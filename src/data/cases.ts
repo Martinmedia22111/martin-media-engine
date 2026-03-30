@@ -571,6 +571,7 @@ export const cases: CaseStudy[] = [
     tags: ["TikTok", "SMM", "Instagram", "FMCG"],
     coverGradient: "from-blue-800/20 to-indigo-500/10",
     coverImage: babushkinaCover,
+    coverType: "logo",
     tiktokUrls: ["https://www.tiktok.com/@babushkina_krynka/video/7534693773180144902"],
     metrics: [
       { label: "Просмотры/мес", value: "100К+" },
