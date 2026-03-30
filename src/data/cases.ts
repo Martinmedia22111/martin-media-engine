@@ -523,6 +523,7 @@ export const cases: CaseStudy[] = [
     results: ["Проект сдан точно в срок", "Ролики в двух форматах: горизонтальный и вертикальный", "Хронометраж 10 и 20 секунд для разных площадок", "Тонкая подача действия препарата через визуальную метафору"],
     tags: ["Реклама", "Видеопродакшн", "Фарма"],
     coverGradient: "from-cyan-600/20 to-blue-500/10",
+    coverImage: grindeksCover,
     videoUrl: "https://www.youtube.com/watch?v=gNvE7XwwSzg",
     metrics: [
       { label: "Фокус", value: "Энергия" },
