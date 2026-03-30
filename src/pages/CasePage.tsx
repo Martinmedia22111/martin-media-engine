@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, VideoJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { cases } from "@/data/cases";
 import { services } from "@/data/services";
@@ -53,6 +53,7 @@ const CasePage = () => {
         ogImage={caseItem.coverImage}
       />
       <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Кейсы", url: "/kejsy" }, { name: caseItem.client, url: `/kejsy/${caseItem.slug}` }]} />
+      {caseItem.videoUrl && <VideoJsonLd name={caseItem.title} description={caseItem.challenge} embedUrl={caseItem.videoUrl} thumbnailUrl={caseItem.coverImage} />}
       <Header />
       <main className="pt-20">
         <section className="section-padding bg-background">

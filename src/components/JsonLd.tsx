@@ -129,6 +129,39 @@ export const BreadcrumbJsonLd = ({ items }: BreadcrumbProps) => (
   </Helmet>
 );
 
+/* ── VideoObject (for case pages with YouTube) ── */
+interface VideoJsonLdProps {
+  name: string;
+  description: string;
+  thumbnailUrl?: string;
+  embedUrl: string;
+  uploadDate?: string;
+}
+
+export const VideoJsonLd = ({ name, description, thumbnailUrl, embedUrl, uploadDate }: VideoJsonLdProps) => {
+  const videoId = embedUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?]+)/)?.[1];
+  if (!videoId) return null;
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name,
+        description,
+        thumbnailUrl: thumbnailUrl || `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+        embedUrl: `https://www.youtube.com/embed/${videoId}`,
+        contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
+        uploadDate: uploadDate || "2025-01-01",
+        publisher: {
+          "@type": "Organization",
+          name: "Martin Media",
+          url: SITE_URL,
+        },
+      })}</script>
+    </Helmet>
+  );
+};
+
 /* ── WebSite (for homepage) ── */
 export const WebSiteJsonLd = () => (
   <Helmet>
