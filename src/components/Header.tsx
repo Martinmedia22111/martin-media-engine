@@ -94,7 +94,7 @@ const Header = () => {
                 to={link.href}
                 className={cn(
                   "text-lg font-heading font-medium py-3 border-b border-border transition-colors",
-                  location.pathname.startsWith(link.href)
+                  (link.href === "/" ? location.pathname === "/" : location.pathname.startsWith(link.href))
                     ? "text-primary"
                     : "text-foreground"
                 )}
