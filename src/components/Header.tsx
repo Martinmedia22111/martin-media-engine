@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { companyInfo } from "@/data/company";
 
 const navLinks = [
   { label: "Услуги", href: "/uslugi" },
@@ -61,7 +62,11 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-4">
+          <a href={`tel:${companyInfo.phone.replace(/\s/g, '')}`} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Phone size={14} />
+            {companyInfo.phoneFormatted}
+          </a>
           <Button asChild variant="default" size="default">
             <Link to="/brief">Обсудить проект</Link>
           </Button>
