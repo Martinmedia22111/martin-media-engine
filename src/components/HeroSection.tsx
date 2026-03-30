@@ -25,14 +25,10 @@ const HeroSection = () => (
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             С 2015 года · Видео · Контент · AI
           </div>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
             <span className="text-white">Martin Media — </span>
-            <span className="text-primary">creative-tech partner</span>
-            <br />
-            <span className="text-white">для брендов, которым</span>
-            <br />
-            <span className="text-white">нужен </span>
-            <span className="text-primary">рост</span>
+            <span className="text-white">помогаем брендам </span>
+            <span className="text-primary">расти.</span>
           </h1>
         </motion.div>
 
