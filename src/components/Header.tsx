@@ -54,7 +54,7 @@ const Header = () => {
               to={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                location.pathname.startsWith(link.href)
+                (link.href === "/" ? location.pathname === "/" : location.pathname.startsWith(link.href))
                   ? "text-primary"
                   : isScrolled ? "text-muted-foreground" : "text-neutral-300"
               )}
