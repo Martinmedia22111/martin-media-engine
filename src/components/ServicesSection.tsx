@@ -1,13 +1,30 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
-import { Video, Clapperboard, Smartphone, BarChart3, Box, Bot, Cpu, Factory, Palette, ArrowRight } from "lucide-react";
+import { ArrowRight, Play, Tv, Smartphone, TrendingUp, Boxes, UtensilsCrossed, Building2, Users, Bot, Megaphone, UserPlus, Camera, Sparkles } from "lucide-react";
 
-import { UtensilsCrossed, Users, Film, Megaphone, UserPlus, Plane, Gamepad2 } from "lucide-react";
+const iconMap: Record<string, React.ElementType> = {
+  Video: Play,
+  Clapperboard: Tv,
+  Smartphone: Smartphone,
+  BarChart3: TrendingUp,
+  Box: Boxes,
+  Bot: Bot,
+  UtensilsCrossed: UtensilsCrossed,
+  Film: Building2,
+  Users: Users,
+  Megaphone: Megaphone,
+  UserPlus: UserPlus,
+  Plane: Camera,
+  Gamepad2: Sparkles,
+};
 
-const iconMap: Record<string, typeof Video> = {
-  Video, Clapperboard, Smartphone, BarChart3, Box, Bot, Cpu, Factory, Palette,
-  UtensilsCrossed, Users, Film, Megaphone, UserPlus, Plane, Gamepad2,
+const categoryColors: Record<string, string> = {
+  production: "from-primary/20 to-primary/5 text-primary",
+  content: "from-accent/30 to-accent/10 text-accent-foreground",
+  ai: "from-primary/15 to-primary/5 text-primary",
+  pr: "from-primary/20 to-primary/5 text-primary",
+  special: "from-accent/30 to-accent/10 text-accent-foreground",
 };
 
 const ServicesSection = () => (
@@ -25,44 +42,51 @@ const ServicesSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {serviceCategories.map((cat, ci) => (
-          <motion.div
+      {/* Category tabs */}
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {serviceCategories.map((cat) => (
+          <span
             key={cat.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: ci * 0.15 }}
+            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-border bg-card text-muted-foreground"
           >
-            <div className="mb-4">
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary">{cat.label}</span>
-              <p className="text-sm text-muted-foreground mt-1">{cat.description}</p>
-            </div>
-            <div className="space-y-3">
-              {services
-                .filter((s) => s.category === cat.id)
-                .map((service) => {
-                  const Icon = iconMap[service.icon] || Video;
-                  return (
-                    <Link
-                      key={service.slug}
-                      to={`/uslugi/${service.slug}`}
-                      className="group flex items-center gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <Icon size={20} />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading font-semibold text-sm text-foreground">{service.shortTitle}</h3>
-                        <p className="text-xs text-muted-foreground mt-0.5 truncate">{service.description}</p>
-                      </div>
-                      <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                    </Link>
-                  );
-                })}
-            </div>
-          </motion.div>
+            {cat.label}
+          </span>
         ))}
+      </div>
+
+      {/* Uniform grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {services.map((service, i) => {
+          const Icon = iconMap[service.icon] || Play;
+          const colorClass = categoryColors[service.category] || categoryColors.production;
+          return (
+            <motion.div
+              key={service.slug}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.04 }}
+            >
+              <Link
+                to={`/uslugi/${service.slug}`}
+                className="group flex flex-col h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+              >
+                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${colorClass} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon size={20} strokeWidth={1.8} />
+                </div>
+                <h3 className="font-heading font-semibold text-sm text-foreground leading-snug">
+                  {service.shortTitle}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed line-clamp-2 flex-1">
+                  {service.description}
+                </p>
+                <div className="mt-4 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Подробнее <ArrowRight size={12} />
+                </div>
+              </Link>
+            </motion.div>
+          );
+        })}
       </div>
 
       <motion.div
@@ -71,7 +95,7 @@ const ServicesSection = () => (
         viewport={{ once: true }}
         className="text-center mt-10"
       >
-        <Link to="/uslugi" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark transition-colors">
+        <Link to="/uslugi" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
           Все услуги <ArrowRight size={16} />
         </Link>
       </motion.div>
