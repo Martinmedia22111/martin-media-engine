@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
 import { Video, Clapperboard, Smartphone, BarChart3, Box, Bot, Cpu, Factory, Palette, ArrowRight } from "lucide-react";
 
-const iconMap: Record<string, React.FC<{ size?: number }>> = {
+const iconMap: Record<string, typeof Video> = {
   Video, Clapperboard, Smartphone, BarChart3, Box, Bot, Cpu, Factory, Palette,
 };
 
