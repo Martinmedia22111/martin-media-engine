@@ -8,7 +8,7 @@ import CasesShowcase from "@/components/CasesShowcase";
 import ResultsSection from "@/components/ResultsSection";
 import MartinLabSection from "@/components/MartinLabSection";
 import ProcessSection from "@/components/ProcessSection";
-import TrustSection from "@/components/TrustSection";
+import InlineContactForm from "@/components/InlineContactForm";
 import BlogPreview from "@/components/BlogPreview";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -21,11 +21,19 @@ const Index = () => (
       
       <WhoWeHelpSection />
       <ServicesSection />
+      <InlineContactForm
+        title="Нужен видеоконтент?"
+        subtitle="Оставьте контакты — обсудим задачи и предложим решение"
+      />
       <CasesShowcase />
       <ResultsSection />
       <MartinLabSection />
       <ProcessSection />
-      <TrustSection />
+      <InlineContactForm
+        variant="dark"
+        title="Готовы обсудить проект?"
+        subtitle="Заполните форму — мы свяжемся и предложим индивидуальное решение"
+      />
       <BlogPreview />
       <FAQSection />
       <CTASection variant="dark" />
