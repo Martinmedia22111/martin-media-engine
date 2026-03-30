@@ -34,7 +34,7 @@ const Cases = () => {
               {filtered.map((c, i) => (
                 <motion.div key={c.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
                   <Link to={`/kejsy/${c.slug}`} className="group block rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                    <div className="relative h-44 overflow-hidden">
+                    <div className="relative h-32 overflow-hidden">
                       {c.coverImage ? (
                         <img src={c.coverImage} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       ) : (
