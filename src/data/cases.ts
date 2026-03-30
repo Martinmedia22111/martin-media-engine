@@ -549,6 +549,7 @@ export const cases: CaseStudy[] = [
     tags: ["TikTok", "SMM", "FMCG"],
     coverGradient: "from-green-700/20 to-emerald-500/10",
     coverImage: galereyaCover,
+    coverType: "logo",
     tiktokUrls: ["https://www.tiktok.com/@galereyavkusa_by/video/7543930809640701190"],
     metrics: [
       { label: "Просмотры", value: "17 млн" },
