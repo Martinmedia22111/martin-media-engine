@@ -501,6 +501,7 @@ export const cases: CaseStudy[] = [
     results: ["Реклама, которая цепляет эмоционально", "Ролик, который хочется пересмотреть", "Продукт упакован в метафору красоты и лёгкости", "Промо-кампания превращена в визуальное волшебство"],
     tags: ["Реклама", "Видеопродакшн", "Ритейл"],
     coverGradient: "from-pink-500/20 to-rose-400/10",
+    coverImage: milaCover,
     videoUrl: "https://www.youtube.com/watch?v=M9kl3sSiEuA",
     metrics: [
       { label: "Фокус", value: "Вдохновлять" },
