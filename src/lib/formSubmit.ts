@@ -27,7 +27,7 @@ export async function submitForm(data: FormData): Promise<{ ok: boolean; message
     const body = encodeURIComponent(
       `Имя: ${data.name}\nТелефон: ${data.phone || '—'}\nEmail: ${data.email || '—'}\nКомпания: ${data.company || '—'}\nУслуга: ${data.service || '—'}\nСообщение: ${data.message || '—'}`
     );
-    window.open(`mailto:martinmedia.minsk@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    window.location.href = `mailto:martinmedia.minsk@gmail.com?subject=${subject}&body=${body}`;
     return { ok: true, message: "Открыто почтовое приложение" };
   }
 
