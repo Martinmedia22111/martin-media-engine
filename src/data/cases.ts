@@ -592,6 +592,7 @@ export const cases: CaseStudy[] = [
     tags: ["TikTok", "SMM", "Ритейл"],
     coverGradient: "from-green-500/20 to-lime-400/10",
     coverImage: almiCover,
+    coverType: "logo",
     tiktokUrls: ["https://www.tiktok.com/@almi_belarus"],
     metrics: [
       { label: "Просмотры", value: "1.7 млн" },
