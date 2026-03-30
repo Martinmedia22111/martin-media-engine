@@ -84,6 +84,18 @@ const CasePage = () => {
               <p className="text-muted-foreground leading-relaxed">{caseItem.solution}</p>
             </div>
 
+            {/* Metrics */}
+            {caseItem.metrics && caseItem.metrics.length > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {caseItem.metrics.map((m, i) => (
+                  <div key={i} className="text-center p-4 rounded-xl bg-card border border-border">
+                    <div className="font-heading text-2xl md:text-3xl font-bold text-primary">{m.value}</div>
+                    <div className="text-xs text-muted-foreground mt-1">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+
             {/* Video Section */}
             {caseItem.videoUrl && (
               <div>
