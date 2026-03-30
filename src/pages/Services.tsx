@@ -9,7 +9,7 @@ import { services, serviceCategories } from "@/data/services";
 import * as Icons from "lucide-react";
 
 const getIcon = (name: string) => {
-  const Icon = (Icons as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[name];
+  const Icon = (Icons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[name];
   return Icon ? <Icon size={24} /> : null;
 };
 
