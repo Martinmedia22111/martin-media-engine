@@ -1,6 +1,7 @@
 import milaCover from "@/assets/mila-cover.jpg";
 import grindeksCover from "@/assets/grindeks-cover.webp";
 import galereyaCover from "@/assets/galereya-vkusa-cover.png";
+import babushkinaCover from "@/assets/babushkina-krynka-cover.png";
 
 export interface CaseStudy {
   id: string;
@@ -551,6 +552,26 @@ export const cases: CaseStudy[] = [
       { label: "Подписчики", value: "+5К" },
       { label: "Ежемесячно", value: "+200К" },
       { label: "Сотрудничество", value: "1 год" },
+    ],
+  },
+  {
+    id: "32",
+    slug: "babushkina-krynka-smm",
+    title: "Продвижение молочного бренда «Бабушкина крынка» в соцсетях",
+    client: "Бабушкина крынка",
+    industry: "FMCG / Продукты питания",
+    services: ["short-form-video", "smm-content-strategy"],
+    challenge: "Бренду молочной продукции «Бабушкина крынка» нужно было выйти в социальные сети с правильным позиционированием, вдохнуть жизнь в аккаунты TikTok и Instagram, нативно продвигать продукцию и наращивать аудиторию.",
+    solution: "Адаптировали TikTok, Instagram и другие платформы под бренд «под ключ». Отслеживали растущие тренды и адаптировали их на этапе роста. Запустили полноценный сериал в соцсетях с продуктом, использовали UGC и нативное продвижение молочной продукции.",
+    results: ["100 000+ просмотров в Instagram ежемесячно", "Стабильное попадание в алгоритмы TikTok", "Органический рост подписок и вовлечённости", "Нативное продвижение и UGC", "Адаптация трендов на этапе их роста"],
+    tags: ["TikTok", "SMM", "Instagram", "FMCG"],
+    coverGradient: "from-blue-800/20 to-indigo-500/10",
+    coverImage: babushkinaCover,
+    tiktokUrls: ["https://www.tiktok.com/@babushkina_krynka/video/7534693773180144902"],
+    metrics: [
+      { label: "Просмотры/мес", value: "100К+" },
+      { label: "Платформы", value: "TikTok, IG" },
+      { label: "Рост", value: "Органический" },
     ],
   },
 ];
