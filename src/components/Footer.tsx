@@ -46,7 +46,7 @@ const Footer = () => (
             <li><Link to="/o-kompanii" className="text-sm text-neutral-400 hover:text-primary transition-colors">О нас</Link></li>
             <li><Link to="/kejsy" className="text-sm text-neutral-400 hover:text-primary transition-colors">Кейсы</Link></li>
             <li><Link to="/blog" className="text-sm text-neutral-400 hover:text-primary transition-colors">Блог</Link></li>
-            <li><Link to="/martin-lab" className="text-sm text-neutral-400 hover:text-primary transition-colors">Martin LAB</Link></li>
+            
             <li><Link to="/faq" className="text-sm text-neutral-400 hover:text-primary transition-colors">FAQ</Link></li>
           </ul>
         </div>
