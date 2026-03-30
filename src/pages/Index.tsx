@@ -21,11 +21,19 @@ const Index = () => (
       
       <WhoWeHelpSection />
       <ServicesSection />
+      <InlineContactForm
+        title="Нужен видеоконтент?"
+        subtitle="Оставьте контакты — обсудим задачи и предложим решение"
+      />
       <CasesShowcase />
       <ResultsSection />
       <MartinLabSection />
       <ProcessSection />
-      <TrustSection />
+      <InlineContactForm
+        variant="dark"
+        title="Готовы обсудить проект?"
+        subtitle="Заполните форму — мы свяжемся и предложим индивидуальное решение"
+      />
       <BlogPreview />
       <FAQSection />
       <CTASection variant="dark" />
