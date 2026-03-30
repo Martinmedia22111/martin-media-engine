@@ -20,13 +20,7 @@ const Cases = () => {
               <p className="mt-4 text-lg text-muted-foreground max-w-lg">Реальные проекты с измеримыми результатами для бизнеса</p>
             </motion.div>
 
-            {/* Filters */}
-            <div className="flex flex-wrap gap-2 mb-10">
-              <button onClick={() => setActiveTag(null)} className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${!activeTag ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground hover:border-primary/30"}`}>Все</button>
-              {allTags.map((tag) => (
-                <button key={tag} onClick={() => setActiveTag(tag)} className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${activeTag === tag ? "bg-primary text-primary-foreground border-primary" : "border-border text-muted-foreground hover:border-primary/30"}`}>{tag}</button>
-              ))}
-            </div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((c, i) => (
