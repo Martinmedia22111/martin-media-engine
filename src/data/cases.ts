@@ -17,6 +17,7 @@ export interface CaseStudy {
   tags: string[];
   coverGradient: string;
   coverImage?: string;
+  coverType?: "photo" | "logo";
   videoUrl?: string;
   videoUrls?: { title: string; url: string }[];
   tiktokUrls?: string[];
