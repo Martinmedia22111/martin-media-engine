@@ -4,14 +4,10 @@ import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cases } from "@/data/cases";
-import { useState } from "react";
 import { Play } from "lucide-react";
 
-const allTags = Array.from(new Set(cases.flatMap((c) => c.tags)));
-
 const Cases = () => {
-  const [activeTag, setActiveTag] = useState<string | null>(null);
-  const filtered = activeTag ? cases.filter((c) => c.tags.includes(activeTag)) : cases;
+  const filtered = cases;
 
   return (
     <>
