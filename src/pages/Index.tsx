@@ -8,7 +8,7 @@ import CasesShowcase from "@/components/CasesShowcase";
 import ResultsSection from "@/components/ResultsSection";
 import MartinLabSection from "@/components/MartinLabSection";
 import ProcessSection from "@/components/ProcessSection";
-import TrustSection from "@/components/TrustSection";
+import InlineContactForm from "@/components/InlineContactForm";
 import BlogPreview from "@/components/BlogPreview";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
