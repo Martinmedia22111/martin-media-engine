@@ -25,10 +25,14 @@ const HeroSection = () => (
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             С 2015 года · Видео · Контент · AI
           </div>
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
-            Создаём видео,
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+            <span className="text-white">Martin Media — </span>
+            <span className="text-primary">creative-tech partner</span>
             <br />
-            <span className="text-primary">которые продают</span>
+            <span className="text-white">для брендов, которым</span>
+            <br />
+            <span className="text-white">нужен </span>
+            <span className="text-primary">рост</span>
           </h1>
         </motion.div>
 
@@ -38,9 +42,8 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-6 text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
         >
-          Martin Media — агентство видеомаркетинга полного цикла.
-          Видеопродакшн, TikTok, Reels, рекламные ролики, SMM, AI-видео
-          и продвижение для бизнеса с 2015 года.
+          Контент, видеопродакшн, short-form, SMM, 3D и AI-решения,
+          собранные в единую систему маркетинга и коммуникации.
         </motion.p>
 
         <motion.div
