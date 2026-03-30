@@ -10,8 +10,11 @@ const steps = [
 ];
 
 const ProcessSection = () => (
-  <section className="section-padding bg-background">
-    <div className="container">
+  <section className="section-padding gradient-red-subtle relative overflow-hidden">
+    {/* Decorative */}
+    <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-primary/[0.04] blur-[100px]" />
+
+    <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,9 +35,9 @@ const ProcessSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="relative text-center p-6 rounded-2xl border border-border bg-card"
+            className="relative text-center p-6 rounded-2xl border border-border bg-card hover:shadow-lg hover:border-primary/20 transition-all duration-300"
           >
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center shadow-lg shadow-primary/30">
               {i + 1}
             </div>
             <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mt-2 mb-4">

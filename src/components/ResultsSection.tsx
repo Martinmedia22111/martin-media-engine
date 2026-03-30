@@ -11,8 +11,8 @@ const results = [
 ];
 
 const ResultsSection = () => (
-  <section className="section-padding bg-secondary/50">
-    <div className="container">
+  <section className="section-padding gradient-warm relative overflow-hidden">
+    <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -33,9 +33,9 @@ const ResultsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="p-6 rounded-2xl bg-card border border-border"
+            className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
           >
-            <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-4">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-primary mb-4 group-hover:from-primary group-hover:to-primary group-hover:text-white transition-all duration-300">
               <r.icon size={22} />
             </div>
             <h3 className="font-heading font-semibold text-foreground mb-1.5">{r.title}</h3>
