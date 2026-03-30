@@ -31,7 +31,7 @@ const TrustSection = () => (
         className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-20"
       >
         {[
-          { value: "187+", label: "Реализованных проектов" },
+          { value: "3000+", label: "Реализованных проектов" },
           { value: "125+", label: "Довольных клиентов" },
           { value: "100M+", label: "Просмотров контента" },
           { value: "9+", label: "Лет на рынке" },

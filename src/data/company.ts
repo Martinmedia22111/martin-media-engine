@@ -4,14 +4,17 @@ export const companyInfo = {
   phone: "+375 29 3321356",
   phoneFormatted: "+375 (29) 332-13-56",
   email: "martinmedia.minsk@gmail.com",
+  emailAlt: "martinlab.minsk1@gmail.com",
   location: "Минск, Беларусь",
   website: "mmedia.by",
   since: 2015,
   logoUrl: "https://mmedia.by/wp-content/uploads/2024/07/logo.png",
+  description: "Более 9 лет мы помогаем брендам успешно развиваться, создавая качественный видеопродакшн и разрабатывая креативные решения, которые действительно работают. В нашем портфеле более 3000+ реализованных проектов в разных сферах. Мы — эксперты в своей области и удостоены награды YouTube.",
+  competencies: ["Digital", "Video", "PR", "AI"],
 };
 
 export const stats = [
-  { value: "187+", label: "реализованных проектов" },
+  { value: "3000+", label: "реализованных проектов" },
   { value: "125+", label: "довольных клиентов" },
   { value: "100M+", label: "просмотров контента" },
   { value: "9+", label: "лет на рынке" },
@@ -20,7 +23,7 @@ export const stats = [
 export const teamStats = [
   { value: "14", label: "Человек в команде" },
   { value: "30+", label: "Действующих клиентов" },
-  { value: "300+", label: "Видеороликов" },
+  { value: "3000+", label: "Реализованных проектов" },
   { value: "9+", label: "Лет успешной работы" },
 ];
 
@@ -37,6 +40,25 @@ export const clients = [
   "МИЛА",
   "ГРИНДЕКС",
   "СОСЕДИ",
+  "COCA-COLA",
+  "DANONE",
+  "SWISS PHARMA",
+  "ARMTEK",
+  "ALPINA",
+  "СБЕР БАНК",
+  "КРАСНЫЙ ПИЩЕВИК",
+  "БАБУШКИНА КРЫНКА",
+  "АВТООСТРОВ",
+  "АЛМИ",
+  "ZIKO",
+  "KRONEX",
+  "ШАТЕ-М",
+  "АЛЬФА-БАНК",
+  "ЕВРООПТ",
+  "ДОБРОНОК",
+  "MOSTMED",
+  "SPA RIVIERA",
+  "ГАСПАДАР",
 ];
 
 export const portfolioCategories = [
@@ -49,4 +71,6 @@ export const portfolioCategories = [
   "AI Видео",
   "Short-form",
   "SMM",
+  "Food-видео",
+  "3D / VFX",
 ] as const;
