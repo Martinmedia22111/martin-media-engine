@@ -44,7 +44,7 @@ const ServicesSection = () => (
 
       {/* Category tabs */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
-        {serviceCategories.map((cat) => (
+        {serviceCategories.filter(c => c.id !== "special").map((cat) => (
           <span
             key={cat.id}
             className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-border bg-card text-muted-foreground"
@@ -55,8 +55,8 @@ const ServicesSection = () => (
       </div>
 
       {/* Uniform grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {services.map((service, i) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {services.filter(s => s.category !== "special").map((service, i) => {
           const Icon = iconMap[service.icon] || Play;
           const colorClass = categoryColors[service.category] || categoryColors.production;
           return (
