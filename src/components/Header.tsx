@@ -39,7 +39,7 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading font-bold text-xl md:text-2xl tracking-tight text-foreground">
+          <span className={cn("font-heading font-bold text-xl md:text-2xl tracking-tight transition-colors", isScrolled ? "text-foreground" : "text-white")}>
             MARTIN<span className="text-primary"> MEDIA</span>
           </span>
         </Link>
@@ -54,7 +54,7 @@ const Header = () => {
                 "text-sm font-medium transition-colors hover:text-primary",
                 location.pathname.startsWith(link.href)
                   ? "text-primary"
-                  : "text-muted-foreground"
+                  : isScrolled ? "text-muted-foreground" : "text-neutral-300"
               )}
             >
               {link.label}
@@ -63,7 +63,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href={`tel:${companyInfo.phone.replace(/\s/g, '')}`} className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors">
+          <a href={`tel:${companyInfo.phone.replace(/\s/g, '')}`} className={cn("flex items-center gap-1.5 text-sm hover:text-primary transition-colors", isScrolled ? "text-muted-foreground" : "text-neutral-300")}>
             <Phone size={14} />
             {companyInfo.phoneFormatted}
           </a>
@@ -74,7 +74,7 @@ const Header = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className={cn("md:hidden p-2 transition-colors", isScrolled ? "text-foreground" : "text-white")}
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Меню"
         >
