@@ -9,7 +9,7 @@ import { cases } from "@/data/cases";
 import { Play } from "lucide-react";
 
 const Cases = () => {
-  const filtered = cases;
+  const filtered = [...cases].reverse();
 
   return (
     <>

@@ -1,3 +1,5 @@
+import milaCover from "@/assets/mila-cover.jpg";
+
 export interface CaseStudy {
   id: string;
   slug: string;
