@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calendar } from "lucide-react";
 
 const articles = [
-  { slug: "skolko-stoit-reklamnyj-rolik", title: "Сколько стоит рекламный ролик в 2025 году: разбор цен и форматов", category: "Гайды", date: "15 марта 2026", readTime: "8 мин" },
+  { slug: "skolko-stoit-reklamnyj-rolik", title: "Сколько стоит рекламный ролик в 2025 году: разбор форматов и подходов", category: "Гайды", date: "15 марта 2026", readTime: "8 мин" },
   { slug: "tiktok-vs-reels-vs-shorts", title: "TikTok, Reels или Shorts: что выбрать бизнесу и почему", category: "Сравнения", date: "10 марта 2026", readTime: "6 мин" },
   { slug: "kak-postroit-content-zavod", title: "Как построить контент-завод: пошаговая методология", category: "Кейсы и разборы", date: "5 марта 2026", readTime: "12 мин" },
 ];
