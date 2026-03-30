@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { services } from "@/data/services";
+import { companyInfo } from "@/data/company";
 
 const footerServices = services.slice(0, 5);
 
@@ -15,7 +16,7 @@ const Footer = () => (
             </span>
           </Link>
           <p className="mt-4 text-sm text-neutral-400 leading-relaxed max-w-xs">
-            Медиа- и технологический партнёр для бизнеса. Видеопродакшн, контент-системы, AI-решения.
+            Агентство видеомаркетинга полного цикла. Видеопродакшн, TikTok, Reels, SMM, AI-видео и продвижение для бизнеса с 2015 года.
           </p>
         </div>
 
@@ -54,13 +55,13 @@ const Footer = () => (
         <div>
           <h4 className="font-heading font-semibold text-background mb-4">Контакты</h4>
           <ul className="space-y-2.5">
-            <li><a href="mailto:hello@martinmedia.ru" className="text-sm text-neutral-400 hover:text-primary transition-colors">hello@martinmedia.ru</a></li>
-            <li><a href="tel:+74951234567" className="text-sm text-neutral-400 hover:text-primary transition-colors">+7 (495) 123-45-67</a></li>
-            <li className="text-sm text-neutral-400">Москва, Россия</li>
+            <li><a href={`mailto:${companyInfo.email}`} className="text-sm text-neutral-400 hover:text-primary transition-colors">{companyInfo.email}</a></li>
+            <li><a href={`tel:${companyInfo.phone.replace(/\s/g, '')}`} className="text-sm text-neutral-400 hover:text-primary transition-colors">{companyInfo.phoneFormatted}</a></li>
+            <li className="text-sm text-neutral-400">{companyInfo.location}</li>
           </ul>
           <div className="mt-6">
             <Link to="/brief" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-              Обсудить проект →
+              Рассчитать стоимость проекта →
             </Link>
           </div>
         </div>
@@ -69,7 +70,7 @@ const Footer = () => (
       <div className="mt-12 pt-8 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-xs text-neutral-500">© {new Date().getFullYear()} Martin Media. Все права защищены.</p>
         <div className="flex items-center gap-6">
-          <Link to="/faq" className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">Политика конфиденциальности</Link>
+          <a href={`https://${companyInfo.website}`} target="_blank" rel="noopener noreferrer" className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">{companyInfo.website}</a>
         </div>
       </div>
     </div>

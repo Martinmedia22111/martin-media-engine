@@ -1,29 +1,23 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { stats, teamStats } from "@/data/company";
 
 const testimonials = [
   {
-    text: "Martin Media построили нам контент-конвейер, который изменил наш подход к маркетингу. За 3 месяца мы вышли на 50+ единиц контента в месяц.",
-    author: "Мария К.",
-    role: "Head of Marketing, E-commerce бренд",
+    text: "Martin Media создали для нас серию рекламных роликов, которые значительно усилили нашу digital-стратегию. Профессиональный подход на каждом этапе.",
+    author: "Маркетинг-директор",
+    role: "Белагропромбанк",
   },
   {
-    text: "AI-ассистент разгрузил наш call-центр на 45%. Пациенты получают ответы мгновенно, а команда фокусируется на сложных задачах.",
-    author: "Андрей С.",
-    role: "CEO, Сеть клиник",
+    text: "Ребята выстроили нам TikTok с нуля — от стратегии до регулярного контента. Результат превзошёл ожидания: охваты и вовлечённость выросли кратно.",
+    author: "Бренд-менеджер",
+    role: "Крупный FMCG-бренд",
   },
   {
-    text: "Ребята поняли наш продукт лучше, чем многие из нашей команды. Рекламные ролики превзошли все бенчмарки.",
-    author: "Алексей Д.",
-    role: "CEO, Финтех-стартап",
+    text: "Работаем с Martin Media уже несколько лет. Ценим за скорость, качество и умение работать с разными форматами — от рекламы до AI-видео.",
+    author: "Руководитель маркетинга",
+    role: "Belkart",
   },
-];
-
-const trustNumbers = [
-  { value: "120+", label: "Реализованных проектов" },
-  { value: "40+", label: "Брендов-партнёров" },
-  { value: "15M+", label: "Просмотров контента" },
-  { value: "98%", label: "Клиентов продлевают сотрудничество" },
 ];
 
 const TrustSection = () => (
@@ -36,7 +30,12 @@ const TrustSection = () => (
         viewport={{ once: true }}
         className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-20"
       >
-        {trustNumbers.map((n) => (
+        {[
+          { value: "187+", label: "Реализованных проектов" },
+          { value: "125+", label: "Довольных клиентов" },
+          { value: "100M+", label: "Просмотров контента" },
+          { value: "9+", label: "Лет на рынке" },
+        ].map((n) => (
           <div key={n.label} className="text-center">
             <div className="font-heading text-3xl md:text-5xl font-bold text-primary">{n.value}</div>
             <div className="text-sm text-muted-foreground mt-2">{n.label}</div>

@@ -2,13 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-
-const stats = [
-  { value: "120+", label: "проектов" },
-  { value: "40+", label: "брендов" },
-  { value: "15M+", label: "просмотров" },
-  { value: "3", label: "года на рынке" },
-];
+import { stats } from "@/data/company";
 
 const HeroSection = () => (
   <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background pt-20">
@@ -27,13 +21,12 @@ const HeroSection = () => (
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/[0.08] text-primary text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Creative + Production + AI
+            С 2015 года · Видео · Контент · AI
           </div>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-            Видео, контент и AI,
+            Создаём видео,
             <br />
-            <span className="text-primary">которые растят</span>
-            {" "}ваш бизнес
+            <span className="text-primary">которые продают</span>
           </h1>
         </motion.div>
 
@@ -43,9 +36,9 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
         >
-          Martin Media — медиа- и технологический партнёр для бизнеса.
-          Объединяем creative production, контент-системы и AI-решения
-          в единую экосистему роста.
+          Martin Media — агентство видеомаркетинга полного цикла.
+          Видеопродакшн, TikTok, Reels, рекламные ролики, SMM, AI-видео
+          и продвижение для бизнеса с 2015 года.
         </motion.p>
 
         <motion.div
@@ -56,7 +49,7 @@ const HeroSection = () => (
         >
           <Button asChild variant="hero" size="xl">
             <Link to="/brief">
-              Обсудить проект <ArrowRight className="ml-1" size={18} />
+              Рассчитать стоимость <ArrowRight className="ml-1" size={18} />
             </Link>
           </Button>
           <Button asChild variant="hero-outline" size="xl">
