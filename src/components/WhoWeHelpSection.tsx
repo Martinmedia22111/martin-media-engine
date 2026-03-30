@@ -6,25 +6,21 @@ const segments = [
     icon: Users,
     title: "Бренды, которым нужен системный видеоконтент",
     description: "Выстроим производство контента как предсказуемый процесс",
-    link: "/uslugi/content-systemy",
   },
   {
     icon: TrendingUp,
     title: "Компании, выходящие в TikTok и Reels",
     description: "Стратегия, производство и аналитика вертикального контента",
-    link: "/uslugi/short-form-video",
   },
   {
     icon: Cpu,
     title: "Бизнесы, внедряющие AI в маркетинг",
     description: "AI-ассистенты, автоматизация, интеграции с вашими процессами",
-    link: "/uslugi/ai-integracii",
   },
   {
     icon: Briefcase,
     title: "Маркетинг-директора, ищущие сильного партнёра",
     description: "Одна команда вместо пяти подрядчиков — продакшн, контент, AI",
-    link: "/uslugi",
   },
 ];
 
