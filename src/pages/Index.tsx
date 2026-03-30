@@ -29,11 +29,6 @@ const Index = () => (
       <ResultsSection />
       <MartinLabSection />
       <ProcessSection />
-      <InlineContactForm
-        variant="dark"
-        title="Готовы обсудить проект?"
-        subtitle="Заполните форму — мы свяжемся и предложим индивидуальное решение"
-      />
       <BlogPreview />
       <FAQSection />
       <CTASection variant="dark" />
