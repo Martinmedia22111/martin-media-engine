@@ -1,4 +1,5 @@
 import milaCover from "@/assets/mila-cover.jpg";
+import grindeksCover from "@/assets/grindeks-cover.webp";
 
 export interface CaseStudy {
   id: string;
