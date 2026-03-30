@@ -201,8 +201,8 @@ const CasePage = () => {
                 {relatedCases.map((c) => (
                   <Link key={c.id} to={`/kejsy/${c.slug}`} className="group block rounded-xl overflow-hidden border border-border bg-card hover:border-primary/30 transition-all">
                     {c.coverImage && (
-                      <div className="h-32 overflow-hidden">
-                        <img src={c.coverImage} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <div className={`h-32 overflow-hidden ${c.coverType === "logo" ? `bg-gradient-to-br ${c.coverGradient} flex items-center justify-center` : ""}`}>
+                        <img src={c.coverImage} alt={c.title} className={`group-hover:scale-105 transition-transform duration-300 ${c.coverType === "logo" ? "max-h-full object-contain p-3" : "w-full h-full object-cover"}`} />
                       </div>
                     )}
                     <div className="p-4">
