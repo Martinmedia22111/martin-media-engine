@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cases } from "@/data/cases";
 import { useState } from "react";
+import { Play } from "lucide-react";
 
 const allTags = Array.from(new Set(cases.flatMap((c) => c.tags)));
 
@@ -35,8 +36,19 @@ const Cases = () => {
               {filtered.map((c, i) => (
                 <motion.div key={c.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
                   <Link to={`/kejsy/${c.slug}`} className="group block rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300">
-                    <div className={`h-44 bg-gradient-to-br ${c.coverGradient} flex items-end p-5`}>
-                      <div className="flex flex-wrap gap-1.5">
+                    <div className="relative h-44 overflow-hidden">
+                      {c.coverImage ? (
+                        <img src={c.coverImage} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      ) : (
+                        <div className={`w-full h-full bg-gradient-to-br ${c.coverGradient}`} />
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      {(c.videoUrl || c.videoUrls) && (
+                        <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
+                          <Play size={14} className="text-primary-foreground ml-0.5" />
+                        </div>
+                      )}
+                      <div className="absolute bottom-3 left-4 flex flex-wrap gap-1.5">
                         {c.tags.slice(0, 2).map((tag) => (
                           <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full bg-background/80 text-foreground backdrop-blur-sm">{tag}</span>
                         ))}

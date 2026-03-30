@@ -10,7 +10,11 @@ export interface CaseStudy {
   results: string[];
   tags: string[];
   coverGradient: string;
+  coverImage?: string;
   videoUrl?: string;
+  videoUrls?: { title: string; url: string }[];
+  tiktokUrls?: string[];
+  gallery?: string[];
   quote?: { text: string; author: string; role: string };
 }
 
@@ -27,6 +31,7 @@ export const cases: CaseStudy[] = [
     results: ["Ролик использован в digital и OLV кампаниях", "Рост узнаваемости бренда в целевом сегменте", "Увеличение обращений на продукты банка"],
     tags: ["Реклама", "Видеопродакшн", "Финансы"],
     coverGradient: "from-emerald-600/20 to-teal-500/10",
+    coverImage: "https://i0.wp.com/mmedia.by/wp-content/uploads/2018/11/5-1_1.jpg?fit=1024%2C684&ssl=1",
     videoUrl: "https://www.youtube.com/watch?v=uQs37Hs6GNE",
   },
   {
@@ -36,11 +41,13 @@ export const cases: CaseStudy[] = [
     client: "Domino's Pizza",
     industry: "HoReCa",
     services: ["reklamnye-roliki", "videoproduction", "short-form-video"],
-    challenge: "Domino's Pizza нуждался в серии рекламных роликов для продвижения новых продуктов и акций в digital-каналах, с фокусом на аппетитную визуализацию и быструю конверсию.",
-    solution: "Сняли серию рекламных роликов с акцентом на food-стилистику и динамичный монтаж. Создали адаптации для соцсетей, stories и таргетированной рекламы.",
+    challenge: "Компания Мартин Медиа разработала яркое видео для Domino's, которое демонстрирует процесс приготовления пиццы и акцентирует внимание на свежих ингредиентах, сладких ценах и быстрой доставке.",
+    solution: "Видео включает уникальные предложения и акции, что делает его не только привлекательным, но и информативным. Это помогло увеличить интерес к бренду и повысить вовлеченность аудитории в социальных сетях.",
     results: ["Серия роликов для digital-продвижения", "Рост заказов в период рекламной кампании", "Контент адаптирован для всех платформ"],
     tags: ["Реклама", "HoReCa", "Видеопродакшн"],
     coverGradient: "from-blue-500/20 to-indigo-500/10",
+    coverImage: "https://i0.wp.com/mmedia.by/wp-content/uploads/2024/07/c9252e6c6cd289c588c3381bc77b1dfc-scaled.jpeg?fit=1024%2C819&ssl=1",
+    videoUrl: "https://www.youtube.com/watch?v=tm0On1m6RMo",
   },
   {
     id: "3",
@@ -49,24 +56,34 @@ export const cases: CaseStudy[] = [
     client: "GYM24",
     industry: "Спорт и фитнес",
     services: ["reklamnye-roliki", "videoproduction"],
-    challenge: "Фитнес-сеть GYM24 хотела привлечь новую аудиторию через яркий, энергичный рекламный ролик, который мотивирует записаться на тренировку и показывает атмосферу клуба.",
+    challenge: "В Martin Media мы гордимся тем, что работаем с ведущими брендами в сфере фитнеса, и Gym24 — один из наших самых ярких проектов. Наша цель заключалась в создании мощной видеомаркетинговой стратегии, которая бы не только привлекала новых клиентов, но и укрепляла лояльность существующих.",
     solution: "Создали динамичный рекламный ролик с реальными тренерами и клиентами GYM24. Использовали динамичную съёмку, энергичный монтаж и мотивирующий саунд-дизайн.",
     results: ["Ролик использован в рекламных кампаниях", "Рост подписок и запросов на абонементы", "Контент для соцсетей и OLV"],
     tags: ["Реклама", "Спорт", "Видеопродакшн"],
     coverGradient: "from-orange-500/20 to-red-500/10",
+    coverImage: "https://i0.wp.com/mmedia.by/wp-content/uploads/2024/07/2024-07-16_22-08-14.png?fit=1024%2C684&ssl=1",
+    videoUrl: "https://www.youtube.com/watch?v=CWfU6fyPTxM",
   },
   {
     id: "4",
     slug: "mila-reklama",
-    title: "Рекламный видеопроект для сети «Мила»",
+    title: "Рекламные ролики с VFX и 3D-графикой для сети «Мила»",
     client: "Мила",
     industry: "Ритейл",
-    services: ["reklamnye-roliki", "videoproduction"],
-    challenge: "Сети магазинов «Мила» необходимо было создать серию рекламных роликов для продвижения акционных предложений и формирования узнаваемого визуального стиля бренда в видео.",
-    solution: "Разработали визуальную концепцию, подходящую для серийного производства роликов. Создали шаблоны для быстрого запуска новых акционных роликов с сохранением единого стиля.",
-    results: ["Серия рекламных роликов для digital", "Единый визуальный стиль для видеокоммуникаций", "Масштабируемый формат для регулярного производства"],
-    tags: ["Реклама", "Ритейл", "Видеопродакшн"],
+    services: ["reklamnye-roliki", "videoproduction", "3d-motion-design"],
+    challenge: "Сети магазинов «Мила» необходимо было создать серию рекламных роликов для продвижения акционных предложений и формирования узнаваемого визуального стиля бренда в видео. Любую идею заказчика нужно было воплотить с помощью современной 3D-графики и визуальных эффектов (VFX).",
+    solution: "Создаем рекламные ролики для бренда «Мила», которые впечатляют. Любую идею заказчика мы воплощаем в жизнь с помощью современной 3D-графики и визуальных эффектов (VFX). От креатива до реализации — реклама, которая увеличивает продажи и граничит с реальностью.",
+    results: ["Серия VFX/CGI-роликов для digital", "Единый визуальный стиль для видеокоммуникаций", "Масштабируемый формат для регулярного производства"],
+    tags: ["Реклама", "VFX", "3D", "Ритейл", "Видеопродакшн"],
     coverGradient: "from-pink-500/20 to-rose-500/10",
+    coverImage: "https://i0.wp.com/mmedia.by/wp-content/uploads/2024/11/1-1.png?fit=1200%2C801&ssl=1",
+    videoUrls: [
+      { title: "День рождения — время радости, веселья и подарков!", url: "https://www.youtube.com/watch?v=lqTnY2qlQ4U" },
+      { title: "Расцветай вместе с Милой! 🌷", url: "https://www.youtube.com/watch?v=xJRHFlvswZ8" },
+      { title: "Новогодний скидочный экспресс 🎄", url: "https://www.youtube.com/watch?v=pmCrPyHvlt4" },
+      { title: "ПокуПЯТНИЦЫ 🖤 Более 6000 товаров на скидках!", url: "https://www.youtube.com/watch?v=ZabUzCymBGM" },
+      { title: "Скидки догоняют Деда!", url: "https://www.youtube.com/watch?v=2onbV2hAHlg" },
+    ],
   },
   {
     id: "5",
@@ -80,6 +97,8 @@ export const cases: CaseStudy[] = [
     results: ["Ролик для ТВ и digital-каналов", "Соответствие регуляторным требованиям", "Повышение узнаваемости продукта"],
     tags: ["Реклама", "Фармацевтика", "Видеопродакшн"],
     coverGradient: "from-green-500/20 to-emerald-500/10",
+    coverImage: "https://i0.wp.com/mmedia.by/wp-content/uploads/2025/09/grindeks.png?fit=510%2C510&ssl=1",
+    videoUrl: "https://www.youtube.com/watch?v=gNvE7XwwSzg",
   },
   {
     id: "6",
@@ -89,10 +108,12 @@ export const cases: CaseStudy[] = [
     industry: "Финансы и банки",
     services: ["reklamnye-roliki", "short-form-video", "smm-content-strategy"],
     challenge: "Belkart нуждался в комплексном подходе: рекламные ролики, AI-видео, контент для TikTok, Instagram и других социальных сетей для построения современного образа платёжной системы.",
-    solution: "Реализовали полный комплекс работ: от рекламных роликов до TikTok-контента и AI-видео. Выстроили контент-стратегию для социальных сетей с регулярным производством контента.",
+    solution: "Компания Мартин Медиа представила видео для Belkart, акцентируя внимание на инновационных услугах и удобстве использования сервисов Belkart. Мы занимаемся продвижением их Instagram, TikTok-аккаунта для увеличения вовлеченности и охвата аудитории от разработки концепции и съёмки до конечного результата.",
     results: ["Рекламные ролики для digital-кампаний", "Регулярный TikTok и Instagram контент", "AI-видео для инновационной подачи", "Системный SMM с ростом вовлечённости"],
     tags: ["Реклама", "AI Видео", "TikTok", "Instagram", "SMM", "Финансы"],
     coverGradient: "from-violet-500/20 to-purple-500/10",
+    coverImage: "https://i0.wp.com/mmedia.by/wp-content/uploads/2026/03/logo_osnovnoy_1.png?fit=935%2C1024&ssl=1",
+    tiktokUrls: ["https://www.tiktok.com/@belkart_by/video/7608957720066051336"],
   },
   {
     id: "7",
