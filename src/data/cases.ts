@@ -1,5 +1,6 @@
 import milaCover from "@/assets/mila-cover.jpg";
 import grindeksCover from "@/assets/grindeks-cover.webp";
+import galereyaCover from "@/assets/galereya-vkusa-cover.png";
 
 export interface CaseStudy {
   id: string;
@@ -529,6 +530,27 @@ export const cases: CaseStudy[] = [
       { label: "Фокус", value: "Энергия" },
       { label: "Форматы", value: "2" },
       { label: "Хронометраж", value: "10 и 20 сек" },
+    ],
+  },
+  {
+    id: "31",
+    slug: "galereya-vkusa-tiktok",
+    title: "Продвижение в TikTok для мясного бренда «Галерея вкуса»",
+    client: "Галерея вкуса",
+    industry: "FMCG / Продукты питания",
+    services: ["short-form-video", "smm-content-strategy"],
+    challenge: "Бренду натуральной и здоровой мясной продукции «Галерея вкуса» нужно было нативно показать все линейки продуктов так, чтобы их захотелось попробовать, и транслировать здоровый образ жизни рядом со здоровыми продуктами.",
+    solution: "Ловили тренды TikTok так, чтобы они работали на продукт. Показывали ценности бренда через соцсети и находили новые точки контакта с целевой аудиторией. За год тестировали разные стратегии и форматы, продолжая искать новое, чтобы зацепить нужную аудиторию.",
+    results: ["17 млн просмотров видео за год", "+5 000 подписчиков", "+200 000 просмотров каждый месяц", "Протестированы разные стратегии и форматы"],
+    tags: ["TikTok", "SMM", "FMCG"],
+    coverGradient: "from-green-700/20 to-emerald-500/10",
+    coverImage: galereyaCover,
+    tiktokUrls: ["https://www.tiktok.com/@galereyavkusa_by/video/7543930809640701190"],
+    metrics: [
+      { label: "Просмотры", value: "17 млн" },
+      { label: "Подписчики", value: "+5К" },
+      { label: "Ежемесячно", value: "+200К" },
+      { label: "Сотрудничество", value: "1 год" },
     ],
   },
 ];
