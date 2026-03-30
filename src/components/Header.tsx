@@ -8,7 +8,6 @@ import { companyInfo } from "@/data/company";
 const navLinks = [
   { label: "Услуги", href: "/uslugi" },
   { label: "Кейсы", href: "/kejsy" },
-  { label: "Martin LAB", href: "/martin-lab" },
   { label: "Блог", href: "/blog" },
   { label: "О нас", href: "/o-kompanii" },
 ];
