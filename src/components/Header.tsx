@@ -38,9 +38,9 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <span className={cn("font-heading font-bold text-xl md:text-2xl tracking-tight transition-colors", isScrolled ? "text-foreground" : "text-white")}>
-            MARTIN<span className="text-primary"> MEDIA</span>
-          </span>
+            <span className="font-heading font-bold text-xl md:text-2xl tracking-tight text-primary">
+              MARTIN MEDIA
+            </span>
         </Link>
 
         {/* Desktop nav */}

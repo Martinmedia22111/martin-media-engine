@@ -11,8 +11,8 @@ const Footer = () => (
         {/* Brand */}
         <div className="lg:col-span-1">
           <Link to="/" className="inline-block">
-            <span className="font-heading font-bold text-2xl text-background">
-              MARTIN<span className="text-primary"> MEDIA</span>
+            <span className="font-heading font-bold text-2xl text-primary">
+              MARTIN MEDIA
             </span>
           </Link>
           <p className="mt-4 text-sm text-neutral-400 leading-relaxed max-w-xs">
