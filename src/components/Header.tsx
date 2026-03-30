@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { companyInfo } from "@/data/company";
 
 const navLinks = [
+  { label: "Главная", href: "/" },
   { label: "Услуги", href: "/uslugi" },
   { label: "Кейсы", href: "/kejsy" },
   { label: "Блог", href: "/blog" },
