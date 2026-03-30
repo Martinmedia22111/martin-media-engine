@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Users, TrendingUp, Cpu, Briefcase } from "lucide-react";
 
 const segments = [
