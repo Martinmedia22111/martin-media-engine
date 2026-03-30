@@ -69,10 +69,10 @@ const Footer = () => (
       </div>
 
       <div className="mt-12 pt-8 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-neutral-500">© {new Date().getFullYear()} Martin Media. Все права защищены.</p>
+        <p className="text-xs text-background">© {new Date().getFullYear()} Martin Media. Все права защищены.</p>
         <div className="flex items-center gap-4">
           <img src={logoMM} alt="Martin Media logo" className="h-6 w-auto" />
-          <a href={`https://${companyInfo.website}`} target="_blank" rel="noopener noreferrer" className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">{companyInfo.website}</a>
+          <a href={`https://${companyInfo.website}`} target="_blank" rel="noopener noreferrer" className="text-xs text-background hover:text-primary transition-colors">{companyInfo.website}</a>
         </div>
       </div>
     </div>
