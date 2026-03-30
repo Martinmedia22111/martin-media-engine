@@ -5,7 +5,31 @@ import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import { cases } from "@/data/cases";
 import { services } from "@/data/services";
-import { CheckCircle, Quote } from "lucide-react";
+import { CheckCircle, Quote, Play } from "lucide-react";
+
+const getYouTubeId = (url: string) => {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?]+)/);
+  return match ? match[1] : null;
+};
+
+const YouTubeEmbed = ({ url, title }: { url: string; title?: string }) => {
+  const videoId = getYouTubeId(url);
+  if (!videoId) return null;
+  return (
+    <div className="rounded-xl overflow-hidden border border-border">
+      {title && <p className="px-4 py-2 text-sm font-medium text-foreground bg-card border-b border-border">{title}</p>}
+      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src={`https://www.youtube.com/embed/${videoId}?rel=0`}
+          title={title || "YouTube video"}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  );
+};
 
 const CasePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -15,6 +39,8 @@ const CasePage = () => {
 
   const relatedServices = services.filter((s) => caseItem.services.includes(s.slug));
   const relatedCases = cases.filter((c) => c.id !== caseItem.id && c.tags.some((t) => caseItem.tags.includes(t))).slice(0, 3);
+
+  const hasVideo = caseItem.videoUrl || (caseItem.videoUrls && caseItem.videoUrls.length > 0);
 
   return (
     <>
@@ -33,10 +59,20 @@ const CasePage = () => {
           </div>
         </section>
 
-        {/* Cover */}
-        <div className={`h-48 md:h-64 bg-gradient-to-br ${caseItem.coverGradient}`} />
+        {/* Cover Image or Gradient */}
+        {caseItem.coverImage ? (
+          <div className="h-64 md:h-96 overflow-hidden">
+            <img
+              src={caseItem.coverImage}
+              alt={caseItem.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ) : (
+          <div className={`h-48 md:h-64 bg-gradient-to-br ${caseItem.coverGradient}`} />
+        )}
 
-        {/* Challenge */}
+        {/* Content */}
         <section className="section-padding bg-background">
           <div className="container max-w-4xl space-y-12">
             <div>
@@ -47,6 +83,57 @@ const CasePage = () => {
               <h2 className="text-2xl font-bold text-foreground mb-3">Решение</h2>
               <p className="text-muted-foreground leading-relaxed">{caseItem.solution}</p>
             </div>
+
+            {/* Video Section */}
+            {caseItem.videoUrl && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <Play size={20} className="text-primary" /> Видео
+                </h2>
+                <YouTubeEmbed url={caseItem.videoUrl} />
+              </div>
+            )}
+
+            {/* Multiple Videos */}
+            {caseItem.videoUrls && caseItem.videoUrls.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <Play size={20} className="text-primary" /> Видео проекта
+                </h2>
+                <div className="space-y-6">
+                  {caseItem.videoUrls.map((v, i) => (
+                    <YouTubeEmbed key={i} url={v.url} title={v.title} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* TikTok Links */}
+            {caseItem.tiktokUrls && caseItem.tiktokUrls.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">TikTok</h2>
+                <div className="space-y-3">
+                  {caseItem.tiktokUrls.map((url, i) => (
+                    <a
+                      key={i}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
+                    >
+                      <div className="w-10 h-10 rounded-lg bg-foreground flex items-center justify-center shrink-0">
+                        <span className="text-background font-bold text-sm">TT</span>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-foreground">Смотреть на TikTok</p>
+                        <p className="text-xs text-muted-foreground">@{url.match(/@([^/]+)/)?.[1] || "tiktok"}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Результаты</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -91,9 +178,16 @@ const CasePage = () => {
               <h2 className="text-2xl font-bold text-foreground mb-6">Похожие кейсы</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {relatedCases.map((c) => (
-                  <Link key={c.id} to={`/kejsy/${c.slug}`} className="group p-5 rounded-xl border border-border bg-card hover:border-primary/30 transition-all">
-                    <p className="text-xs text-muted-foreground mb-1">{c.client}</p>
-                    <h3 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">{c.title}</h3>
+                  <Link key={c.id} to={`/kejsy/${c.slug}`} className="group block rounded-xl overflow-hidden border border-border bg-card hover:border-primary/30 transition-all">
+                    {c.coverImage && (
+                      <div className="h-32 overflow-hidden">
+                        <img src={c.coverImage} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <p className="text-xs text-muted-foreground mb-1">{c.client}</p>
+                      <h3 className="font-heading font-semibold text-sm text-foreground group-hover:text-primary transition-colors line-clamp-2">{c.title}</h3>
+                    </div>
                   </Link>
                 ))}
               </div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cases } from "@/data/cases";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 
 const featured = cases.slice(0, 3);
 
@@ -39,8 +39,25 @@ const CasesShowcase = () => (
               className="group block rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"
             >
               {/* Cover */}
-              <div className={`h-48 bg-gradient-to-br ${c.coverGradient} flex items-end p-5`}>
-                <div className="flex flex-wrap gap-1.5">
+              <div className="relative h-48 overflow-hidden">
+                {c.coverImage ? (
+                  <img
+                    src={c.coverImage}
+                    alt={c.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className={`w-full h-full bg-gradient-to-br ${c.coverGradient}`} />
+                )}
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                {/* Video indicator */}
+                {(c.videoUrl || c.videoUrls) && (
+                  <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
+                    <Play size={14} className="text-primary-foreground ml-0.5" />
+                  </div>
+                )}
+                <div className="absolute bottom-3 left-4 flex flex-wrap gap-1.5">
                   {c.tags.slice(0, 2).map((tag) => (
                     <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full bg-background/80 text-foreground backdrop-blur-sm">
                       {tag}
