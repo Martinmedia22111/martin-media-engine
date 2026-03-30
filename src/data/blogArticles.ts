@@ -13,7 +13,7 @@ export interface BlogArticle {
 export const blogArticles: BlogArticle[] = [
   {
     slug: "skolko-stoit-reklamnyj-rolik",
-    title: "Сколько стоит рекламный ролик в 2025 году: разбор цен и форматов",
+    title: "Сколько стоит рекламный ролик в 2025 году: разбор форматов и подходов",
     category: "Гайды",
     date: "2026-03-15",
     readTime: "8 мин",
@@ -124,7 +124,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     slug: "ai-assistenty-dlya-biznesa",
-    title: "AI-ассистенты для бизнеса: что это, как работает, сколько стоит",
+    title: "AI-ассистенты для бизнеса: что это и как работает",
     category: "Гайды",
     date: "2026-02-28",
     readTime: "10 мин",
