@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
-import { stats, teamStats } from "@/data/company";
 
 const testimonials = [
   {
@@ -37,7 +36,7 @@ const TrustSection = () => (
           { value: "9+", label: "Лет на рынке" },
         ].map((n) => (
           <div key={n.label} className="text-center">
-            <div className="font-heading text-3xl md:text-5xl font-bold text-primary">{n.value}</div>
+            <div className="font-heading text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">{n.value}</div>
             <div className="text-sm text-muted-foreground mt-2">{n.label}</div>
           </div>
         ))}
@@ -61,11 +60,12 @@ const TrustSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            className="p-6 md:p-8 rounded-2xl bg-card border border-border"
+            className="p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/20 transition-colors duration-300 relative overflow-hidden"
           >
-            <Quote size={24} className="text-primary/30 mb-4" />
+            <div className="absolute top-0 right-0 w-20 h-20 bg-primary/[0.03] rounded-bl-[60px]" />
+            <Quote size={24} className="text-primary/40 mb-4" />
             <p className="text-foreground leading-relaxed mb-6">{t.text}</p>
-            <div>
+            <div className="border-t border-border pt-4">
               <div className="font-heading font-semibold text-foreground text-sm">{t.author}</div>
               <div className="text-xs text-muted-foreground mt-0.5">{t.role}</div>
             </div>

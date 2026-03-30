@@ -6,8 +6,11 @@ import { ArrowRight, Play } from "lucide-react";
 const featured = cases.slice(0, 3);
 
 const CasesShowcase = () => (
-  <section className="section-padding bg-background">
-    <div className="container">
+  <section className="section-padding gradient-dark relative overflow-hidden">
+    {/* Decorative */}
+    <div className="absolute top-0 left-[20%] w-[300px] h-[300px] rounded-full bg-primary/[0.06] blur-[120px]" />
+    
+    <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,12 +18,12 @@ const CasesShowcase = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12"
       >
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Кейсы</h2>
-          <p className="mt-3 text-muted-foreground text-lg max-w-lg">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">Кейсы</h2>
+          <p className="mt-3 text-neutral-400 text-lg max-w-lg">
             Реальные проекты с измеримыми результатами
           </p>
         </div>
-        <Link to="/kejsy" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark transition-colors shrink-0">
+        <Link to="/kejsy" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors shrink-0">
           Все кейсы <ArrowRight size={16} />
         </Link>
       </motion.div>
@@ -36,7 +39,7 @@ const CasesShowcase = () => (
           >
             <Link
               to={`/kejsy/${c.slug}`}
-              className="group block rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300"
+              className="group block rounded-2xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
               {/* Cover */}
               <div className="relative h-48 overflow-hidden">
@@ -49,17 +52,15 @@ const CasesShowcase = () => (
                 ) : (
                   <div className={`w-full h-full bg-gradient-to-br ${c.coverGradient}`} />
                 )}
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                {/* Video indicator */}
                 {(c.videoUrl || c.videoUrls) && (
                   <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
-                    <Play size={14} className="text-primary-foreground ml-0.5" />
+                    <Play size={14} className="text-white ml-0.5" />
                   </div>
                 )}
                 <div className="absolute bottom-3 left-4 flex flex-wrap gap-1.5">
                   {c.tags.slice(0, 2).map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full bg-background/80 text-foreground backdrop-blur-sm">
+                    <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm">
                       {tag}
                     </span>
                   ))}
@@ -67,8 +68,8 @@ const CasesShowcase = () => (
               </div>
               {/* Content */}
               <div className="p-5">
-                <p className="text-xs text-muted-foreground mb-2">{c.client} · {c.industry}</p>
-                <h3 className="font-heading font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                <p className="text-xs text-neutral-500 mb-2">{c.client} · {c.industry}</p>
+                <h3 className="font-heading font-semibold text-white leading-snug group-hover:text-primary transition-colors line-clamp-2">
                   {c.title}
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">

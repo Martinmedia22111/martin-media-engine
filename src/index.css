@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -38,6 +40,10 @@
     --surface: 220 20% 97%;
     --surface-foreground: 220 15% 13%;
     --primary-dark: 0 72% 42%;
+    --primary-glow: 0 85% 58%;
+    --dark-surface: 220 20% 8%;
+    --dark-surface-lighter: 220 16% 14%;
+    --warm-surface: 15 30% 97%;
     --neutral-50: 220 20% 98%;
     --neutral-100: 220 14% 96%;
     --neutral-200: 220 13% 91%;
@@ -85,6 +91,22 @@
 
   .section-padding-sm {
     @apply py-12 md:py-16;
+  }
+
+  .gradient-dark {
+    background: linear-gradient(135deg, hsl(var(--dark-surface)) 0%, hsl(220 18% 12%) 50%, hsl(0 30% 12%) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--dark-surface)) 0%, hsl(220 18% 10%) 60%, hsl(0 40% 10%) 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--warm-surface)) 0%, hsl(0 20% 97%) 100%);
+  }
+
+  .gradient-red-subtle {
+    background: linear-gradient(135deg, hsl(0 60% 96%) 0%, hsl(0 30% 98%) 50%, hsl(var(--background)) 100%);
   }
 }
 
