@@ -48,20 +48,17 @@ const WhoWeHelpSection = () => (
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
           >
-            <Link
-              to={item.link}
-              className="group block p-6 md:p-8 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+            <div
+              className="block p-6 md:p-8 rounded-2xl border border-border bg-card relative overflow-hidden"
             >
-              {/* Subtle gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-primary mb-4 group-hover:from-primary group-hover:to-primary group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-primary mb-4">
                   <item.icon size={24} />
                 </div>
                 <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
-            </Link>
+            </div>
           </motion.div>
         ))}
       </div>
