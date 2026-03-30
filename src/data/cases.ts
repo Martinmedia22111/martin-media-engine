@@ -17,6 +17,7 @@ export interface CaseStudy {
   tags: string[];
   coverGradient: string;
   coverImage?: string;
+  coverType?: "photo" | "logo";
   videoUrl?: string;
   videoUrls?: { title: string; url: string }[];
   tiktokUrls?: string[];
@@ -508,6 +509,7 @@ export const cases: CaseStudy[] = [
     tags: ["Реклама", "Видеопродакшн", "Ритейл"],
     coverGradient: "from-pink-500/20 to-rose-400/10",
     coverImage: milaCover,
+    coverType: "logo",
     videoUrl: "https://www.youtube.com/watch?v=M9kl3sSiEuA",
     metrics: [
       { label: "Фокус", value: "Вдохновлять" },
@@ -547,6 +549,7 @@ export const cases: CaseStudy[] = [
     tags: ["TikTok", "SMM", "FMCG"],
     coverGradient: "from-green-700/20 to-emerald-500/10",
     coverImage: galereyaCover,
+    coverType: "logo",
     tiktokUrls: ["https://www.tiktok.com/@galereyavkusa_by/video/7543930809640701190"],
     metrics: [
       { label: "Просмотры", value: "17 млн" },
@@ -568,6 +571,7 @@ export const cases: CaseStudy[] = [
     tags: ["TikTok", "SMM", "Instagram", "FMCG"],
     coverGradient: "from-blue-800/20 to-indigo-500/10",
     coverImage: babushkinaCover,
+    coverType: "logo",
     tiktokUrls: ["https://www.tiktok.com/@babushkina_krynka/video/7534693773180144902"],
     metrics: [
       { label: "Просмотры/мес", value: "100К+" },
@@ -588,6 +592,7 @@ export const cases: CaseStudy[] = [
     tags: ["TikTok", "SMM", "Ритейл"],
     coverGradient: "from-green-500/20 to-lime-400/10",
     coverImage: almiCover,
+    coverType: "logo",
     tiktokUrls: ["https://www.tiktok.com/@almi_belarus"],
     metrics: [
       { label: "Просмотры", value: "1.7 млн" },
