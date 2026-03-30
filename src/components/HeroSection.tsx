@@ -69,7 +69,7 @@ const HeroSection = () => (
         {stats.map((stat) => (
           <div key={stat.label}>
             <div className="font-heading text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
-            <div className="text-sm text-neutral-500 mt-1">{stat.label}</div>
+            <div className="text-base text-white mt-1">{stat.label}</div>
           </div>
         ))}
       </motion.div>
