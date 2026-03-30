@@ -18,7 +18,9 @@ const CasesShowcase = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12"
       >
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Кейсы</h2>
+          <Link to="/kejsy" className="hover:text-primary transition-colors">
+            <h2 className="text-3xl md:text-4xl font-bold text-white hover:text-primary transition-colors">Кейсы</h2>
+          </Link>
           <p className="mt-3 text-neutral-400 text-lg max-w-lg">
             Реальные проекты с измеримыми результатами
           </p>
@@ -81,6 +83,15 @@ const CasesShowcase = () => (
             </Link>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-10 text-center">
+        <Link
+          to="/kejsy"
+          className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+        >
+          Смотреть больше <ArrowRight size={16} />
+        </Link>
       </div>
     </div>
   </section>
