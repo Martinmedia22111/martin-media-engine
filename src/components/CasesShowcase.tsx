@@ -44,12 +44,12 @@ const CasesShowcase = () => (
               className="group block rounded-2xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
               {/* Cover */}
-              <div className="relative h-48 overflow-hidden">
+              <div className={`relative h-48 overflow-hidden ${c.coverType === "logo" ? `bg-gradient-to-br ${c.coverGradient}` : ""}`}>
                 {c.coverImage ? (
                   <img
                     src={c.coverImage}
                     alt={c.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${c.coverType === "logo" ? "object-contain p-6" : "object-cover"}`}
                   />
                 ) : (
                   <div className={`w-full h-full bg-gradient-to-br ${c.coverGradient}`} />

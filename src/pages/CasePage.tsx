@@ -70,11 +70,11 @@ const CasePage = () => {
 
         {/* Cover Image or Gradient */}
         {caseItem.coverImage ? (
-          <div className="h-64 md:h-96 overflow-hidden">
+          <div className={`h-64 md:h-96 overflow-hidden ${caseItem.coverType === "logo" ? `bg-gradient-to-br ${caseItem.coverGradient} flex items-center justify-center` : ""}`}>
             <img
               src={caseItem.coverImage}
               alt={caseItem.title}
-              className="w-full h-full object-cover"
+              className={`${caseItem.coverType === "logo" ? "max-h-full max-w-md object-contain p-8" : "w-full h-full object-cover"}`}
             />
           </div>
         ) : (
