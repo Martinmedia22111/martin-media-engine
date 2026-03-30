@@ -509,6 +509,7 @@ export const cases: CaseStudy[] = [
     tags: ["Реклама", "Видеопродакшн", "Ритейл"],
     coverGradient: "from-pink-500/20 to-rose-400/10",
     coverImage: milaCover,
+    coverType: "logo",
     videoUrl: "https://www.youtube.com/watch?v=M9kl3sSiEuA",
     metrics: [
       { label: "Фокус", value: "Вдохновлять" },
