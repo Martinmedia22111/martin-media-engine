@@ -2,6 +2,7 @@ import milaCover from "@/assets/mila-cover.jpg";
 import grindeksCover from "@/assets/grindeks-cover.webp";
 import galereyaCover from "@/assets/galereya-vkusa-cover.png";
 import babushkinaCover from "@/assets/babushkina-krynka-cover.png";
+import almiCover from "@/assets/almi-cover.jpg";
 
 export interface CaseStudy {
   id: string;
