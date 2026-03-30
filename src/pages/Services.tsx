@@ -1,44 +1,60 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
-import { Video, Clapperboard, Smartphone, BarChart3, Box, Bot, Cpu, Factory, Palette, ArrowRight } from "lucide-react";
+import * as Icons from "lucide-react";
 
-const iconMap: Record<string, typeof Video> = { Video, Clapperboard, Smartphone, BarChart3, Box, Bot, Cpu, Factory, Palette };
+const getIcon = (name: string) => {
+  const Icon = (Icons as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[name];
+  return Icon ? <Icon size={24} /> : null;
+};
 
 const Services = () => (
   <>
+    <SEO
+      title="Услуги видеомаркетинга"
+      description="Полный спектр услуг Martin Media: видеопродакшн, рекламные ролики, TikTok и Reels, SMM-стратегия, 3D/VFX, AI-решения, корпоративные фильмы, аэросъёмка. Минск, Беларусь."
+      path="/uslugi"
+    />
+    <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }]} />
     <Header />
     <main className="pt-20">
       <section className="section-padding bg-background">
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mb-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Услуги</h1>
-            <p className="mt-4 text-lg text-muted-foreground">Единая экосистема: от стратегии и продакшна до AI-автоматизации</p>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+              Полный спектр услуг видеомаркетинга — от стратегии до готового контента
+            </p>
           </motion.div>
-          {serviceCategories.map((cat, ci) => (
-            <motion.div key={cat.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: ci * 0.1 }} className="mb-12">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-primary mb-1">{cat.label}</h2>
-              <p className="text-sm text-muted-foreground mb-6">{cat.description}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {services.filter(s => s.category === cat.id).map(s => {
-                  const Icon = iconMap[s.icon] || Video;
-                  return (
-                    <Link key={s.slug} to={`/uslugi/${s.slug}`} className="group flex gap-4 p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-md transition-all">
-                      <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"><Icon size={22} /></div>
-                      <div className="flex-1">
-                        <h3 className="font-heading font-semibold text-foreground">{s.shortTitle}</h3>
-                        <p className="text-sm text-muted-foreground mt-1">{s.description}</p>
-                      </div>
-                      <ArrowRight size={16} className="text-muted-foreground group-hover:text-primary mt-1 shrink-0" />
-                    </Link>
-                  );
-                })}
+
+          {serviceCategories.map((cat) => {
+            const catServices = services.filter((s) => s.category === cat.id);
+            if (catServices.length === 0) return null;
+            return (
+              <div key={cat.id} className="mt-14">
+                <h2 className="text-2xl font-bold text-foreground">{cat.label}</h2>
+                <p className="text-muted-foreground mt-1">{cat.description}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
+                  {catServices.map((s, i) => (
+                    <motion.div key={s.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
+                      <Link to={`/uslugi/${s.slug}`} className="group block p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-lg transition-all h-full">
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                          {getIcon(s.icon)}
+                        </div>
+                        <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{s.shortTitle}</h3>
+                        <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{s.description}</p>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </section>
       <CTASection />

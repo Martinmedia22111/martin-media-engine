@@ -3,19 +3,57 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { companyInfo } from "@/data/company";
+import { submitForm } from "@/lib/formSubmit";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+    service: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const result = await submitForm({
+      name: formData.name,
+      company: formData.company,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      service: formData.service,
+      source: "Бриф / Рассчитать стоимость",
+    });
+
+    setLoading(false);
+    if (result.ok) {
+      setSubmitted(true);
+    } else {
+      setError(result.message);
+    }
   };
+
+  const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+    setFormData({ ...formData, [field]: e.target.value });
 
   return (
     <>
+      <SEO
+        title="Рассчитать стоимость проекта"
+        description="Заполните бриф и получите индивидуальное предложение от Martin Media. Видеопродакшн, TikTok, SMM, AI-решения для бизнеса в Минске."
+        path="/brief"
+      />
       <Header />
       <main className="pt-20">
         <section className="section-padding bg-background">
@@ -40,30 +78,30 @@ const Contact = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-1.5">Имя *</label>
-                    <input required type="text" placeholder="Ваше имя" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
+                    <input required type="text" name="name" value={formData.name} onChange={update("name")} placeholder="Ваше имя" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-1.5">Компания</label>
-                    <input type="text" placeholder="Название компании" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
+                    <input type="text" name="company" value={formData.company} onChange={update("company")} placeholder="Название компании" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-1.5">Email *</label>
-                    <input required type="email" placeholder="email@company.com" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
+                    <input required type="email" name="email" value={formData.email} onChange={update("email")} placeholder="email@company.com" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-1.5">Телефон</label>
-                    <input type="tel" placeholder="+375 (__) ___-__-__" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
+                    <input type="tel" name="phone" value={formData.phone} onChange={update("phone")} placeholder="+375 (__) ___-__-__" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">Расскажите подробнее о проекте *</label>
-                  <textarea required rows={4} placeholder="Чем занимаетесь, какие площадки для продвижения хотели бы охватить?" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none" />
+                  <textarea required rows={4} name="message" value={formData.message} onChange={update("message")} placeholder="Чем занимаетесь, какие площадки для продвижения хотели бы охватить?" className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1.5">Какие услуги интересуют?</label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors">
+                  <select name="service" value={formData.service} onChange={update("service")} className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors">
                     <option value="">Выберите направление</option>
                     <option>TikTok под ключ</option>
                     <option>Видео для рекламы</option>
@@ -78,8 +116,9 @@ const Contact = () => {
                     <option>Другое</option>
                   </select>
                 </div>
-                <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
-                  Отправить заявку <Send size={16} className="ml-1" />
+                {error && <p className="text-sm text-red-500">{error}</p>}
+                <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto" disabled={loading}>
+                  {loading ? <><Loader2 size={16} className="mr-1 animate-spin" /> Отправка...</> : <>Отправить заявку <Send size={16} className="ml-1" /></>}
                 </Button>
                 <p className="text-xs text-muted-foreground">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности</p>
               </motion.form>

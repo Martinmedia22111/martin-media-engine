@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Calendar, ArrowRight } from "lucide-react";
@@ -16,6 +18,12 @@ const articles = [
 
 const Blog = () => (
   <>
+    <SEO
+      title="Блог о видеомаркетинге и AI"
+      description="Экспертные статьи Martin Media: видеопродакшн, TikTok, Reels, SMM-стратегии, AI-решения для бизнеса. Гайды, кейсы, разборы."
+      path="/blog"
+    />
+    <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Блог", url: "/blog" }]} />
     <Header />
     <main className="pt-20">
       <section className="section-padding bg-background">

@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { cases } from "@/data/cases";
 import { services } from "@/data/services";
@@ -44,6 +46,13 @@ const CasePage = () => {
 
   return (
     <>
+      <SEO
+        title={`${caseItem.title} — кейс ${caseItem.client}`}
+        description={caseItem.challenge.substring(0, 160)}
+        path={`/kejsy/${caseItem.slug}`}
+        ogImage={caseItem.coverImage}
+      />
+      <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Кейсы", url: "/kejsy" }, { name: caseItem.client, url: `/kejsy/${caseItem.slug}` }]} />
       <Header />
       <main className="pt-20">
         <section className="section-padding bg-background">

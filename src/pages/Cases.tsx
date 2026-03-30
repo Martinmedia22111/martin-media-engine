@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cases } from "@/data/cases";
@@ -11,6 +13,12 @@ const Cases = () => {
 
   return (
     <>
+      <SEO
+        title="Кейсы и портфолио"
+        description="Кейсы Martin Media: реальные проекты с измеримыми результатами. Видеопродакшн, TikTok, SMM, AI-видео для Белагропромбанк, Domino's, Volkswagen, Coca-Cola и других."
+        path="/kejsy"
+      />
+      <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Кейсы", url: "/kejsy" }]} />
       <Header />
       <main className="pt-20">
         <section className="section-padding bg-background">

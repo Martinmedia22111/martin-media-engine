@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,6 +10,12 @@ import { Bot, Cpu, Sparkles, Zap, ArrowRight } from "lucide-react";
 
 const MartinLab = () => (
   <>
+    <SEO
+      title="Martin Lab — AI-решения для бизнеса"
+      description="Martin Lab — AI-подразделение Martin Media. AI-ассистенты, автоматизация маркетинга, AI-видео, чат-боты и аналитика для бизнеса в Минске."
+      path="/martin-lab"
+    />
+    <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Martin Lab", url: "/martin-lab" }]} />
     <Header />
     <main className="pt-20">
       <section className="section-padding bg-foreground text-background relative overflow-hidden">

@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import SEO from "@/components/SEO";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
 
 import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -15,6 +17,13 @@ import CTASection from "@/components/CTASection";
 
 const Index = () => (
   <>
+    <SEO
+      title="Martin Media — видеопродакшн, контент и AI-решения для бизнеса в Минске"
+      description="Martin Media — агентство видеомаркетинга полного цикла в Минске. Видеопродакшн, TikTok, Reels, SMM, AI-видео, 3D-анимация и продвижение для бизнеса с 2015 года. 3000+ проектов, 125+ клиентов."
+      path="/"
+    />
+    <OrganizationJsonLd />
+    <WebSiteJsonLd />
     <Header />
     <main>
       <HeroSection />

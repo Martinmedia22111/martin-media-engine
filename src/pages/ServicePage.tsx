@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { ServiceJsonLd, FAQJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { services } from "@/data/services";
 import { cases } from "@/data/cases";
@@ -20,6 +22,14 @@ const ServicePage = () => {
 
   return (
     <>
+      <SEO
+        title={service.title}
+        description={service.description}
+        path={`/uslugi/${service.slug}`}
+      />
+      <ServiceJsonLd name={service.title} description={service.description} slug={service.slug} />
+      {service.faq.length > 0 && <FAQJsonLd items={service.faq} />}
+      <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }, { name: service.shortTitle, url: `/uslugi/${service.slug}` }]} />
       <Header />
       <main className="pt-20">
         {/* Hero */}

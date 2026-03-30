@@ -4,6 +4,8 @@ import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { blogArticles } from "@/data/blogArticles";
 import { companyInfo } from "@/data/company";
 import { Helmet } from "react-helmet-async";
@@ -44,9 +46,15 @@ const BlogPost = () => {
 
   return (
     <>
+      <SEO
+        title={article.title}
+        description={article.excerpt}
+        path={`/blog/${article.slug}`}
+        type="article"
+        article={{ author: article.author, publishedTime: article.date }}
+      />
+      <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Блог", url: "/blog" }, { name: article.title.substring(0, 40), url: `/blog/${article.slug}` }]} />
       <Helmet>
-        <title>{article.title} | {companyInfo.name}</title>
-        <meta name="description" content={article.excerpt} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 

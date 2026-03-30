@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { submitForm } from "@/lib/formSubmit";
 
 interface InlineContactFormProps {
   title?: string;
@@ -15,10 +16,28 @@ const InlineContactForm = ({
   variant = "light",
 }: InlineContactFormProps) => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const result = await submitForm({
+      name: formData.name,
+      phone: formData.phone,
+      message: formData.message,
+      source: "Инлайн-форма на главной",
+    });
+
+    setLoading(false);
+    if (result.ok) {
+      setSubmitted(true);
+    } else {
+      setError(result.message);
+    }
   };
 
   const isDark = variant === "dark";
@@ -72,6 +91,9 @@ const InlineContactForm = ({
                 <input
                   required
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Ваше имя"
                   className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
                 />
@@ -83,6 +105,9 @@ const InlineContactForm = ({
                 <input
                   required
                   type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+375 (__) ___-__-__"
                   className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
                 />
@@ -94,13 +119,17 @@ const InlineContactForm = ({
               </label>
               <textarea
                 rows={3}
+                name="message"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Расскажите кратко о вашем проекте"
                 className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-none"
               />
             </div>
+            {error && <p className="text-sm text-red-500">{error}</p>}
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <Button type="submit" variant="default" size="lg">
-                Отправить заявку <Send size={16} className="ml-1" />
+              <Button type="submit" variant="default" size="lg" disabled={loading}>
+                {loading ? <><Loader2 size={16} className="mr-1 animate-spin" /> Отправка...</> : <>Отправить заявку <Send size={16} className="ml-1" /></>}
               </Button>
               <p className={`text-xs ${isDark ? "text-primary-foreground/50" : "text-muted-foreground"}`}>
                 Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности

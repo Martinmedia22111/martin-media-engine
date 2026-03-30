@@ -15,18 +15,21 @@ interface FAQSectionProps {
   items?: FAQItem[];
   title?: string;
   subtitle?: string;
+  showH1?: boolean;
 }
 
 const defaultFAQ: FAQItem[] = [
-  { question: "Сколько стоят ваши услуги?", answer: "Стоимость зависит от задачи, формата и объёма. Минимальный проект по видеопродакшну — от 150 000 ₽, short-form пакет — от 80 000 ₽/мес, AI-решения — от 200 000 ₽. Мы всегда подбираем решение под бюджет." },
+  { question: "Сколько стоят ваши услуги?", answer: "Стоимость зависит от задачи, формата и объёма. Мы всегда подбираем решение под бюджет клиента. Оставьте заявку — подготовим индивидуальное предложение." },
   { question: "Как быстро вы начинаете работу?", answer: "Обычно стартуем в течение 3–5 рабочих дней после согласования брифа. Срочные проекты обсуждаются индивидуально." },
-  { question: "Работаете ли вы с компаниями из регионов?", answer: "Да, мы работаем по всей России и за рубежом. Многие процессы ведём удалённо, при необходимости выезжаем на съёмки." },
+  { question: "Работаете ли вы с компаниями из других стран?", answer: "Да, работаем по всей Беларуси и за рубежом. Многие процессы ведём удалённо, при необходимости выезжаем на съёмки." },
   { question: "Что нужно от нас для старта?", answer: "Заполненный бриф, понимание цели и контактное лицо для коммуникации. Мы проведём установочную встречу и разберёмся во всех деталях." },
   { question: "Можно ли заказать только одну услугу?", answer: "Да, можно. Но мы рекомендуем комплексный подход: стратегия + продакшн + дистрибуция дают кратно больший результат." },
   { question: "Как вы измеряете результат?", answer: "Мы согласовываем KPI на старте и предоставляем регулярные отчёты. Метрики зависят от задачи: охваты, конверсии, стоимость лида, вовлечённость и др." },
 ];
 
-const FAQSection = ({ items = defaultFAQ, title = "Частые вопросы", subtitle }: FAQSectionProps) => (
+const FAQSection = ({ items = defaultFAQ, title = "Частые вопросы", subtitle, showH1 = false }: FAQSectionProps) => {
+  const Heading = showH1 ? "h1" : "h2";
+  return (
   <section className="section-padding bg-background">
     <div className="container max-w-3xl">
       <motion.div
@@ -35,7 +38,7 @@ const FAQSection = ({ items = defaultFAQ, title = "Частые вопросы",
         viewport={{ once: true }}
         className="text-center mb-10"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">{title}</h2>
+        <Heading className="text-3xl md:text-4xl font-bold text-foreground">{title}</Heading>
         {subtitle && <p className="mt-4 text-muted-foreground text-lg">{subtitle}</p>}
       </motion.div>
 
@@ -63,6 +66,7 @@ const FAQSection = ({ items = defaultFAQ, title = "Частые вопросы",
       </motion.div>
     </div>
   </section>
-);
+  );
+};
 
 export default FAQSection;

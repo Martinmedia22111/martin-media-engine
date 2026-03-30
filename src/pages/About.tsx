@@ -1,12 +1,21 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
+import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Users, Award, Zap, Globe, Calendar, Video, UserCheck } from "lucide-react";
 import { companyInfo, teamStats } from "@/data/company";
 
 const About = () => (
   <>
+    <SEO
+      title="О компании"
+      description="Martin Media — агентство видеомаркетинга полного цикла из Минска. С 2015 года, команда 14 профессионалов, 3000+ реализованных проектов, 125+ довольных клиентов."
+      path="/o-kompanii"
+    />
+    <LocalBusinessJsonLd />
+    <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "О компании", url: "/o-kompanii" }]} />
     <Header />
     <main className="pt-20">
       <section className="section-padding bg-background">

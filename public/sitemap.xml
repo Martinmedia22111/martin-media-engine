@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main pages -->
+  <url><loc>https://mmedia.by/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://mmedia.by/uslugi</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mmedia.by/kejsy</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mmedia.by/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/o-kompanii</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/brief</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/kontakty</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/martin-lab</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Service pages -->
+  <url><loc>https://mmedia.by/uslugi/videoproduction</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/uslugi/reklamnye-roliki</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/uslugi/short-form-video</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/uslugi/smm-content-strategy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/uslugi/3d-motion-design</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/food-video</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/influence-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/ai-resheniya</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mmedia.by/uslugi/korporativnye-filmy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/pr-strategii</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/hr-brand</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/aerosyomka-panoramy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/uslugi/reklamnyye-igry</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Case studies -->
+  <url><loc>https://mmedia.by/kejsy/belagroprombank-reklama</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/dominos-pizza-reklama</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/gym24-reklama</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/mila-reklama</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/grindeks-reklama</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/belkart-kompleksnyj-proekt</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/almi-tiktok</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/babushkina-krynka-tiktok</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/krasnyj-pishchevik-tiktok</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/armtek-reels</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/avtoostrob-youtube</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/kejsy/volkswagen-youtube-tiktok</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Blog posts -->
+  <url><loc>https://mmedia.by/blog/skolko-stoit-reklamnyj-rolik</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/blog/tiktok-vs-reels-vs-shorts</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/blog/kak-postroit-content-zavod</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/blog/ai-assistenty-dlya-biznesa</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/blog/7-oshibok-videomarketinga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://mmedia.by/blog/kak-ai-menyaet-marketing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
