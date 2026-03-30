@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import logoMM from "@/assets/logo-mm.png";
 import { cn } from "@/lib/utils";
 import { companyInfo } from "@/data/company";
 
@@ -37,7 +38,8 @@ const Header = () => {
       )}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2.5">
+            <img src={logoMM} alt="Martin Media logo" className="h-7 md:h-8 w-auto" />
             <span className="font-heading font-bold text-xl md:text-2xl tracking-tight text-primary">
               MARTIN MEDIA
             </span>
