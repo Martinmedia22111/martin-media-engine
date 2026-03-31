@@ -64,7 +64,8 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-        className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 border-t border-white/10 pt-8"
+        className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 rounded-2xl px-8 py-8"
+        style={{ background: 'linear-gradient(135deg, hsl(0 10% 14%) 0%, hsl(0 15% 12%) 100%)' }}
       >
         {stats.map((stat) => (
           <div key={stat.label}>
