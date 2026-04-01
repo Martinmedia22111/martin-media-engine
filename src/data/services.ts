@@ -4,7 +4,7 @@ export interface Service {
   title: string;
   shortTitle: string;
   description: string;
-  category: "production" | "content" | "ai" | "pr" | "special";
+  category: "production" | "content" | "ai" | "pr" | "dev" | "special";
   icon: string;
   painPoints: string[];
   includes: string[];
