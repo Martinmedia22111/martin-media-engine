@@ -57,9 +57,16 @@ const ServicesSection = () => (
         ))}
       </div>
 
-      {/* Uniform grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.filter(s => s.category !== "special").map((service, i) => {
+      {/* Uniform grid with even rows */}
+      {(() => {
+        const filtered = services.filter(s => s.category !== "special");
+        const cols = 3; // lg columns
+        const remainder = filtered.length % cols;
+        // If remainder is 1, move last item to a separate 2-col row with the previous item
+        const mainItems = remainder === 1 ? filtered.slice(0, -4) : filtered;
+        const lastRowItems = remainder === 1 ? filtered.slice(-4) : [];
+
+        const renderCard = (service: typeof filtered[0], i: number) => {
           const Icon = iconMap[service.icon] || Play;
           const colorClass = categoryColors[service.category] || categoryColors.production;
           return (
@@ -89,8 +96,21 @@ const ServicesSection = () => (
               </Link>
             </motion.div>
           );
-        })}
-      </div>
+        };
+
+        return (
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {mainItems.map((service, i) => renderCard(service, i))}
+            </div>
+            {lastRowItems.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                {lastRowItems.map((service, i) => renderCard(service, mainItems.length + i))}
+              </div>
+            )}
+          </>
+        );
+      })()}
 
       <motion.div
         initial={{ opacity: 0 }}
