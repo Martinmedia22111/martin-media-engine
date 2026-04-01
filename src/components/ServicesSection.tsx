@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
-import { ArrowRight, Play, Tv, Smartphone, TrendingUp, Boxes, UtensilsCrossed, Building2, Users, Bot, Megaphone, UserPlus, Camera, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Tv, Smartphone, TrendingUp, Boxes, UtensilsCrossed, Building2, Users, Bot, Megaphone, UserPlus, Camera, Sparkles, MessageCircle, Globe } from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
   Video: Play,
@@ -17,6 +17,8 @@ const iconMap: Record<string, React.ElementType> = {
   UserPlus: UserPlus,
   Plane: Camera,
   Gamepad2: Sparkles,
+  MessageCircle: MessageCircle,
+  Globe: Globe,
 };
 
 const categoryColors: Record<string, string> = {
