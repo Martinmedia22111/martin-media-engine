@@ -26,6 +26,7 @@ const categoryColors: Record<string, string> = {
   content: "from-accent/30 to-accent/10 text-accent-foreground",
   ai: "from-primary/15 to-primary/5 text-primary",
   pr: "from-primary/20 to-primary/5 text-primary",
+  dev: "from-primary/15 to-accent/10 text-primary",
   special: "from-accent/30 to-accent/10 text-accent-foreground",
 };
 
