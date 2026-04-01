@@ -19,6 +19,7 @@ export const serviceCategories = [
   { id: "content", label: "Content", description: "Контент-стратегия и системы" },
   { id: "ai", label: "AI & Automation", description: "AI-решения и автоматизация" },
   { id: "pr", label: "PR", description: "PR-стратегии и имидж" },
+  { id: "dev", label: "Development", description: "Разработка ботов и сайтов" },
   { id: "special", label: "Спецпроекты", description: "Аэросъёмка, панорамы, спецпроекты" },
 ] as const;
 
