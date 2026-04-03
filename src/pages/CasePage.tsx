@@ -86,7 +86,7 @@ const CasePage = () => {
   const relatedServices = services.filter((s) => caseItem.services.includes(s.slug));
   const relatedCases = cases.filter((c) => c.id !== caseItem.id && c.tags.some((t) => caseItem.tags.includes(t))).slice(0, 3);
 
-  const hasVideo = caseItem.videoUrl || (caseItem.videoUrls && caseItem.videoUrls.length > 0);
+  const hasVideo = caseItem.videoUrl || (caseItem.videoUrls && caseItem.videoUrls.length > 0) || (caseItem.localVideos && caseItem.localVideos.length > 0);
 
   return (
     <>
@@ -169,6 +169,29 @@ const CasePage = () => {
                 <div className="space-y-6">
                   {caseItem.videoUrls.map((v, i) => (
                     <YouTubeEmbed key={i} url={v.url} title={v.title} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Local Videos */}
+            {caseItem.localVideos && caseItem.localVideos.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <Play size={20} className="text-primary" /> Видео проекта
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {caseItem.localVideos.map((v, i) => (
+                    <div key={i} className="rounded-xl overflow-hidden border border-border bg-card">
+                      {v.title && <p className="px-4 py-2 text-sm font-medium text-foreground border-b border-border">{v.title}</p>}
+                      <video
+                        src={v.url}
+                        controls
+                        playsInline
+                        className="w-full"
+                        preload="metadata"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>

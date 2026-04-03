@@ -3,6 +3,7 @@ import grindeksCover from "@/assets/grindeks-cover.webp";
 import galereyaCover from "@/assets/galereya-vkusa-cover.png";
 import babushkinaCover from "@/assets/babushkina-krynka-cover.png";
 import almiCover from "@/assets/almi-cover.jpg";
+import aquaDaridaCover from "@/assets/aqua-darida-cover.png";
 
 export interface CaseStudy {
   id: string;
@@ -22,6 +23,7 @@ export interface CaseStudy {
   videoUrls?: { title: string; url: string }[];
   tiktokUrls?: string[];
   gallery?: string[];
+  localVideos?: { title?: string; url: string }[];
   quote?: { text: string; author: string; role: string };
   metrics?: { label: string; value: string }[];
 }
@@ -599,6 +601,30 @@ export const cases: CaseStudy[] = [
       { label: "Лайки", value: "58К" },
       { label: "Репосты", value: "6К+" },
       { label: "Подписчики", value: "+3 220" },
+    ],
+  },
+  {
+    id: "34",
+    slug: "aqua-darida-mesyats-chistoy-zaboty",
+    title: "AQUA DARIDA: серия рекламных креативов для социального проекта «Месяц чистой заботы о себе»",
+    client: "AQUA DARIDA",
+    industry: "FMCG",
+    services: ["video-production", "creative-advertising"],
+    challenge: "Бренд AQUA DARIDA запустил в марте социальный проект, объединивший серию бесплатных офлайн-встреч с экспертами в области здоровья, красоты и телесных практик. Задача стояла непростая: разработать контент для FMCG-бренда, который не продаёт продукт напрямую, а формирует эмоциональную связь с аудиторией через тему женского благополучия. Визуальный язык должен был точно передавать идею — забота о себе не роскошь, а необходимость.",
+    solution: "Команда Martin Media разработала серию рекламных креативов для кампании, которая охватила все ключевые форматы продвижения — от статичных визуалов до видеоконтента. Видеопродакшн Минск-команды был ориентирован на тёплую, но современную эстетику: без пафоса, с акцентом на реальных женских историях и практиках самозаботы. Каждый креатив для бренда создавался с учётом tone of voice AQUA DARIDA и задач конкретного этапа кампании — анонс, вовлечение, итоги.",
+    results: [
+      "Создана полноценная серия креативов для бренда: статичные форматы и видео для digital-каналов кампании",
+      "Разработан единый визуальный код, объединивший все коммуникации социального проекта бренда",
+      "Видеопродакшн обеспечил промо-поддержку серии офлайн-мероприятий с экспертами",
+      "Контент органично встроился в нарратив AQUA DARIDA и усилил позиционирование бренда как партнёра в женском wellbeing",
+    ],
+    tags: ["FMCG", "Креатив", "Видеопродакшн", "Социальный проект", "Wellbeing"],
+    coverGradient: "from-pink-400/20 to-rose-300/10",
+    coverImage: aquaDaridaCover,
+    coverType: "photo",
+    localVideos: [
+      { url: "/videos/aqua-darida-1.mp4" },
+      { url: "/videos/aqua-darida-2.mp4" },
     ],
   },
 ];
