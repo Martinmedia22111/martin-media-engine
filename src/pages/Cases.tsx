@@ -41,7 +41,7 @@ const Cases = () => {
                         <div className={`w-full h-full bg-gradient-to-br ${c.coverGradient}`} />
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      {(c.videoUrl || c.videoUrls) && (
+                      {(c.videoUrl || c.videoUrls || c.localVideos) && (
                         <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-primary/90 flex items-center justify-center">
                           <Play size={14} className="text-primary-foreground ml-0.5" />
                         </div>
