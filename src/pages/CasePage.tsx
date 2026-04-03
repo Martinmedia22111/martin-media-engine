@@ -33,6 +33,50 @@ const YouTubeEmbed = ({ url, title }: { url: string; title?: string }) => {
   );
 };
 
+const getTikTokVideoId = (url: string) => {
+  const match = url.match(/video\/(\d+)/);
+  return match ? match[1] : null;
+};
+
+const TikTokEmbed = ({ url }: { url: string }) => {
+  const videoId = getTikTokVideoId(url);
+  const username = url.match(/@([^/]+)/)?.[1] || "tiktok";
+
+  if (!videoId) {
+    // If it's a profile link (no video ID), show a styled link to the profile
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
+      >
+        <div className="w-10 h-10 rounded-lg bg-foreground flex items-center justify-center shrink-0">
+          <span className="text-background font-bold text-sm">TT</span>
+        </div>
+        <div>
+          <p className="text-sm font-medium text-foreground">Смотреть профиль на TikTok</p>
+          <p className="text-xs text-muted-foreground">@{username}</p>
+        </div>
+      </a>
+    );
+  }
+
+  return (
+    <div className="rounded-xl overflow-hidden border border-border bg-card">
+      <div className="relative w-full flex justify-center" style={{ maxWidth: "360px", margin: "0 auto" }}>
+        <iframe
+          src={`https://www.tiktok.com/embed/v2/${videoId}`}
+          style={{ width: "100%", height: "740px", border: "none" }}
+          allowFullScreen
+          allow="encrypted-media"
+          title={`TikTok @${username}`}
+        />
+      </div>
+    </div>
+  );
+};
+
 const CasePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const caseItem = cases.find((c) => c.slug === slug);
@@ -130,27 +174,15 @@ const CasePage = () => {
               </div>
             )}
 
-            {/* TikTok Links */}
+            {/* TikTok Embeds */}
             {caseItem.tiktokUrls && caseItem.tiktokUrls.length > 0 && (
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-4">TikTok</h2>
-                <div className="space-y-3">
+                <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                  <Play size={20} className="text-primary" /> TikTok
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {caseItem.tiktokUrls.map((url, i) => (
-                    <a
-                      key={i}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 p-4 rounded-xl border border-border bg-card hover:border-primary/30 transition-colors"
-                    >
-                      <div className="w-10 h-10 rounded-lg bg-foreground flex items-center justify-center shrink-0">
-                        <span className="text-background font-bold text-sm">TT</span>
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-foreground">Смотреть на TikTok</p>
-                        <p className="text-xs text-muted-foreground">@{url.match(/@([^/]+)/)?.[1] || "tiktok"}</p>
-                      </div>
-                    </a>
+                    <TikTokEmbed key={i} url={url} />
                   ))}
                 </div>
               </div>
