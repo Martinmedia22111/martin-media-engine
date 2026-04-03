@@ -23,6 +23,7 @@ export interface CaseStudy {
   videoUrls?: { title: string; url: string }[];
   tiktokUrls?: string[];
   gallery?: string[];
+  localVideos?: { title?: string; url: string }[];
   quote?: { text: string; author: string; role: string };
   metrics?: { label: string; value: string }[];
 }
