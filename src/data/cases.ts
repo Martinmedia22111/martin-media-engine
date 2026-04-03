@@ -3,6 +3,7 @@ import grindeksCover from "@/assets/grindeks-cover.webp";
 import galereyaCover from "@/assets/galereya-vkusa-cover.png";
 import babushkinaCover from "@/assets/babushkina-krynka-cover.png";
 import almiCover from "@/assets/almi-cover.jpg";
+import aquaDaridaCover from "@/assets/aqua-darida-cover.png";
 
 export interface CaseStudy {
   id: string;
