@@ -86,7 +86,7 @@ const CasePage = () => {
   const relatedServices = services.filter((s) => caseItem.services.includes(s.slug));
   const relatedCases = cases.filter((c) => c.id !== caseItem.id && c.tags.some((t) => caseItem.tags.includes(t))).slice(0, 3);
 
-  const hasVideo = caseItem.videoUrl || (caseItem.videoUrls && caseItem.videoUrls.length > 0);
+  const hasVideo = caseItem.videoUrl || (caseItem.videoUrls && caseItem.videoUrls.length > 0) || (caseItem.localVideos && caseItem.localVideos.length > 0);
 
   return (
     <>
