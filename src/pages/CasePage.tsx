@@ -180,7 +180,7 @@ const CasePage = () => {
                 <h2 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
                   <Play size={20} className="text-primary" /> Видео проекта
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className={`grid gap-4 ${caseItem.localVideos.length === 1 ? 'grid-cols-1 max-w-md mx-auto' : 'grid-cols-1 sm:grid-cols-2'}`}>
                   {caseItem.localVideos.map((v, i) => (
                     <div key={i} className="rounded-xl overflow-hidden border border-border bg-card">
                       {v.title && <p className="px-4 py-2 text-sm font-medium text-foreground border-b border-border">{v.title}</p>}
