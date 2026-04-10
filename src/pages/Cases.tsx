@@ -55,9 +55,9 @@ const Cases = () => {
                     <div className="p-5">
                       <p className="text-xs text-muted-foreground mb-2">{c.client} · {c.industry}</p>
                       <h3 className="font-heading font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">{c.title}</h3>
-                      <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
+                      <div className="mt-3 space-y-1">
                         {c.results.slice(0, 2).map((r) => (
-                          <span key={r} className="text-xs text-primary font-medium">{r}</span>
+                          <p key={r} className="text-xs text-primary font-medium line-clamp-1">{r}</p>
                         ))}
                       </div>
                     </div>
