@@ -72,7 +72,7 @@ const ServicesSection = () => (
             >
               <Link
                 to={`/uslugi/${service.slug}`}
-                className="group flex flex-col h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+                className="group flex flex-col h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${colorClass} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon size={20} strokeWidth={1.8} />
