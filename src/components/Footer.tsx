@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logoMM from "@/assets/logo-mm.png";
 import { services } from "@/data/services";
 import { companyInfo } from "@/data/company";
+import SocialLinks from "@/components/SocialLinks";
 
 const footerServices = services.slice(0, 5);
 
@@ -19,6 +20,7 @@ const Footer = () => (
           <p className="mt-4 text-sm text-neutral-400 leading-relaxed max-w-xs">
             Агентство видеомаркетинга полного цикла. Видеопродакшн, TikTok, Reels, SMM, AI-видео и продвижение для бизнеса с 2015 года.
           </p>
+          <SocialLinks className="mt-5" />
         </div>
 
         {/* Services */}
