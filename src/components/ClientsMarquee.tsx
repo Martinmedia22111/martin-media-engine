@@ -10,7 +10,7 @@ const ClientsMarquee = () => (
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium"
+        className="text-center text-sm uppercase tracking-[0.2em] text-destructive font-bold"
       >
         Нам доверяют
       </motion.p>
@@ -24,7 +24,7 @@ const ClientsMarquee = () => (
         {doubled.map((name, i) => (
           <span
             key={`l-${i}`}
-            className="shrink-0 text-sm md:text-base font-heading font-semibold tracking-wide text-foreground/40 whitespace-nowrap select-none"
+            className="shrink-0 text-sm md:text-base font-heading font-bold tracking-wide text-card-foreground whitespace-nowrap select-none"
           >
             {name}
           </span>
@@ -40,7 +40,7 @@ const ClientsMarquee = () => (
         {[...doubled].reverse().map((name, i) => (
           <span
             key={`r-${i}`}
-            className="shrink-0 text-sm md:text-base font-heading font-semibold tracking-wide text-foreground/40 whitespace-nowrap select-none"
+            className="shrink-0 text-sm md:text-base font-heading font-bold tracking-wide text-card-foreground whitespace-nowrap select-none"
           >
             {name}
           </span>
