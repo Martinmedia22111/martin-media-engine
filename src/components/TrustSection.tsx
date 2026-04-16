@@ -1,23 +1,4 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    text: "Martin Media создали для нас серию рекламных роликов, которые значительно усилили нашу digital-стратегию. Профессиональный подход на каждом этапе.",
-    author: "Маркетинг-директор",
-    role: "Белагропромбанк",
-  },
-  {
-    text: "Ребята выстроили нам TikTok с нуля — от стратегии до регулярного контента. Результат превзошёл ожидания: охваты и вовлечённость выросли кратно.",
-    author: "Бренд-менеджер",
-    role: "Крупный FMCG-бренд",
-  },
-  {
-    text: "Работаем с Martin Media уже несколько лет. Ценим за скорость, качество и умение работать с разными форматами — от рекламы до AI-видео.",
-    author: "Руководитель маркетинга",
-    role: "Belkart",
-  },
-];
 
 const TrustSection = () => (
   <section className="section-padding bg-secondary/50">
@@ -27,7 +8,7 @@ const TrustSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 md:mb-20"
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
       >
         {[
           { value: "3000+", label: "Реализованных проектов" },
@@ -41,37 +22,6 @@ const TrustSection = () => (
           </div>
         ))}
       </motion.div>
-
-      {/* Testimonials */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-10"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Что говорят клиенты</h2>
-      </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {testimonials.map((t, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="p-6 md:p-8 rounded-2xl bg-card border border-border hover:border-primary/20 transition-colors duration-300 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-20 h-20 bg-primary/[0.03] rounded-bl-[60px]" />
-            <Quote size={24} className="text-primary/40 mb-4" />
-            <p className="text-foreground leading-relaxed mb-6">{t.text}</p>
-            <div className="border-t border-border pt-4">
-              <div className="font-heading font-semibold text-foreground text-sm">{t.author}</div>
-              <div className="text-xs text-muted-foreground mt-0.5">{t.role}</div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
     </div>
   </section>
 );
