@@ -19,6 +19,8 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === "/";
+  const hasDarkHero = isHome;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
