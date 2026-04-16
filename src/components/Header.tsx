@@ -66,7 +66,7 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <SocialLinks iconClassName={cn("transition-colors hover:text-primary", isScrolled ? "text-muted-foreground" : "text-neutral-400")} />
+          <SocialLinks className="mr-2" iconClassName={cn("transition-colors hover:text-primary", isScrolled ? "text-muted-foreground" : "text-neutral-400")} />
           <a href={`tel:${companyInfo.phone.replace(/\s/g, '')}`} className={cn("flex items-center gap-1.5 text-sm hover:text-primary transition-colors", isScrolled ? "text-muted-foreground" : "text-neutral-300")}>
             <Phone size={14} />
             {companyInfo.phoneFormatted}
