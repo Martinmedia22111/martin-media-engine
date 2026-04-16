@@ -24,7 +24,7 @@ const ClientsMarquee = () => (
         {doubled.map((name, i) => (
           <span
             key={`l-${i}`}
-            className="shrink-0 text-sm md:text-base font-heading font-semibold tracking-wide text-muted-foreground/60 whitespace-nowrap select-none"
+            className="shrink-0 text-sm md:text-base font-heading font-semibold tracking-wide text-foreground/40 whitespace-nowrap select-none"
           >
             {name}
           </span>
@@ -40,7 +40,7 @@ const ClientsMarquee = () => (
         {[...doubled].reverse().map((name, i) => (
           <span
             key={`r-${i}`}
-            className="shrink-0 text-sm md:text-base font-heading font-semibold tracking-wide text-muted-foreground/60 whitespace-nowrap select-none"
+            className="shrink-0 text-sm md:text-base font-heading font-semibold tracking-wide text-foreground/40 whitespace-nowrap select-none"
           >
             {name}
           </span>
