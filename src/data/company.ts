@@ -11,6 +11,11 @@ export const companyInfo = {
   logoUrl: "https://mmedia.by/wp-content/uploads/2024/07/logo.png",
   description: "Более 9 лет мы помогаем брендам успешно развиваться, создавая качественный видеопродакшн и разрабатывая креативные решения, которые действительно работают. В нашем портфеле более 3000+ реализованных проектов в разных сферах. Мы — эксперты в своей области и удостоены награды YouTube.",
   competencies: ["Digital", "Video", "PR", "AI"],
+  socials: {
+    instagram: "https://www.instagram.com/mmedia.by/",
+    tiktok: "https://www.tiktok.com/@mmedia.by",
+    youtube: "https://www.youtube.com/@martin-media",
+  },
 };
 
 export const stats = [
