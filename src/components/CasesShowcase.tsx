@@ -41,7 +41,7 @@ const CasesShowcase = () => (
           >
             <Link
               to={`/kejsy/${c.slug}`}
-              className="group block rounded-2xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
+              className="group block rounded-2xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Cover */}
               <div className={`relative h-48 overflow-hidden ${c.coverType === "logo" ? `bg-gradient-to-br ${c.coverGradient}` : ""}`}>

@@ -8,6 +8,8 @@ import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import ServicesSection from "@/components/ServicesSection";
 import CasesShowcase from "@/components/CasesShowcase";
 import ResultsSection from "@/components/ResultsSection";
+import ClientsMarquee from "@/components/ClientsMarquee";
+import TrustSection from "@/components/TrustSection";
 import MartinLabSection from "@/components/MartinLabSection";
 import ProcessSection from "@/components/ProcessSection";
 import InlineContactForm from "@/components/InlineContactForm";
@@ -21,6 +23,7 @@ const Index = () => (
       title="Martin Media — видеопродакшн, контент и AI-решения для бизнеса в Минске"
       description="Martin Media — агентство видеомаркетинга полного цикла в Минске. Видеопродакшн, TikTok, Reels, SMM, AI-видео, 3D-анимация и продвижение для бизнеса с 2015 года. 3000+ проектов, 125+ клиентов."
       path="/"
+      ogImage="https://mmedia.by/og-image.jpg"
     />
     <OrganizationJsonLd />
     <WebSiteJsonLd />
@@ -36,6 +39,8 @@ const Index = () => (
       />
       <CasesShowcase />
       <ResultsSection />
+      <ClientsMarquee />
+      <TrustSection />
       <MartinLabSection />
       <ProcessSection />
       <BlogPreview />

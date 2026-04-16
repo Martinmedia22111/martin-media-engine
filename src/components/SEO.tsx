@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const SITE_URL = "https://mmedia.by";
 const SITE_NAME = "Martin Media";
-const DEFAULT_OG_IMAGE = "https://mmedia.by/wp-content/uploads/2024/07/logo.png";
+const DEFAULT_OG_IMAGE = "https://mmedia.by/og-image.jpg";
 
 interface SEOProps {
   title: string;
