@@ -105,7 +105,8 @@ const Header = () => {
               </Link>
             ))}
           </nav>
-          <div className="p-6 mt-auto">
+          <div className="p-6 mt-auto space-y-6">
+            <SocialLinks className="justify-center" iconClassName="text-muted-foreground hover:text-primary" />
             <Button asChild variant="default" size="lg" className="w-full">
               <Link to="/brief">Обсудить проект</Link>
             </Button>
