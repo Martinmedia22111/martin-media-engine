@@ -1,24 +1,24 @@
 import { motion } from "framer-motion";
-import { Users, TrendingUp, Cpu, Briefcase } from "lucide-react";
+import AudienceSceneIcon, { type AudienceSceneKey } from "./AudienceSceneIcon";
 
-const segments = [
+const segments: { scene: AudienceSceneKey; title: string; description: string }[] = [
   {
-    icon: Users,
+    scene: "brands",
     title: "Бренды, которым нужен системный видеоконтент",
     description: "Выстроим производство контента как предсказуемый процесс",
   },
   {
-    icon: TrendingUp,
+    scene: "vertical",
     title: "Компании, выходящие в TikTok и Reels",
     description: "Стратегия, производство и аналитика вертикального контента",
   },
   {
-    icon: Cpu,
+    scene: "ai",
     title: "Бизнесы, внедряющие AI в маркетинг",
     description: "AI-ассистенты, автоматизация, интеграции с вашими процессами",
   },
   {
-    icon: Briefcase,
+    scene: "cmo",
     title: "Маркетинг-директора, ищущие сильного партнёра",
     description: "Одна команда вместо пяти подрядчиков — продакшн, контент, AI",
   },
@@ -39,7 +39,7 @@ const WhoWeHelpSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {segments.map((item, i) => (
           <motion.div
             key={item.title}
@@ -47,18 +47,13 @@ const WhoWeHelpSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
+            className="group flex flex-col items-center text-center p-6 pt-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div
-              className="block p-6 md:p-8 rounded-2xl border border-border bg-card relative overflow-hidden"
-            >
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-primary mb-4">
-                  <item.icon size={24} />
-                </div>
-                <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
+            <div className="w-32 h-32 md:w-36 md:h-36 mb-5 transition-transform duration-500 group-hover:scale-110">
+              <AudienceSceneIcon scene={item.scene} />
             </div>
+            <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{item.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">{item.description}</p>
           </motion.div>
         ))}
       </div>
