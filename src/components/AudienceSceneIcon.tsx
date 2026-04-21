@@ -186,64 +186,32 @@ const AiScene = () => (
 );
 
 /* ───────────────────────── 4. CMO / STRATEGIC PARTNER ─────────────────────────
-   Сцена: крупное рукопожатие — две руки навстречу (красная + графит).
-   Без человеческих фигур. Метафора: партнёрство на равных. */
+   Сцена: проверенная иконка-рукопожатие (Lucide Handshake) на красном
+   круге-бейдже. Чистая, мгновенно читается. */
 const CmoScene = () => (
   <svg {...baseProps}>
     <circle cx="60" cy="60" r="54" fill={BG_SOFT} />
 
-    {/* soft halo behind the handshake */}
-    <circle cx="60" cy="60" r="36" fill="none" stroke={RED_SOFT} strokeWidth="1.5" strokeDasharray="3 4" />
+    {/* dashed orbit */}
+    <circle cx="60" cy="60" r="44" fill="none" stroke={RED_SOFT} strokeWidth="1.5" strokeDasharray="3 4" />
 
     {/* spark accents */}
-    <circle cx="26" cy="36" r="2.5" fill={RED} />
-    <circle cx="94" cy="84" r="2.5" fill={RED} />
-    <circle cx="28" cy="86" r="2" fill={GRAPHITE} />
-    <circle cx="92" cy="34" r="2" fill={GRAPHITE} />
+    <circle cx="20" cy="32" r="2.5" fill={RED} />
+    <circle cx="100" cy="88" r="2.5" fill={RED} />
+    <circle cx="22" cy="90" r="2" fill={GRAPHITE} />
+    <circle cx="98" cy="30" r="2" fill={GRAPHITE} />
 
-    {/* LEFT sleeve cuff — RED, coming from bottom-left */}
-    <path d="M8 88 L8 72 L40 56 L48 70 L20 88 Z" fill={RED} opacity="0.85" />
-    {/* LEFT forearm — RED */}
-    <path
-      d="M22 76 L56 56 L64 70 L30 90 Z"
-      fill={RED}
-    />
+    {/* RED hero badge circle */}
+    <circle cx="60" cy="60" r="32" fill={RED} />
+    <circle cx="60" cy="60" r="32" fill="none" stroke="hsl(var(--background) / 0.2)" strokeWidth="1.5" />
 
-    {/* RIGHT sleeve cuff — GRAPHITE, coming from top-right */}
-    <path d="M112 32 L112 48 L80 64 L72 50 L100 32 Z" fill={GRAPHITE} opacity="0.85" />
-    {/* RIGHT forearm — GRAPHITE */}
-    <path
-      d="M98 44 L64 64 L56 50 L90 30 Z"
-      fill={GRAPHITE}
-    />
-
-    {/* RIGHT hand / palm gripping */}
-    <path
-      d="M56 50 C50 54, 48 60, 52 66 C56 72, 64 72, 70 66 L74 60 L64 48 Z"
-      fill={GRAPHITE}
-    />
-    {/* RIGHT thumb wrap */}
-    <path
-      d="M58 56 C62 54, 66 56, 66 60 C66 64, 62 66, 58 64 Z"
-      fill={GRAPHITE}
-    />
-
-    {/* LEFT hand / palm gripping (on top — red, hierarchy) */}
-    <path
-      d="M64 70 C70 66, 72 60, 68 54 C64 48, 56 48, 50 54 L46 60 L56 72 Z"
-      fill={RED}
-    />
-    {/* LEFT thumb wrap on top */}
-    <path
-      d="M62 64 C58 66, 54 64, 54 60 C54 56, 58 54, 62 56 Z"
-      fill={RED}
-    />
-
-    {/* knuckle highlights */}
-    <g stroke="hsl(var(--background) / 0.35)" strokeWidth="1.4" strokeLinecap="round" fill="none">
-      <path d="M52 58 L56 62" />
-      <path d="M56 54 L60 58" />
-      <path d="M60 50 L64 54" />
+    {/* Lucide "Handshake" icon, scaled & centered (24x24 → 48x48 at offset 36,36) */}
+    <g transform="translate(36 36) scale(2)" fill="none" stroke="hsl(var(--background))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m11 17 2 2a1 1 0 1 0 3-3" />
+      <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
+      <path d="m21 3 1 11h-2" />
+      <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
+      <path d="M3 4h8" />
     </g>
   </svg>
 );
