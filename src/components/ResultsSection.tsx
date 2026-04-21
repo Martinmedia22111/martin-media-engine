@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { TrendingUp, DollarSign, Clock, Zap, Target, BarChart } from "lucide-react";
+import ResultDuotoneIcon, { type ResultIconKey } from "./ResultDuotoneIcon";
 
-const results = [
-  { icon: TrendingUp, title: "Рост охватов на 200–400%", description: "Системный контент вместо разовых публикаций" },
-  { icon: DollarSign, title: "Снижение стоимости лида", description: "Видеоконтент конвертирует лучше статики" },
-  { icon: Clock, title: "Запуск за 2–4 недели", description: "От брифа до первых результатов" },
-  { icon: Zap, title: "AI работает 24/7", description: "Ассистенты, которые не берут выходных" },
-  { icon: Target, title: "Полный цикл в одной команде", description: "Стратегия → продакшн → дистрибуция" },
-  { icon: BarChart, title: "Измеримый результат", description: "Метрики и аналитика с первого месяца" },
+const results: { icon: ResultIconKey; title: string; description: string }[] = [
+  { icon: "growth", title: "Рост охватов на 200–400%", description: "Системный контент вместо разовых публикаций" },
+  { icon: "lead-cost", title: "Снижение стоимости лида", description: "Видеоконтент конвертирует лучше статики" },
+  { icon: "fast-launch", title: "Запуск за 2–4 недели", description: "От брифа до первых результатов" },
+  { icon: "ai-247", title: "AI работает 24/7", description: "Ассистенты, которые не берут выходных" },
+  { icon: "full-cycle", title: "Полный цикл в одной команде", description: "Стратегия → продакшн → дистрибуция" },
+  { icon: "measurable", title: "Измеримый результат", description: "Метрики и аналитика с первого месяца" },
 ];
 
 const ResultsSection = () => (
@@ -33,13 +33,13 @@ const ResultsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+            className="group flex flex-col items-center text-center p-6 pt-8 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-primary mb-4 group-hover:from-primary group-hover:to-primary group-hover:text-white transition-all duration-300">
-              <r.icon size={22} />
+            <div className="w-28 h-28 md:w-32 md:h-32 mb-5 transition-transform duration-500 group-hover:scale-110">
+              <ResultDuotoneIcon icon={r.icon} />
             </div>
-            <h3 className="font-heading font-semibold text-foreground mb-1.5">{r.title}</h3>
-            <p className="text-sm text-muted-foreground">{r.description}</p>
+            <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{r.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">{r.description}</p>
           </motion.div>
         ))}
       </div>
