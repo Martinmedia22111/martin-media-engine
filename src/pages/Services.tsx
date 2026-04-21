@@ -37,12 +37,14 @@ const Services = () => (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
                   {catServices.map((s, i) => (
                     <motion.div key={s.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-                      <Link to={`/uslugi/${s.slug}`} className="group block p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-lg transition-all h-full">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                          {getIcon(s.icon)}
+                      <Link to={`/uslugi/${s.slug}`} className="group flex flex-col h-full rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-lg transition-all overflow-hidden">
+                        <div className="relative flex items-center justify-center h-32 bg-gradient-to-br from-secondary/40 to-background border-b border-border/60 px-4">
+                          <ServiceTypoIcon slug={s.slug} className="text-[52px]" />
                         </div>
-                        <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{s.shortTitle}</h3>
-                        <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{s.description}</p>
+                        <div className="p-6">
+                          <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">{s.shortTitle}</h3>
+                          <p className="text-sm text-muted-foreground mt-2 line-clamp-2">{s.description}</p>
+                        </div>
                       </Link>
                     </motion.div>
                   ))}
