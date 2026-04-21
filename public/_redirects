@@ -1,1 +1,30 @@
-/*    /index.html   200
+# 301 redirects from old WordPress URLs (preserve SEO weight)
+/arenda-videostudii       /uslugi/videoproduction       301!
+/arenda-videostudii/*     /uslugi/videoproduction       301!
+/grid-portfolio           /kejsy                        301!
+/grid-portfolio/*         /kejsy                        301!
+/tiktok-prodvizhenie      /uslugi/short-form-video      301!
+/tiktok-prodvizhenie/*    /uslugi/short-form-video      301!
+/youtube-prodvizhenie     /uslugi/short-form-video      301!
+/youtube-prodvizhenie/*   /uslugi/short-form-video      301!
+/instagram-prodvizhenie   /uslugi/smm-content-strategy  301!
+/instagram-prodvizhenie/* /uslugi/smm-content-strategy  301!
+/airvideo-quadrocopter    /uslugi/aerosyomka-panoramy   301!
+/airvideo-quadrocopter/*  /uslugi/aerosyomka-panoramy   301!
+/services                 /uslugi                       301!
+/services/*               /uslugi                       301!
+/o-nas                    /o-kompanii                   301!
+/o-nas/*                  /o-kompanii                   301!
+/reklamnye-roliki         /uslugi/reklamnye-roliki      301!
+/korporativnye-filmy      /uslugi/korporativnye-filmy   301!
+/smm                      /uslugi/smm-content-strategy  301!
+/3d-animaciya             /uslugi/3d-motion-design      301!
+/motion-design            /uslugi/3d-motion-design      301!
+/food-video               /uslugi/food-video            301!
+/contacts                 /kontakty                     301!
+/contact                  /kontakty                     301!
+/portfolio                /kejsy                        301!
+/portfolio/*              /kejsy                        301!
+
+# SPA fallback (must be LAST)
+/*                        /index.html                   200
