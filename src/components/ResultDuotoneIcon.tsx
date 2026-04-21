@@ -28,6 +28,7 @@ const GRAPHITE = "hsl(var(--foreground))";
 const GRAPHITE_SOFT = "hsl(var(--foreground) / 0.12)";
 const RED = "hsl(var(--primary))";
 const RED_SOFT = "hsl(var(--primary) / 0.18)";
+const BG_SOFT = "hsl(var(--muted))";
 
 // 1. Рост охватов 200–400% — восходящая столбчатая диаграмма со стрелкой
 const GrowthIcon = () => (
