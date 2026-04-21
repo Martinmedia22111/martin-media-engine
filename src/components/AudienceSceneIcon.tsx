@@ -132,122 +132,122 @@ const VerticalScene = () => (
 );
 
 /* ───────────────────────── 3. AI IN MARKETING ─────────────────────────
-   Сцена: мозг-схема с нейронными узлами, из которой растут
-   маркетинговые "лепестки" (data → insight → action). */
+   Сцена: голова робота-ассистента с антеннами-сигналами и
+   "глазом-объективом" — киборг как со-пилот маркетинга. */
 const AiScene = () => (
   <svg {...baseProps}>
     <circle cx="60" cy="60" r="54" fill={BG_SOFT} />
 
-    {/* outer orbit */}
-    <circle cx="60" cy="60" r="40" fill="none" stroke={RED_SOFT} strokeWidth="1.5" strokeDasharray="3 4" />
+    {/* radiating signal arcs (Wi-Fi style) above the head */}
+    <path d="M40 24 Q60 12 80 24" stroke={RED_SOFT} strokeWidth="2" strokeLinecap="round" fill="none" />
+    <path d="M46 30 Q60 22 74 30" stroke={RED} strokeWidth="2" strokeLinecap="round" fill="none" opacity="0.6" />
 
-    {/* brain — left RED hemisphere, right graphite outline */}
-    <path
-      d="M60 32 C44 32, 34 44, 34 58 C34 70, 42 80, 54 84 L54 86 C54 88, 56 90, 58 90 L60 90 Z"
-      fill={RED}
-    />
-    <path
-      d="M60 32 C76 32, 86 44, 86 58 C86 70, 78 80, 66 84 L66 86 C66 88, 64 90, 62 90 L60 90 Z"
-      fill={RED_SOFT}
-      stroke={RED}
-      strokeWidth="2.5"
-    />
+    {/* antennas */}
+    <line x1="44" y1="40" x2="40" y2="28" stroke={GRAPHITE} strokeWidth="2" strokeLinecap="round" />
+    <line x1="76" y1="40" x2="80" y2="28" stroke={GRAPHITE} strokeWidth="2" strokeLinecap="round" />
+    <circle cx="40" cy="28" r="2.5" fill={RED} />
+    <circle cx="80" cy="28" r="2.5" fill={RED} />
 
-    {/* neural circuit on right hemisphere — graphite for contrast */}
-    <g stroke={GRAPHITE} strokeWidth="1.8" strokeLinecap="round" fill="none">
-      <path d="M62 44 L70 50" />
-      <path d="M70 50 L78 48" />
-      <path d="M70 50 L72 62" />
-      <path d="M72 62 L80 64" />
-      <path d="M72 62 L66 74" />
+    {/* neck / connector */}
+    <rect x="54" y="86" width="12" height="6" rx="1.5" fill={GRAPHITE} />
+    <rect x="46" y="92" width="28" height="4" rx="2" fill={GRAPHITE} />
+
+    {/* robot head — RED hero shell */}
+    <rect x="34" y="38" width="52" height="48" rx="14" fill={RED} />
+
+    {/* head side "ears" / speakers */}
+    <rect x="30" y="54" width="6" height="16" rx="2" fill={GRAPHITE} />
+    <rect x="84" y="54" width="6" height="16" rx="2" fill={GRAPHITE} />
+
+    {/* visor / face plate — dark band like a cyborg HUD */}
+    <rect x="40" y="50" width="40" height="22" rx="6" fill={GRAPHITE} />
+
+    {/* single cyclops camera eye — glowing red */}
+    <circle cx="60" cy="61" r="7" fill="hsl(var(--background))" />
+    <circle cx="60" cy="61" r="5" fill={RED} />
+    <circle cx="58" cy="59" r="1.5" fill="hsl(var(--background))" />
+
+    {/* small status LEDs on the visor */}
+    <circle cx="46" cy="61" r="1.5" fill={RED} />
+    <circle cx="74" cy="61" r="1.5" fill="hsl(var(--background))" opacity="0.8" />
+
+    {/* mouth / speaker grille */}
+    <g stroke="hsl(var(--background) / 0.4)" strokeWidth="1.2" strokeLinecap="round">
+      <line x1="50" y1="80" x2="70" y2="80" />
+      <line x1="52" y1="83" x2="68" y2="83" />
     </g>
-    <g fill={GRAPHITE}>
-      <circle cx="62" cy="44" r="2.5" />
-      <circle cx="70" cy="50" r="2.5" />
-      <circle cx="78" cy="48" r="2.5" />
-      <circle cx="72" cy="62" r="2.5" />
-      <circle cx="80" cy="64" r="2.5" />
-      <circle cx="66" cy="74" r="2.5" />
-    </g>
 
-    {/* synapse highlights on left (red) hemisphere */}
-    <g fill="hsl(var(--background))">
-      <circle cx="46" cy="50" r="2" />
-      <circle cx="42" cy="62" r="2" />
-      <circle cx="50" cy="72" r="2" />
-    </g>
-
-    {/* orbiting data nodes */}
-    <circle cx="20" cy="60" r="5" fill={RED} />
-    <circle cx="100" cy="60" r="5" fill={RED} />
-    <circle cx="60" cy="20" r="4" fill={GRAPHITE} />
+    {/* circuit dots floating around — data context */}
+    <circle cx="20" cy="64" r="3" fill={RED} />
+    <circle cx="100" cy="64" r="3" fill={RED} />
+    <circle cx="22" cy="48" r="2" fill={GRAPHITE} />
+    <circle cx="98" cy="48" r="2" fill={GRAPHITE} />
   </svg>
 );
 
 /* ───────────────────────── 4. CMO / STRATEGIC PARTNER ─────────────────────────
-   Сцена: шахматная фигура (король) на доске + одна красная пешка-партнёр рядом.
-   Метафора: стратегическое мышление + надёжный соратник. */
+   Сцена: рукопожатие двух фигур над общей восходящей графикой.
+   Метафора: партнёрство + общий рост. Без крестов и шахмат. */
 const CmoScene = () => (
   <svg {...baseProps}>
     <circle cx="60" cy="60" r="54" fill={BG_SOFT} />
 
-    {/* chessboard plate — red base */}
-    <rect x="22" y="80" width="76" height="14" rx="2" fill={RED} />
-    {/* board squares pattern */}
-    <g fill="hsl(var(--background))" opacity="0.6">
-      <rect x="26" y="82" width="8" height="4" />
-      <rect x="42" y="82" width="8" height="4" />
-      <rect x="58" y="82" width="8" height="4" />
-      <rect x="74" y="82" width="8" height="4" />
-      <rect x="90" y="82" width="6" height="4" />
-      <rect x="34" y="86" width="8" height="4" />
-      <rect x="50" y="86" width="8" height="4" />
-      <rect x="66" y="86" width="8" height="4" />
-      <rect x="82" y="86" width="8" height="4" />
-    </g>
+    {/* baseline */}
+    <line x1="18" y1="92" x2="102" y2="92" stroke={GRAPHITE_SOFT} strokeWidth="2" strokeLinecap="round" />
 
-    {/* KING — RED hero, central */}
-    {/* base */}
-    <path d="M44 80 L44 76 L72 76 L72 80 Z" fill={RED} />
-    {/* body */}
+    {/* growth chart bars behind — shared success */}
+    <rect x="24" y="78" width="8" height="14" rx="1.5" fill={GRAPHITE_SOFT} />
+    <rect x="36" y="72" width="8" height="20" rx="1.5" fill={GRAPHITE_SOFT} />
+    <rect x="76" y="68" width="8" height="24" rx="1.5" fill={RED_SOFT} />
+    <rect x="88" y="60" width="8" height="32" rx="1.5" fill={RED_SOFT} />
+
+    {/* upward arrow line connecting growth */}
     <path
-      d="M48 76 L48 60 C48 54, 52 50, 58 50 L58 46 C58 44, 60 44, 60 46 L60 50 C66 50, 70 54, 70 60 L70 76 Z"
+      d="M28 76 L40 70 L52 64 L68 56 L80 50 L94 42"
+      stroke={RED}
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+      opacity="0.5"
+    />
+    {/* arrow head */}
+    <path d="M88 42 L94 42 L94 48" stroke={RED} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" opacity="0.5" />
+
+    {/* LEFT figure — RED (client/CMO) */}
+    <circle cx="38" cy="40" r="9" fill={RED} />
+    <path
+      d="M22 78 C22 66, 30 58, 38 58 C46 58, 54 66, 54 78 L54 86 L22 86 Z"
       fill={RED}
     />
-    {/* body inner highlight */}
+
+    {/* RIGHT figure — GRAPHITE (Martin Media partner) */}
+    <circle cx="82" cy="40" r="9" fill={GRAPHITE} />
     <path
-      d="M52 74 L52 60 C52 56, 55 53, 59 53"
-      stroke="hsl(var(--background) / 0.35)"
-      strokeWidth="1.5"
+      d="M66 78 C66 66, 74 58, 82 58 C90 58, 98 66, 98 78 L98 86 L66 86 Z"
+      fill={GRAPHITE}
+    />
+
+    {/* HANDSHAKE — central red bridge between two arms */}
+    {/* left arm */}
+    <path
+      d="M48 64 L58 70 L60 72"
+      stroke={RED}
+      strokeWidth="6"
       strokeLinecap="round"
       fill="none"
     />
-    {/* crown cross */}
-    <rect x="56" y="32" width="6" height="14" rx="1.5" fill={RED} />
-    <rect x="51" y="36" width="16" height="5" rx="1.5" fill={RED} />
-    {/* graphite crown jewel — accent */}
-    <circle cx="59" cy="28" r="3.5" fill={GRAPHITE} />
-
-    {/* PAWN — graphite ally beside king */}
-    <path d="M82 80 L82 78 L94 78 L94 80 Z" fill={GRAPHITE} />
+    {/* right arm */}
     <path
-      d="M84 78 L84 70 C84 66, 86 64, 88 64 L88 64 C88 60, 90 58, 88 58 C86 58, 88 60, 88 64 C90 64, 92 66, 92 70 L92 78 Z"
-      fill={GRAPHITE}
-    />
-    <circle cx="88" cy="58" r="4" fill={GRAPHITE} />
-
-    {/* strategic vector — diagonal sight line king→pawn (partnership) */}
-    <line
-      x1="64"
-      y1="48"
-      x2="86"
-      y2="58"
-      stroke={RED}
-      strokeWidth="1.5"
-      strokeDasharray="2 3"
+      d="M72 64 L62 70 L60 72"
+      stroke={GRAPHITE}
+      strokeWidth="6"
       strokeLinecap="round"
-      opacity="0.7"
+      fill="none"
     />
+    {/* clasp highlight */}
+    <circle cx="60" cy="71" r="4.5" fill={RED} />
+    <circle cx="60" cy="71" r="2" fill="hsl(var(--background))" />
   </svg>
 );
 
