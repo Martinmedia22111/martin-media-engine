@@ -2,7 +2,190 @@
   command = "npm run build"
   publish = "dist"
 
+# 301 redirects from old WordPress URLs (saves accumulated SEO weight)
+[[redirects]]
+  from = "/arenda-videostudii"
+  to = "/uslugi/videoproduction"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/arenda-videostudii/*"
+  to = "/uslugi/videoproduction"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grid-portfolio"
+  to = "/kejsy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/grid-portfolio/*"
+  to = "/kejsy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tiktok-prodvizhenie"
+  to = "/uslugi/short-form-video"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tiktok-prodvizhenie/*"
+  to = "/uslugi/short-form-video"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/youtube-prodvizhenie"
+  to = "/uslugi/short-form-video"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/youtube-prodvizhenie/*"
+  to = "/uslugi/short-form-video"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/instagram-prodvizhenie"
+  to = "/uslugi/smm-content-strategy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/instagram-prodvizhenie/*"
+  to = "/uslugi/smm-content-strategy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/airvideo-quadrocopter"
+  to = "/uslugi/aerosyomka-panoramy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/airvideo-quadrocopter/*"
+  to = "/uslugi/aerosyomka-panoramy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/uslugi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/*"
+  to = "/uslugi"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/o-nas"
+  to = "/o-kompanii"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/o-nas/*"
+  to = "/o-kompanii"
+  status = 301
+  force = true
+
+# Additional WordPress URLs that may be in Google index
+[[redirects]]
+  from = "/uslugi-videoproduction"
+  to = "/uslugi/videoproduction"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/reklamnye-roliki"
+  to = "/uslugi/reklamnye-roliki"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/korporativnye-filmy"
+  to = "/uslugi/korporativnye-filmy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/smm"
+  to = "/uslugi/smm-content-strategy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/3d-animaciya"
+  to = "/uslugi/3d-motion-design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/motion-design"
+  to = "/uslugi/3d-motion-design"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/food-video"
+  to = "/uslugi/food-video"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contacts"
+  to = "/kontakty"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/kontakty"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/kejsy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/portfolio/*"
+  to = "/kejsy"
+  status = 301
+  force = true
+
+# SPA fallback (must be LAST!)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Enable prerendering for search engine bots (Netlify feature)
+[build.processing]
+  skip_processing = false
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long cache for static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
