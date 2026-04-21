@@ -186,8 +186,8 @@ const AiScene = () => (
 );
 
 /* ───────────────────────── 4. CMO / STRATEGIC PARTNER ─────────────────────────
-   Сцена: рукопожатие, близкое к референсу — массивные диагональные манжеты,
-   единый силуэт сцепленных ладоней, белая линия-стык и короткие линии пальцев. */
+   Сцена: два схематичных человечка лицом друг к другу + двусторонняя стрелка
+   между ними — символ партнёрства, диалога и обмена. */
 const CmoScene = () => (
   <svg {...baseProps}>
     <circle cx="60" cy="60" r="54" fill={BG_SOFT} />
@@ -195,70 +195,73 @@ const CmoScene = () => (
     {/* soft halo */}
     <circle cx="60" cy="60" r="42" fill="none" stroke={RED_SOFT} strokeWidth="1.5" strokeDasharray="3 4" />
 
+    {/* ground line */}
+    <line x1="20" y1="96" x2="100" y2="96" stroke={GRAPHITE_SOFT} strokeWidth="2" strokeLinecap="round" />
+
     {/* spark accents */}
-    <circle cx="18" cy="30" r="2.5" fill={RED} />
-    <circle cx="102" cy="90" r="2.5" fill={RED} />
-    <circle cx="20" cy="92" r="2" fill={GRAPHITE} />
-    <circle cx="100" cy="28" r="2" fill={GRAPHITE} />
+    <circle cx="18" cy="28" r="2.5" fill={RED} />
+    <circle cx="102" cy="28" r="2.5" fill={GRAPHITE} />
 
-    {/* cuffs */}
-    <g transform="rotate(-14 28 54)">
-      <rect x="14" y="38" width="24" height="34" rx="5" fill={RED} />
-      <circle cx="22" cy="62" r="3.3" fill="hsl(var(--background))" />
-    </g>
-    <g transform="rotate(14 92 54)">
-      <rect x="82" y="38" width="24" height="34" rx="5" fill={GRAPHITE} />
-      <circle cx="98" cy="62" r="3.3" fill="hsl(var(--background))" />
-    </g>
-
-    {/* left hand */}
+    {/* ── LEFT PERSON (red) ── */}
+    {/* head */}
+    <circle cx="30" cy="44" r="9" fill={RED} />
+    {/* body — rounded shoulders/torso */}
     <path
-      d="M34 49
-         L54 49
-         C62 49, 68 51, 73 56
-         L81 73
-         L61 89
-         C58 91.5, 53.5 91.5, 50.5 89
-         L31 74
-         C27.5 71.5, 27.5 66.5, 30.5 63
-         L34 49 Z"
+      d="M16 92
+         L16 72
+         C16 63, 22 57, 30 57
+         C38 57, 44 63, 44 72
+         L44 92 Z"
       fill={RED}
     />
 
-    {/* right hand */}
+    {/* ── RIGHT PERSON (graphite) ── */}
+    {/* head */}
+    <circle cx="90" cy="44" r="9" fill={GRAPHITE} />
+    {/* body */}
     <path
-      d="M86 49
-         L67 49
-         C59 49, 53 51.5, 48 56.5
-         L39 73
-         L59 89
-         C62 91.5, 66.5 91.5, 69.5 89
-         L88.5 74
-         C92 71.5, 92.2 66.5, 89 63
-         L86 49 Z"
+      d="M76 92
+         L76 72
+         C76 63, 82 57, 90 57
+         C98 57, 104 63, 104 72
+         L104 92 Z"
       fill={GRAPHITE}
     />
 
-    {/* central seam like in reference */}
+    {/* ── DOUBLE-HEADED ARROW between them ── */}
+    {/* shaft */}
+    <line
+      x1="49"
+      y1="70"
+      x2="71"
+      y2="70"
+      stroke={RED}
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+    {/* left arrowhead */}
     <path
-      d="M57 49
-         C53 53, 52 58, 54 62
-         C56 66, 61 66.5, 65 63.5
-         C68.5 60.8, 73 60.8, 76.5 63.5
-         L83 72"
-      stroke="hsl(var(--background))"
-      strokeWidth="1.8"
+      d="M49 70 L56 64 M49 70 L56 76"
+      stroke={RED}
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    {/* right arrowhead */}
+    <path
+      d="M71 70 L64 64 M71 70 L64 76"
+      stroke={RED}
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
     />
 
-    {/* finger separations */}
-    <g stroke="hsl(var(--background))" strokeWidth="1.8" strokeLinecap="round" fill="none">
-      <line x1="58" y1="71" x2="65" y2="78" />
-      <line x1="64" y1="69" x2="71" y2="77" />
-      <line x1="70" y1="67" x2="77" y2="75" />
-    </g>
+    {/* small dialog dots above arrow — exchange / conversation */}
+    <circle cx="55" cy="55" r="2" fill={GRAPHITE_MID} />
+    <circle cx="60" cy="52" r="2.2" fill={RED} />
+    <circle cx="65" cy="55" r="2" fill={GRAPHITE_MID} />
   </svg>
 );
 
