@@ -59,17 +59,17 @@ const GrowthIcon = () => (
 const LeadCostIcon = () => (
   <svg {...baseProps}>
     <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
-    {/* coin */}
-    <circle cx="40" cy="44" r="22" fill={GRAPHITE} />
+    {/* coin — light with red ring */}
+    <circle cx="40" cy="44" r="22" fill="hsl(var(--background))" stroke={GRAPHITE_SOFT} strokeWidth="2" />
     <circle cx="40" cy="44" r="16" fill="none" stroke={RED_SOFT} strokeWidth="2" />
     <text
       x="40"
-      y="51"
+      y="52"
       textAnchor="middle"
       fontFamily="'Space Grotesk', system-ui, sans-serif"
       fontWeight="900"
       fontSize="22"
-      fill="white"
+      fill={RED}
     >
       $
     </text>
@@ -95,8 +95,8 @@ const LeadCostIcon = () => (
 const FastLaunchIcon = () => (
   <svg {...baseProps}>
     <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
-    {/* calendar body */}
-    <rect x="20" y="26" width="56" height="48" rx="6" fill={GRAPHITE} />
+    {/* calendar body — light */}
+    <rect x="20" y="26" width="56" height="48" rx="6" fill="hsl(var(--background))" stroke={GRAPHITE_SOFT} strokeWidth="2" />
     {/* header strip */}
     <rect x="20" y="26" width="56" height="12" rx="6" fill={RED} />
     <rect x="20" y="32" width="56" height="6" fill={RED} />
@@ -104,7 +104,7 @@ const FastLaunchIcon = () => (
     <rect x="30" y="20" width="4" height="12" rx="2" fill={GRAPHITE} />
     <rect x="62" y="20" width="4" height="12" rx="2" fill={GRAPHITE} />
     {/* week dots */}
-    <g fill="white" opacity="0.35">
+    <g fill={GRAPHITE} opacity="0.25">
       <circle cx="30" cy="48" r="2.2" />
       <circle cx="40" cy="48" r="2.2" />
       <circle cx="50" cy="48" r="2.2" />
@@ -121,8 +121,8 @@ const FastLaunchIcon = () => (
     </g>
     {/* highlighted launch range 2–4 */}
     <rect x="36" y="54" width="20" height="10" rx="3" fill={RED} />
-    <circle cx="40" cy="59" r="2.4" fill="white" />
-    <circle cx="50" cy="59" r="2.4" fill="white" />
+    <circle cx="40" cy="59" r="2.4" fill="hsl(var(--background))" />
+    <circle cx="50" cy="59" r="2.4" fill="hsl(var(--background))" />
   </svg>
 );
 
