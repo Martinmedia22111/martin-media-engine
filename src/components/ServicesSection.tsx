@@ -1,34 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
-import { ArrowRight, Play, Tv, Smartphone, TrendingUp, Boxes, UtensilsCrossed, Building2, Users, Bot, Megaphone, UserPlus, Camera, Sparkles, MessageCircle, Globe } from "lucide-react";
-
-const iconMap: Record<string, React.ElementType> = {
-  Video: Play,
-  Clapperboard: Tv,
-  Smartphone: Smartphone,
-  BarChart3: TrendingUp,
-  Box: Boxes,
-  Bot: Bot,
-  UtensilsCrossed: UtensilsCrossed,
-  Film: Building2,
-  Users: Users,
-  Megaphone: Megaphone,
-  UserPlus: UserPlus,
-  Plane: Camera,
-  Gamepad2: Sparkles,
-  MessageCircle: MessageCircle,
-  Globe: Globe,
-};
-
-const categoryColors: Record<string, string> = {
-  production: "from-primary/20 to-primary/5 text-primary",
-  content: "from-accent/30 to-accent/10 text-accent-foreground",
-  ai: "from-primary/15 to-primary/5 text-primary",
-  pr: "from-primary/20 to-primary/5 text-primary",
-  dev: "from-primary/15 to-accent/10 text-primary",
-  special: "from-accent/30 to-accent/10 text-accent-foreground",
-};
+import { ArrowRight } from "lucide-react";
+import ServiceTypoIcon from "@/components/ServiceTypoIcon";
 
 const ServicesSection = () => (
   <section className="section-padding bg-secondary/50">
