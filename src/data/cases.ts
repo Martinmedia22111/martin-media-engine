@@ -57,6 +57,7 @@ export const cases: CaseStudy[] = [
     results: ["Серия из 5 роликов для digital-кампаний, охватившая 1.8M+ показов за первый месяц", "Рост заказов через приложение на 22% в период рекламной кампании", "Контент адаптирован для 6 платформ и форматов из одной съёмки", "CPV ниже на 35% по сравнению с бенчмарком категории HoReCa"],
     tags: ["Реклама", "HoReCa", "Видеопродакшн"],
     coverGradient: "from-blue-500/20 to-indigo-500/10",
+    coverImage: "/cases/dominos-pizza-reklama-cover.jpg",
     videoUrl: "https://www.youtube.com/watch?v=tm0On1m6RMo",
   },
   {
@@ -71,6 +72,7 @@ export const cases: CaseStudy[] = [
     results: ["Ролик использован в digital и OLV-кампаниях с охватом 800K+ показов", "Рост запросов на абонементы на 18% в период размещения ролика", "Контент адаптирован для 4 платформ: YouTube, Instagram, OLV, сайт", "Completion rate ролика на YouTube — 72%, что выше среднего по категории «Спорт»"],
     tags: ["Реклама", "Спорт", "Видеопродакшн"],
     coverGradient: "from-orange-500/20 to-red-500/10",
+    coverImage: "/cases/gym24-reklama-cover.jpg",
     videoUrl: "https://www.youtube.com/watch?v=CWfU6fyPTxM",
   },
   {
@@ -85,6 +87,7 @@ export const cases: CaseStudy[] = [
     results: ["Серия из 10+ VFX/CGI-роликов для digital- и ТВ-кампаний", "Формирование единого узнаваемого визуального стиля «Мила» в видео", "Масштабируемый формат: новый ролик для акции создаётся за 5–7 дней вместо 3 недель", "Рост вовлечённости рекламных публикаций на 45% после перехода на VFX-формат"],
     tags: ["Реклама", "VFX", "3D", "Ритейл"],
     coverGradient: "from-pink-500/20 to-rose-500/10",
+    coverImage: "/cases/mila-reklama-cover.jpg",
     videoUrls: [
       { title: "День рождения — время радости, веселья и подарков!", url: "https://www.youtube.com/watch?v=lqTnY2qlQ4U" },
       { title: "Расцветай вместе с Милой! 🌷", url: "https://www.youtube.com/watch?v=xJRHFlvswZ8" },
@@ -105,6 +108,7 @@ export const cases: CaseStudy[] = [
     results: ["Ролик размещён на ТВ и в digital-каналах с охватом 1.5M+ уникальных зрителей", "Полное соответствие регуляторным требованиям — согласование пройдено с первого раза", "Рост узнаваемости продукта на 20% в целевом сегменте (по данным post-campaign замера)", "Два формата ролика (горизонтальный и вертикальный) обеспечили покрытие всех площадок размещения"],
     tags: ["Реклама", "Фармацевтика", "Видеопродакшн"],
     coverGradient: "from-green-500/20 to-emerald-500/10",
+    coverImage: "/cases/grindeks-reklama-cover.jpg",
     videoUrl: "https://www.youtube.com/watch?v=gNvE7XwwSzg",
   },
   {
@@ -119,6 +123,7 @@ export const cases: CaseStudy[] = [
     results: ["Рекламные ролики для digital-кампаний с суммарным охватом 3M+ показов", "Регулярный TikTok и Instagram контент — 15+ публикаций в месяц с ростом вовлечённости на 180%", "AI-видео для Belkart стало одним из первых AI-роликов на белорусском рекламном рынке", "Рост подписчиков TikTok-аккаунта Belkart в 4 раза за 6 месяцев сотрудничества"],
     tags: ["Реклама", "AI Видео", "TikTok", "Instagram", "SMM"],
     coverGradient: "from-violet-500/20 to-purple-500/10",
+    coverImage: "/cases/belkart-kompleksnyj-proekt-cover.jpg",
     tiktokUrls: ["https://www.tiktok.com/@belkart_by/video/7608957720066051336"],
   },
   {
@@ -145,6 +150,7 @@ export const cases: CaseStudy[] = [
     ],
     tags: ["TikTok", "Ритейл", "Органика", "Сериальный контент"],
     coverGradient: "from-red-500/20 to-orange-500/10",
+    coverImage: "/cases/almi-tiktok-cover.jpg",
     tiktokUrls: ["https://www.tiktok.com/@almi_belarus"],
     quote: {
       text: "За короткий промежуток времени новый формат показал эффективность в продвижении сети магазинов Алми, способствует росту аудитории и повышению вовлеченности.",
@@ -176,6 +182,7 @@ export const cases: CaseStudy[] = [
     ],
     tags: ["TikTok", "FMCG", "SMM", "Органика"],
     coverGradient: "from-amber-500/20 to-yellow-500/10",
+    coverImage: "/cases/babushkina-krynka-tiktok-cover.jpg",
     tiktokUrls: ["https://www.tiktok.com/@babushkina_krynka"],
   },
   {
@@ -201,6 +208,7 @@ export const cases: CaseStudy[] = [
     ],
     tags: ["TikTok", "FMCG", "Рост аудитории"],
     coverGradient: "from-red-600/20 to-rose-500/10",
+    coverImage: "/cases/krasnyj-pishchevik-tiktok-cover.jpg",
     tiktokUrls: ["https://www.tiktok.com/@krasnyi_pishchevik"],
   },
   {
@@ -215,6 +223,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный Reels/Shorts контент", "Рост вовлечённости в Instagram", "Узнаваемый визуальный стиль бренда"],
     tags: ["Reels", "Shorts", "Автозапчасти", "3D"],
     coverGradient: "from-slate-500/20 to-gray-500/10",
+    coverImage: "/cases/armtek-reels-cover.jpg",
     tiktokUrls: ["https://www.instagram.com/armtek_official"],
   },
   {
@@ -239,6 +248,7 @@ export const cases: CaseStudy[] = [
     ],
     tags: ["YouTube", "Авто", "Органика"],
     coverGradient: "from-red-600/20 to-orange-500/10",
+    coverImage: "/cases/avtoostrob-youtube-cover.jpg",
     videoUrl: "https://www.youtube.com/channel/UCEEK1Ec7iV21eDfCHE87zXw",
   },
   {
@@ -263,6 +273,7 @@ export const cases: CaseStudy[] = [
     ],
     tags: ["YouTube", "TikTok", "Авто", "Органика"],
     coverGradient: "from-blue-600/20 to-sky-500/10",
+    coverImage: "/cases/volkswagen-youtube-tiktok-cover.jpg",
     videoUrl: "https://www.youtube.com/channel/UCYG3Ujqe30OFGDaP9b1QsXw",
   },
   {
@@ -277,6 +288,7 @@ export const cases: CaseStudy[] = [
     results: ["2000+ лайков на ролике", "Рост узнаваемости бренда у молодой аудитории", "Органический охват через трендовый контент"],
     tags: ["TikTok", "Short-form", "FMCG"],
     coverGradient: "from-cyan-500/20 to-blue-400/10",
+    coverImage: "/cases/darida-tiktok-smm-cover.jpg",
   },
   {
     id: "14",
@@ -290,6 +302,7 @@ export const cases: CaseStudy[] = [
     results: ["2760+ лайков и вирусный охват", "Рост подписчиков аккаунта", "Узнаваемый развлекательный формат для бренда"],
     tags: ["TikTok", "Short-form", "Ритейл"],
     coverGradient: "from-amber-500/20 to-yellow-400/10",
+    coverImage: "/cases/sosedi-tiktok-cover.jpg",
   },
   {
     id: "15",
@@ -303,6 +316,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный контент для соцсетей", "Рост вовлечённости аудитории", "Привлечение молодой ЦА"],
     tags: ["TikTok", "SMM", "Автоиндустрия"],
     coverGradient: "from-slate-500/20 to-gray-400/10",
+    coverImage: "/cases/atlant-m-smm-cover.jpg",
   },
   {
     id: "16",
@@ -316,6 +330,7 @@ export const cases: CaseStudy[] = [
     results: ["Серия видеороликов для digital-каналов", "Контент для дилерских центров", "Рост интереса к модельному ряду"],
     tags: ["Реклама", "Автоиндустрия"],
     coverGradient: "from-red-500/20 to-rose-400/10",
+    coverImage: "/cases/chery-video-content-cover.jpg",
   },
   {
     id: "17",
@@ -329,6 +344,7 @@ export const cases: CaseStudy[] = [
     results: ["Видеоконтент для рекламных кампаний", "Усиление бренда в digital-каналах", "Рост лояльности клиентов"],
     tags: ["TikTok", "Социальные сети", "Энергетика"],
     coverGradient: "from-yellow-500/20 to-orange-400/10",
+    coverImage: "/cases/a100-video-cover.jpg",
   },
   {
     id: "18",
@@ -342,6 +358,7 @@ export const cases: CaseStudy[] = [
     results: ["Серия food-видео для соцсетей", "Кулинарное шоу с интеграцией бренда", "Высокая вовлечённость аудитории"],
     tags: ["Food-видео", "FMCG", "Контент"],
     coverGradient: "from-red-700/20 to-red-500/10",
+    coverImage: "/cases/coca-cola-food-video-cover.jpg",
   },
   // --- Новые кейсы с mmedia.by/grid-portfolio/ ---
   {
@@ -356,6 +373,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный TikTok-контент", "Рост вовлечённости аудитории", "Увеличение узнаваемости бренда"],
     tags: ["TikTok", "SMM", "Ритейл"],
     coverGradient: "from-green-500/20 to-emerald-400/10",
+    coverImage: "/cases/galereya-vkusa-smm-cover.jpg",
   },
   {
     id: "20",
@@ -369,6 +387,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный контент для TikTok", "Рост подписчиков и вовлечённости", "Усиление присутствия бренда в соцсетях"],
     tags: ["TikTok", "SMM", "Ритейл"],
     coverGradient: "from-teal-500/20 to-cyan-400/10",
+    coverImage: "/cases/hoba-smm-cover.jpg",
   },
   {
     id: "21",
@@ -382,6 +401,7 @@ export const cases: CaseStudy[] = [
     results: ["Запуск TikTok-аккаунта", "Органический охват аудитории", "Узнаваемый контент-формат"],
     tags: ["TikTok", "SMM", "FMCG"],
     coverGradient: "from-lime-500/20 to-green-400/10",
+    coverImage: "/cases/mozhno-smm-cover.jpg",
   },
   {
     id: "22",
@@ -395,6 +415,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный TikTok-контент", "Рост узнаваемости бренда", "Вовлечение целевой аудитории"],
     tags: ["TikTok", "SMM", "FMCG"],
     coverGradient: "from-sky-500/20 to-blue-400/10",
+    coverImage: "/cases/your-water-smm-cover.jpg",
   },
   {
     id: "23",
@@ -422,6 +443,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный контент для Instagram и TikTok", "Рост вовлечённости аудитории", "Усиление позиционирования бренда"],
     tags: ["Instagram", "TikTok", "SMM", "FMCG"],
     coverGradient: "from-rose-500/20 to-pink-400/10",
+    coverImage: "/cases/yas-belous-smm-cover.jpg",
   },
   {
     id: "25",
@@ -435,6 +457,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный TikTok-контент", "Рост трафика на портал", "Привлечение молодой аудитории"],
     tags: ["TikTok", "SMM", "Недвижимость"],
     coverGradient: "from-indigo-500/20 to-violet-400/10",
+    coverImage: "/cases/realt-smm-cover.jpg",
   },
   {
     id: "26",
@@ -462,6 +485,7 @@ export const cases: CaseStudy[] = [
     results: ["Регулярный YouTube-контент", "Рост подписчиков канала", "Повышение экспертности бренда"],
     tags: ["YouTube", "Социальные сети", "Медицина"],
     coverGradient: "from-blue-500/20 to-indigo-400/10",
+    coverImage: "/cases/ortos-youtube-cover.jpg",
   },
   {
     id: "28",
@@ -475,6 +499,7 @@ export const cases: CaseStudy[] = [
     results: ["Корпоративный фильм для партнёров", "Регулярный контент для соцсетей", "Усиление имиджа бренда"],
     tags: ["Корпоративный фильм", "TikTok", "SMM", "Финансы"],
     coverGradient: "from-green-600/20 to-emerald-500/10",
+    coverImage: "/cases/sberbank-korporativnyj-cover.jpg",
   },
   {
     id: "29",
