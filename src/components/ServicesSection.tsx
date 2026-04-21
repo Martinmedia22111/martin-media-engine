@@ -33,24 +33,22 @@ const ServicesSection = () => (
 
       {/* Uniform grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {services.filter(s => s.category !== "special").map((service, i) => {
-          const Icon = iconMap[service.icon] || Play;
-          const colorClass = categoryColors[service.category] || categoryColors.production;
-          return (
-            <motion.div
-              key={service.slug}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.04 }}
+        {services.filter(s => s.category !== "special").map((service, i) => (
+          <motion.div
+            key={service.slug}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.04 }}
+          >
+            <Link
+              to={`/uslugi/${service.slug}`}
+              className="group flex flex-col h-full rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <Link
-                to={`/uslugi/${service.slug}`}
-                className="group flex flex-col h-full p-5 rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${colorClass} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon size={20} strokeWidth={1.8} />
-                </div>
+              <div className="relative flex items-center justify-center h-28 bg-gradient-to-br from-secondary/40 to-background border-b border-border/60 px-4">
+                <ServiceTypoIcon slug={service.slug} className="text-[44px] sm:text-[48px]" />
+              </div>
+              <div className="flex flex-col flex-1 p-5">
                 <h3 className="font-heading font-semibold text-sm text-foreground leading-snug">
                   {service.shortTitle}
                 </h3>
@@ -60,10 +58,10 @@ const ServicesSection = () => (
                 <div className="mt-4 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Подробнее <ArrowRight size={12} />
                 </div>
-              </Link>
-            </motion.div>
-          );
-        })}
+              </div>
+            </Link>
+          </motion.div>
+        ))}
       </div>
 
       <motion.div
