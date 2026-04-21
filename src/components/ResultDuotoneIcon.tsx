@@ -34,7 +34,7 @@ const BG_SOFT = "hsl(var(--muted))";
 const GrowthIcon = () => (
   <svg {...baseProps}>
     {/* soft red background blob */}
-    <circle cx="48" cy="48" r="42" fill={RED_SOFT} />
+    <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
     {/* baseline */}
     <line x1="18" y1="74" x2="80" y2="74" stroke={GRAPHITE_SOFT} strokeWidth="2" strokeLinecap="round" />
     {/* bars */}
@@ -58,7 +58,7 @@ const GrowthIcon = () => (
 // 2. Снижение стоимости лида — монета с падающей стрелкой
 const LeadCostIcon = () => (
   <svg {...baseProps}>
-    <circle cx="48" cy="48" r="42" fill={RED_SOFT} />
+    <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
     {/* coin */}
     <circle cx="40" cy="44" r="22" fill={GRAPHITE} />
     <circle cx="40" cy="44" r="16" fill="none" stroke={RED_SOFT} strokeWidth="2" />
@@ -94,7 +94,7 @@ const LeadCostIcon = () => (
 // 3. Запуск за 2–4 недели — календарь с отмеченным диапазоном
 const FastLaunchIcon = () => (
   <svg {...baseProps}>
-    <circle cx="48" cy="48" r="42" fill={RED_SOFT} />
+    <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
     {/* calendar body */}
     <rect x="20" y="26" width="56" height="48" rx="6" fill={GRAPHITE} />
     {/* header strip */}
@@ -129,7 +129,7 @@ const FastLaunchIcon = () => (
 // 4. AI 24/7 — нейрон с пульсом, бесконечность снизу
 const Ai247Icon = () => (
   <svg {...baseProps}>
-    <circle cx="48" cy="48" r="42" fill={RED_SOFT} />
+    <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
     {/* central node */}
     <circle cx="48" cy="42" r="10" fill={GRAPHITE} />
     {/* satellites */}
@@ -153,7 +153,7 @@ const Ai247Icon = () => (
 // 5. Полный цикл в одной команде — концентрические сегменты (стратегия → продакшн → дистрибуция)
 const FullCycleIcon = () => (
   <svg {...baseProps}>
-    <circle cx="48" cy="48" r="42" fill={RED_SOFT} />
+    <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
     {/* outer ring */}
     <circle cx="48" cy="48" r="32" fill="none" stroke={GRAPHITE} strokeWidth="6" />
     {/* mid ring */}
@@ -182,7 +182,7 @@ const FullCycleIcon = () => (
 // 6. Измеримый результат — приборная панель / спидометр
 const MeasurableIcon = () => (
   <svg {...baseProps}>
-    <circle cx="48" cy="48" r="42" fill={RED_SOFT} />
+    <circle cx="48" cy="48" r="42" fill={BG_SOFT} />
     {/* gauge arc background */}
     <path
       d="M18 60 A30 30 0 0 1 78 60"
