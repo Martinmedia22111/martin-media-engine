@@ -186,33 +186,95 @@ const AiScene = () => (
 );
 
 /* ───────────────────────── 4. CMO / STRATEGIC PARTNER ─────────────────────────
-   Сцена: проверенная иконка-рукопожатие (Lucide Handshake) на красном
-   круге-бейдже. Чистая, мгновенно читается. */
+   Сцена: классическое блочное рукопожатие в стиле референса —
+   две руки с прямоугольными манжетами и круглыми "запонками".
+   Левая рука RED, правая GRAPHITE — равноправное партнёрство. */
 const CmoScene = () => (
   <svg {...baseProps}>
     <circle cx="60" cy="60" r="54" fill={BG_SOFT} />
 
-    {/* dashed orbit */}
-    <circle cx="60" cy="60" r="44" fill="none" stroke={RED_SOFT} strokeWidth="1.5" strokeDasharray="3 4" />
+    {/* soft halo */}
+    <circle cx="60" cy="60" r="42" fill="none" stroke={RED_SOFT} strokeWidth="1.5" strokeDasharray="3 4" />
 
     {/* spark accents */}
-    <circle cx="20" cy="32" r="2.5" fill={RED} />
-    <circle cx="100" cy="88" r="2.5" fill={RED} />
-    <circle cx="22" cy="90" r="2" fill={GRAPHITE} />
-    <circle cx="98" cy="30" r="2" fill={GRAPHITE} />
+    <circle cx="18" cy="30" r="2.5" fill={RED} />
+    <circle cx="102" cy="90" r="2.5" fill={RED} />
+    <circle cx="20" cy="92" r="2" fill={GRAPHITE} />
+    <circle cx="100" cy="28" r="2" fill={GRAPHITE} />
 
-    {/* RED hero badge circle */}
-    <circle cx="60" cy="60" r="32" fill={RED} />
-    <circle cx="60" cy="60" r="32" fill="none" stroke="hsl(var(--background) / 0.2)" strokeWidth="1.5" />
-
-    {/* Lucide "Handshake" icon, scaled & centered (24x24 → 48x48 at offset 36,36) */}
-    <g transform="translate(36 36) scale(2)" fill="none" stroke="hsl(var(--background))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="m11 17 2 2a1 1 0 1 0 3-3" />
-      <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" />
-      <path d="m21 3 1 11h-2" />
-      <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" />
-      <path d="M3 4h8" />
+    {/* ===== LEFT cuff (RED) — slightly tilted block with stud ===== */}
+    <g transform="rotate(-14 32 64)">
+      <rect x="14" y="54" width="22" height="22" rx="3" fill={RED} />
+      <circle cx="22" cy="65" r="3" fill="hsl(var(--background))" />
     </g>
+
+    {/* ===== RIGHT cuff (GRAPHITE) — mirrored tilted block with stud ===== */}
+    <g transform="rotate(14 88 64)">
+      <rect x="84" y="54" width="22" height="22" rx="3" fill={GRAPHITE} />
+      <circle cx="98" cy="65" r="3" fill="hsl(var(--background))" />
+    </g>
+
+    {/* ===== LEFT hand (RED) — palm + thumb wrapping around right hand ===== */}
+    <path
+      d="M30 70
+         L52 56
+         C56 53, 62 53, 66 56
+         L74 62
+         C76 63.5, 76 66, 74 67.5
+         L66 73
+         L60 77
+         L46 84
+         C42 86.5, 37 85.5, 35 82
+         L30 74
+         Z"
+      fill={RED}
+    />
+    {/* left thumb on top */}
+    <path
+      d="M52 56
+         C55 52, 60 51, 64 53
+         L70 57
+         C72 58.5, 72 61, 70 62
+         L62 66
+         Z"
+      fill={RED}
+      stroke="hsl(var(--background))"
+      strokeWidth="1.2"
+      strokeLinejoin="round"
+    />
+
+    {/* ===== RIGHT hand (GRAPHITE) — palm + fingers gripping left hand ===== */}
+    <path
+      d="M90 70
+         L70 58
+         C66 56, 60 56, 56 58
+         L46 64
+         C44 65.5, 44 68, 46 69.5
+         L56 75
+         L62 78
+         L74 84
+         C78 86, 83 85, 85 82
+         L90 74
+         Z"
+      fill={GRAPHITE}
+    />
+
+    {/* finger separation lines on right hand (the 4 fingers detail) */}
+    <g stroke="hsl(var(--background))" strokeWidth="1.2" strokeLinecap="round" fill="none">
+      <line x1="58" y1="72" x2="66" y2="76" />
+      <line x1="62" y1="70" x2="70" y2="74" />
+      <line x1="66" y1="68" x2="74" y2="72" />
+      <line x1="70" y1="66" x2="78" y2="70" />
+    </g>
+
+    {/* subtle inner highlight where the two hands meet */}
+    <path
+      d="M52 60 C56 57, 62 57, 66 60"
+      stroke="hsl(var(--background) / 0.5)"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      fill="none"
+    />
   </svg>
 );
 
