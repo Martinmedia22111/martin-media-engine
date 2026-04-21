@@ -6,12 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
-import * as Icons from "lucide-react";
-
-const getIcon = (name: string) => {
-  const Icon = (Icons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string }>>)[name];
-  return Icon ? <Icon size={24} /> : null;
-};
+import ServiceTypoIcon from "@/components/ServiceTypoIcon";
 
 const Services = () => (
   <>
