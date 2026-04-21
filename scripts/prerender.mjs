@@ -194,6 +194,9 @@ async function prerender() {
 }
 
 prerender().catch((err) => {
-  console.error("❌ Prerender failed:", err);
-  process.exit(1);
+  console.error("⚠️  Prerender failed:", err.message);
+  console.error("Build will continue without prerendering.");
+  // Don't exit with error — let the build succeed with CSR-only HTML.
+  // Redirects and other SEO improvements still apply.
+  process.exit(0);
 });
