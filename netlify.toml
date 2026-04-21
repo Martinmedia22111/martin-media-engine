@@ -2,6 +2,11 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  # Cache Puppeteer Chrome binary between builds
+  PUPPETEER_CACHE_DIR = "/opt/build/repo/.cache/puppeteer"
+  NODE_VERSION = "20"
+
 # 301 redirects from old WordPress URLs (saves accumulated SEO weight)
 [[redirects]]
   from = "/arenda-videostudii"
