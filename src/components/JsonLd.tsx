@@ -129,6 +129,40 @@ export const BreadcrumbJsonLd = ({ items }: BreadcrumbProps) => (
   </Helmet>
 );
 
+/* ── CreativeWork / CaseStudy (for case pages) ── */
+interface CaseStudyJsonLdProps {
+  name: string;
+  description: string;
+  slug: string;
+  client: string;
+  image?: string;
+  services?: string[];
+}
+
+export const CaseStudyJsonLd = ({ name, description, slug, client, image, services }: CaseStudyJsonLdProps) => (
+  <Helmet>
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name,
+      description,
+      url: `${SITE_URL}/kejsy/${slug}`,
+      image: image || "https://mmedia.by/wp-content/uploads/2024/07/logo.png",
+      creator: {
+        "@type": "Organization",
+        name: "Martin Media",
+        "@id": `${SITE_URL}/#organization`,
+      },
+      about: {
+        "@type": "Organization",
+        name: client,
+      },
+      keywords: services ? services.join(", ") : undefined,
+      inLanguage: "ru",
+    })}</script>
+  </Helmet>
+);
+
 /* ── VideoObject (for case pages with YouTube) ── */
 interface VideoJsonLdProps {
   name: string;
