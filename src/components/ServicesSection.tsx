@@ -56,8 +56,8 @@ const ServicesSection = () => (
                   {service.description}
                 </p>
                 <div className="mt-4 flex justify-center">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-foreground text-background group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                    Подробнее <ArrowRight size={12} />
+                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-secondary text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                    Подробнее
                   </span>
                 </div>
               </div>
