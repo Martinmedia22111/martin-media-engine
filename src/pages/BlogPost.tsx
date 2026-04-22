@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { Calendar, Clock, User } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
@@ -9,6 +9,7 @@ import { BreadcrumbJsonLd } from "@/components/JsonLd";
 import { blogArticles } from "@/data/blogArticles";
 import { companyInfo } from "@/data/company";
 import { Helmet } from "react-helmet-async";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -62,13 +63,11 @@ const BlogPost = () => {
       <main className="pt-20">
         <article className="section-padding bg-background">
           <div className="container max-w-3xl">
-            {/* Back link */}
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
-            >
-              <ArrowLeft size={16} /> Назад к блогу
-            </Link>
+            <Breadcrumbs items={[
+              { name: "Главная", url: "/" },
+              { name: "Блог", url: "/blog" },
+              { name: article.title.length > 40 ? article.title.substring(0, 40) + "..." : article.title },
+            ]} />
 
             {/* Header */}
             <motion.div

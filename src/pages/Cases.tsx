@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cases } from "@/data/cases";
 import { Play } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Cases = () => {
   const filtered = [...cases].reverse();
@@ -24,6 +25,7 @@ const Cases = () => {
         <section className="section-padding bg-background">
           <div className="container">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
+              <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Кейсы" }]} />
               <h1 className="text-4xl md:text-5xl font-bold text-foreground">Кейсы</h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-lg">Реальные проекты с измеримыми результатами для бизнеса</p>
             </motion.div>

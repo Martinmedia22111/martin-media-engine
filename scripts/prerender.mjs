@@ -165,8 +165,24 @@ async function prerender() {
       const url = `http://localhost:${PORT}${route}`;
       await page.goto(url, { waitUntil: "networkidle0", timeout: 30000 });
 
-      // Wait for React to mount and render
-      await new Promise((r) => setTimeout(r, 1500));
+      // Wait for React to mount, React Helmet to apply, and Framer Motion to settle
+      await new Promise((r) => setTimeout(r, 3500));
+
+      // Wait for a canonical meta tag that matches current route (confirms Helmet applied)
+      await page.waitForFunction(
+        (expectedPath) => {
+          const canonical = document.querySelector('link[rel="canonical"]');
+          if (!canonical) return false;
+          const href = canonical.getAttribute('href') || '';
+          // Homepage: href is https://mmedia.by. Other pages: https://mmedia.by<path>
+          if (expectedPath === '/') return href.endsWith('mmedia.by') || href.endsWith('mmedia.by/');
+          return href.includes(expectedPath);
+        },
+        { timeout: 5000 },
+        route
+      ).catch(() => {
+        console.warn(`   ⚠  Canonical not updated for ${route}, snapshotting anyway`);
+      });
 
       // Extract fully rendered HTML
       const html = await page.content();

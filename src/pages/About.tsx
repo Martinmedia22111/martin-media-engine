@@ -6,6 +6,7 @@ import { LocalBusinessJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Users, Award, Zap, Globe, Calendar, Video, UserCheck } from "lucide-react";
 import { companyInfo, teamStats } from "@/data/company";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const About = () => (
   <>
@@ -21,6 +22,7 @@ const About = () => (
       <section className="section-padding bg-background">
         <div className="container max-w-4xl">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "О компании" }]} />
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">О компании</h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
               Martin Media — агентство видеомаркетинга полного цикла из Минска.

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { cases } from "@/data/cases";
 import { services } from "@/data/services";
 import { CheckCircle, Quote, Play } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const getYouTubeId = (url: string) => {
   const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^&?]+)/);
@@ -103,8 +104,12 @@ const CasePage = () => {
         <section className="section-padding bg-background">
           <div className="container max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <Link to="/kejsy" className="text-sm text-muted-foreground hover:text-primary transition-colors mb-4 inline-block">← Все кейсы</Link>
-              <div className="flex flex-wrap gap-2 mb-4 mt-2">
+              <Breadcrumbs items={[
+                { name: "Главная", url: "/" },
+                { name: "Кейсы", url: "/kejsy" },
+                { name: caseItem.client },
+              ]} />
+              <div className="flex flex-wrap gap-2 mb-4">
                 {caseItem.tags.map((t) => <span key={t} className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary">{t}</span>)}
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">{caseItem.title}</h1>

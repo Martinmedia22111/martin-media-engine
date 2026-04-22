@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
 import ServiceTypoIcon from "@/components/ServiceTypoIcon";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Services = () => (
   <>
@@ -21,6 +22,7 @@ const Services = () => (
       <section className="section-padding bg-background">
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Услуги" }]} />
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Услуги</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
               Полный спектр услуг видеомаркетинга — от стратегии до готового контента

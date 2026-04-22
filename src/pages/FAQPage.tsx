@@ -4,6 +4,7 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 import { FAQJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const faqItems = [
   { question: "Сколько стоят ваши услуги?", answer: "Стоимость зависит от задачи, формата и объёма. Мы всегда подбираем решение под бюджет клиента. Оставьте заявку — подготовим индивидуальное предложение." },
@@ -28,6 +29,9 @@ const FAQPage = () => (
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "FAQ", url: "/faq" }]} />
     <Header />
     <main className="pt-20">
+      <div className="container max-w-4xl pt-8">
+        <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "FAQ" }]} />
+      </div>
       <FAQSection items={faqItems} title="Частые вопросы" subtitle="Ответы на самые популярные вопросы о работе с Martin Media" showH1 />
       <CTASection title="Не нашли ответ?" subtitle="Напишите нам — ответим в течение 24 часов" />
     </main>

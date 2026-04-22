@@ -1,10 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -27,45 +22,48 @@ const defaultFAQ: FAQItem[] = [
   { question: "Как вы измеряете результат?", answer: "Мы согласовываем KPI на старте и предоставляем регулярные отчёты. Метрики зависят от задачи: охваты, конверсии, стоимость лида, вовлечённость и др." },
 ];
 
+/**
+ * FAQ использует нативный <details>/<summary>, чтобы ВСЕ ОТВЕТЫ всегда
+ * были в DOM, видны поисковикам, AI-ботам и screen readers.
+ * По умолчанию первый вопрос открыт — даёт сразу видимый контент в пререндере.
+ */
 const FAQSection = ({ items = defaultFAQ, title = "Частые вопросы", subtitle, showH1 = false }: FAQSectionProps) => {
   const Heading = showH1 ? "h1" : "h2";
   return (
-  <section className="section-padding bg-background">
-    <div className="container max-w-3xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-10"
-      >
-        <Heading className="text-3xl md:text-4xl font-bold text-foreground">{title}</Heading>
-        {subtitle && <p className="mt-4 text-muted-foreground text-lg">{subtitle}</p>}
-      </motion.div>
+    <section className="section-padding bg-background">
+      <div className="container max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <Heading className="text-3xl md:text-4xl font-bold text-foreground">{title}</Heading>
+          {subtitle && <p className="mt-4 text-muted-foreground text-lg">{subtitle}</p>}
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <Accordion type="single" collapsible className="space-y-3">
+        <div className="space-y-3">
           {items.map((item, i) => (
-            <AccordionItem
+            <details
               key={i}
-              value={`faq-${i}`}
-              className="border border-border rounded-xl px-5 data-[state=open]:border-primary/30 transition-colors"
+              open={i === 0}
+              className="group border border-border rounded-xl px-5 open:border-primary/30 transition-colors"
             >
-              <AccordionTrigger className="text-left font-heading font-semibold text-foreground text-sm md:text-base hover:text-primary py-4">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-4">
+              <summary className="flex items-center justify-between cursor-pointer list-none font-heading font-semibold text-foreground text-sm md:text-base hover:text-primary py-4">
+                <span className="pr-4">{item.question}</span>
+                <ChevronDown
+                  className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"
+                  aria-hidden="true"
+                />
+              </summary>
+              <div className="text-muted-foreground text-sm leading-relaxed pb-4 pr-6">
                 {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+              </div>
+            </details>
           ))}
-        </Accordion>
-      </motion.div>
-    </div>
-  </section>
+        </div>
+      </div>
+    </section>
   );
 };
 

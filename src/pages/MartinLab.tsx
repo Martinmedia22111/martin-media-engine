@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Bot, Cpu, Sparkles, Zap, ArrowRight } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const MartinLab = () => (
   <>
@@ -22,6 +23,7 @@ const MartinLab = () => (
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[150px]" />
         <div className="container relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
+            <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Martin Lab" }]} className="text-neutral-400 [&_a:hover]:text-primary" />
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6">
               <Sparkles size={14} /> Martin LAB
             </span>

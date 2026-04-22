@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
@@ -8,8 +9,9 @@ import { ServiceJsonLd, FAQJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd"
 import { motion } from "framer-motion";
 import { services } from "@/data/services";
 import { cases } from "@/data/cases";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -30,21 +32,63 @@ const ServicePage = () => {
       <ServiceJsonLd name={service.title} description={service.description} slug={service.slug} />
       {service.faq.length > 0 && <FAQJsonLd items={service.faq} />}
       <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }, { name: service.shortTitle, url: `/uslugi/${service.slug}` }]} />
+      {service.testimonials && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": service.title,
+            "provider": {
+              "@type": "Organization",
+              "name": "Martin Media"
+            },
+            "review": service.testimonials.map(t => ({
+              "@type": "Review",
+              "reviewBody": t.text,
+              "author": { "@type": "Person", "name": t.author },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+            }))
+          })}</script>
+        </Helmet>
+      )}
       <Header />
       <main className="pt-20">
         {/* Hero */}
         <section className="section-padding bg-background">
           <div className="container max-w-4xl">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <Link to="/uslugi" className="text-sm text-muted-foreground hover:text-primary transition-colors mb-4 inline-block">← Все услуги</Link>
+              <Breadcrumbs items={[
+                { name: "Главная", url: "/" },
+                { name: "Услуги", url: "/uslugi" },
+                { name: service.shortTitle },
+              ]} />
               <h1 className="text-3xl md:text-5xl font-bold text-foreground mt-2">{service.title}</h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl">{service.description}</p>
+              {service.seoIntro && (
+                <div className="mt-6 text-muted-foreground leading-relaxed max-w-3xl whitespace-pre-line">
+                  {service.seoIntro}
+                </div>
+              )}
               <div className="mt-8">
                 <Button asChild variant="hero" size="lg"><Link to="/brief">Обсудить {service.shortTitle.toLowerCase()} <ArrowRight size={16} className="ml-1" /></Link></Button>
               </div>
             </motion.div>
           </div>
         </section>
+
+        {/* Pricing */}
+        {service.pricing && (
+          <section className="section-padding-sm bg-primary/[0.03] border-y border-primary/10">
+            <div className="container max-w-4xl">
+              <h2 className="text-2xl font-bold text-foreground mb-4">Стоимость услуги</h2>
+              <p className="text-3xl font-bold text-primary">{service.pricing.startingFrom}</p>
+              {service.pricing.note && <p className="text-muted-foreground mt-2">{service.pricing.note}</p>}
+              <div className="mt-4">
+                <Link to="/brief" className="text-primary font-medium hover:underline">Получить точный расчёт →</Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Pain Points */}
         <section className="section-padding-sm bg-secondary/50">
@@ -93,8 +137,24 @@ const ServicePage = () => {
           </div>
         </section>
 
+        {/* Industries */}
+        {service.industries && (
+          <section className="section-padding bg-background">
+            <div className="container max-w-4xl">
+              <h2 className="text-2xl font-bold text-foreground mb-6">Отрасли, с которыми мы работаем</h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {service.industries.map((ind) => (
+                  <div key={ind.name} className="p-4 rounded-xl border border-border bg-card text-sm font-medium text-foreground">
+                    {ind.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Results */}
-        <section className="section-padding bg-background">
+        <section className={`section-padding ${service.industries ? "bg-secondary/50" : "bg-background"}`}>
           <div className="container max-w-4xl">
             <h2 className="text-2xl font-bold text-foreground mb-6">Результаты</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -106,6 +166,27 @@ const ServicePage = () => {
             </div>
           </div>
         </section>
+
+        {/* Testimonials */}
+        {service.testimonials && (
+          <section className="section-padding bg-background">
+            <div className="container max-w-4xl">
+              <h2 className="text-2xl font-bold text-foreground mb-6">Что говорят клиенты</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {service.testimonials.map((t, i) => (
+                  <blockquote key={i} className="p-6 rounded-2xl bg-secondary/50 border border-border">
+                    <Quote size={20} className="text-primary/30 mb-3" />
+                    <p className="text-foreground leading-relaxed italic">{t.text}</p>
+                    <cite className="block mt-4 not-italic">
+                      <span className="font-heading font-semibold text-foreground text-sm">{t.author}</span>
+                      <span className="block text-xs text-muted-foreground">{t.company}</span>
+                    </cite>
+                  </blockquote>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Related Cases */}
         {relatedCases.length > 0 && (
