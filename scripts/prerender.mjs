@@ -36,6 +36,7 @@ const ROUTES = [
   "/uslugi/hr-brand",
   "/uslugi/aerosyomka-panoramy",
   "/uslugi/reklamnyye-igry",
+  "/uslugi/telegram-boty-i-sajty",
   "/kejsy",
   "/blog",
   "/o-kompanii",
