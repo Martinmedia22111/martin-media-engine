@@ -205,18 +205,6 @@ const ServicePage = () => {
           </section>
         )}
 
-        {/* For whom */}
-        <section className="section-padding bg-background">
-          <div className="container max-w-4xl">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Для кого подходит</h2>
-            <div className="flex flex-wrap gap-2">
-              {service.forWhom.map((w) => (
-                <span key={w} className="px-4 py-2 rounded-full border border-border text-sm text-foreground">{w}</span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* FAQ */}
         <FAQSection items={service.faq} title={`FAQ: ${service.shortTitle}`} />
 
