@@ -45,8 +45,32 @@ const ServicesSection = () => (
               to={`/uslugi/${service.slug}`}
               className="group flex flex-col h-full rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="relative flex items-center justify-center h-28 bg-gradient-to-br from-neutral-200 to-neutral-300 border-b border-border/60 px-4">
-                <ServiceTypoIcon slug={service.slug} className="text-[44px] sm:text-[48px]" />
+              <div
+                className="relative flex items-center justify-center h-28 border-b border-border/60 px-4 overflow-hidden"
+                style={{
+                  backgroundColor: "#c8ccd1",
+                  backgroundImage: [
+                    // top highlight
+                    "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,0.06) 62%, rgba(0,0,0,0.18) 100%)",
+                    // diagonal sheen
+                    "linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 28%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.35) 100%)",
+                    // brushed metal vertical lines
+                    "repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, rgba(0,0,0,0.05) 1px, rgba(0,0,0,0.05) 2px)",
+                    // base gradient
+                    "linear-gradient(160deg, #d8dce1 0%, #b8bcc2 50%, #9ea3aa 100%)",
+                  ].join(", "),
+                }}
+              >
+                {/* subtle inner shine */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-0 h-1/2"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse 80% 100% at 50% 0%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%)",
+                  }}
+                />
+                <ServiceTypoIcon slug={service.slug} className="relative text-[44px] sm:text-[48px] drop-shadow-sm" />
               </div>
               <div className="flex flex-col flex-1 p-5">
                 <h3 className="font-heading font-semibold text-sm text-foreground leading-snug">
