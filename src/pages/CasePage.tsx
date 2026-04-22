@@ -107,8 +107,8 @@ const CasePage = () => {
         services={caseItem.services}
       />
       {caseItem.videoUrl && <VideoJsonLd name={caseItem.title} description={caseItem.challenge} embedUrl={caseItem.videoUrl} thumbnailUrl={caseItem.coverImage} />}
-      {caseItem.videoUrls && caseItem.videoUrls.map((url, i) => (
-        <VideoJsonLd key={`vid-${i}`} name={`${caseItem.title} — видео ${i + 1}`} description={caseItem.challenge} embedUrl={url} thumbnailUrl={caseItem.coverImage} />
+      {caseItem.videoUrls && caseItem.videoUrls.map((v, i) => (
+        <VideoJsonLd key={`vid-${i}`} name={`${caseItem.title} — ${v.title}`} description={caseItem.challenge} embedUrl={v.url} thumbnailUrl={caseItem.coverImage} />
       ))}
       <Header />
       <main className="pt-20">
