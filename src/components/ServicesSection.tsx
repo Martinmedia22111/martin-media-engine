@@ -55,8 +55,10 @@ const ServicesSection = () => (
                 <p className="text-xs text-muted-foreground mt-1.5 leading-relaxed line-clamp-2 flex-1">
                   {service.description}
                 </p>
-                <div className="mt-4 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Подробнее <ArrowRight size={12} />
+                <div className="mt-4 flex justify-center">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-neutral-700 text-white group-hover:bg-primary transition-colors duration-300">
+                    Подробнее <ArrowRight size={12} />
+                  </span>
                 </div>
               </div>
             </Link>
