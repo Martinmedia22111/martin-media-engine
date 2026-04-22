@@ -48,16 +48,16 @@ const ServicesSection = () => (
               <div
                 className="relative flex items-center justify-center h-28 border-b border-border/60 px-4 overflow-hidden"
                 style={{
-                  backgroundColor: "#c8ccd1",
+                  backgroundColor: "#d6dade",
                   backgroundImage: [
                     // top highlight
-                    "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,0.06) 62%, rgba(0,0,0,0.18) 100%)",
+                    "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,0.03) 62%, rgba(0,0,0,0.08) 100%)",
                     // diagonal sheen
                     "linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 28%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.35) 100%)",
                     // brushed metal vertical lines
                     "repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, rgba(0,0,0,0.05) 1px, rgba(0,0,0,0.05) 2px)",
-                    // base gradient
-                    "linear-gradient(160deg, #d8dce1 0%, #b8bcc2 50%, #9ea3aa 100%)",
+                    // base gradient — lighter dark side
+                    "linear-gradient(160deg, #e2e6ea 0%, #cdd1d6 50%, #b8bdc3 100%)",
                   ].join(", "),
                 }}
               >
