@@ -45,7 +45,7 @@ const ServicesSection = () => (
               to={`/uslugi/${service.slug}`}
               className="group flex flex-col h-full rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="relative flex items-center justify-center h-28 bg-gradient-to-br from-muted to-secondary border-b border-border/60 px-4">
+              <div className="relative flex items-center justify-center h-28 bg-gradient-to-br from-neutral-200 to-neutral-300 border-b border-border/60 px-4">
                 <ServiceTypoIcon slug={service.slug} className="text-[44px] sm:text-[48px]" />
               </div>
               <div className="flex flex-col flex-1 p-5">
