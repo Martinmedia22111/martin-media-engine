@@ -25,8 +25,8 @@ const ServicePage = () => {
   return (
     <>
       <SEO
-        title={service.title}
-        description={service.description}
+        title={service.metaTitle ?? service.title}
+        description={service.metaDescription ?? service.description}
         path={`/uslugi/${service.slug}`}
       />
       <ServiceJsonLd name={service.title} description={service.description} slug={service.slug} />
