@@ -25,7 +25,7 @@ const Services = () => (
             <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Услуги" }]} />
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Услуги</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              Полный спектр услуг видеомаркетинга — от стратегии до готового контента
+              Полный спектр услуг рекламного агентства — от стратегии и креатива до видеопродакшна, SMM и AI-решений
             </p>
           </motion.div>
 
