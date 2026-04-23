@@ -38,8 +38,8 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-6 text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
         >
-          Контент, видеопродакшн, short-form, SMM, 3D и AI-решения,
-          собранные в единую систему маркетинга и коммуникации.
+Рекламное агентство полного цикла: стратегия, креатив, видеопродакшн,
+          SMM, performance и AI-решения — собранные в единую систему маркетинга и коммуникации.
         </motion.p>
 
         <motion.div

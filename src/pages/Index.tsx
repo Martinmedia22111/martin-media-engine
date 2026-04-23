@@ -21,8 +21,8 @@ import CTASection from "@/components/CTASection";
 const Index = () => (
   <>
     <SEO
-      title="Martin Media — видеопродакшн, контент и AI-решения для бизнеса в Минске"
-      description="Martin Media — агентство видеомаркетинга полного цикла в Минске. Видеопродакшн, TikTok, Reels, SMM, AI-видео, 3D-анимация и продвижение для бизнеса с 2015 года. 3000+ проектов, 125+ клиентов."
+      title="Martin Media — рекламное агентство полного цикла в Минске"
+      description="Martin Media — рекламное агентство полного цикла в Минске. Стратегия, креатив, видеопродакшн, SMM, performance, 3D и AI-решения для бизнеса с 2015 года. 3000+ проектов, 125+ клиентов."
       path="/"
       ogImage="https://mmedia.by/og-image.jpg"
     />

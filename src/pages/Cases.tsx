@@ -16,7 +16,7 @@ const Cases = () => {
     <>
       <SEO
         title="Кейсы и портфолио"
-        description="Кейсы Martin Media: реальные проекты с измеримыми результатами. Видеопродакшн, TikTok, SMM, AI-видео для Белагропромбанк, Domino's, Volkswagen, Coca-Cola и других."
+        description="Кейсы Martin Media: реальные проекты рекламного агентства полного цикла с измеримыми результатами. Видеопродакшн, TikTok, SMM, AI-видео для Белагропромбанк, Domino's, Volkswagen, Coca-Cola и других."
         path="/kejsy"
       />
       <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Кейсы", url: "/kejsy" }]} />
