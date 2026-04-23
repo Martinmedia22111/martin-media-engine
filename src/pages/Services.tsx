@@ -12,8 +12,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const Services = () => (
   <>
     <SEO
-      title="Услуги видеомаркетинга"
-      description="Полный спектр услуг Martin Media: видеопродакшн, рекламные ролики, TikTok и Reels, SMM-стратегия, 3D/VFX, AI-решения, корпоративные фильмы, аэросъёмка. Минск, Беларусь."
+      title="Услуги рекламного агентства"
+      description="Полный спектр услуг Martin Media как рекламного агентства полного цикла: стратегия и креатив, видеопродакшн, рекламные ролики, TikTok и Reels, SMM, performance, 3D/VFX, AI-решения. Минск, Беларусь."
       path="/uslugi"
     />
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }]} />

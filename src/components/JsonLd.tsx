@@ -13,7 +13,7 @@ export const OrganizationJsonLd = () => (
       alternateName: "Мартин Медиа",
       url: SITE_URL,
       logo: "https://mmedia.by/wp-content/uploads/2024/07/logo.png",
-      description: "Агентство видеомаркетинга полного цикла в Минске. Видеопродакшн, TikTok, Reels, SMM, AI-видео и продвижение для бизнеса с 2015 года.",
+      description: "Рекламное агентство полного цикла в Минске. Стратегия, креатив, видеопродакшн, SMM, performance и AI-решения для бизнеса с 2015 года.",
       foundingDate: "2015",
       email: "martinmedia.minsk@gmail.com",
       telephone: "+375293321356",
@@ -55,7 +55,7 @@ export const LocalBusinessJsonLd = () => (
         addressCountry: "BY",
       },
       priceRange: "$$",
-      description: "Агентство видеомаркетинга полного цикла. Видеопродакшн, SMM, AI-решения для бизнеса.",
+      description: "Рекламное агентство полного цикла. Стратегия, креатив, видеопродакшн, SMM, performance и AI-решения для бизнеса.",
       numberOfEmployees: { "@type": "QuantitativeValue", value: 14 },
       foundingDate: "2015",
     })}</script>
@@ -204,7 +204,7 @@ export const WebSiteJsonLd = () => (
       "@type": "WebSite",
       name: "Martin Media",
       url: SITE_URL,
-      description: "Агентство видеомаркетинга полного цикла в Минске. Видеопродакшн, TikTok, SMM, AI-видео.",
+      description: "Рекламное агентство полного цикла в Минске. Стратегия, креатив, видеопродакшн, SMM, performance и AI-решения.",
       publisher: { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
       inLanguage: "ru",
     })}</script>

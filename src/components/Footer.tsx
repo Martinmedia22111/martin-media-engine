@@ -18,7 +18,7 @@ const Footer = () => (
             </span>
           </Link>
           <p className="mt-4 text-sm text-neutral-400 leading-relaxed max-w-xs">
-            Агентство видеомаркетинга полного цикла. Видеопродакшн, TikTok, Reels, SMM, AI-видео и продвижение для бизнеса с 2015 года.
+            Рекламное агентство полного цикла. Стратегия, креатив, видеопродакшн, SMM, performance и AI-решения для бизнеса с 2015 года.
           </p>
           <SocialLinks className="mt-5" />
         </div>
