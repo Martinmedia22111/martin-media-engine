@@ -58,18 +58,7 @@ const HeroSection = () => (
             Martin Media —
           </span>
           <span className="block text-white/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
-            помогаем брендам
-          </span>
-          <span className="block mt-3 text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.85] tracking-tighter">
-            <span
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage:
-                  'linear-gradient(135deg, hsl(0 85% 60%) 0%, hsl(0 72% 50%) 50%, hsl(0 65% 42%) 100%)',
-              }}
-            >
-              расти.
-            </span>
+            помогаем брендам расти.
           </span>
         </motion.h1>
 
