@@ -4,7 +4,6 @@ import HeroSection from "@/components/HeroSection";
 import SEO from "@/components/SEO";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
 
-import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import ServicesSection from "@/components/ServicesSection";
 import CasesShowcase from "@/components/CasesShowcase";
 import ResultsSection from "@/components/ResultsSection";
