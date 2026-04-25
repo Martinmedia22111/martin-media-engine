@@ -6,9 +6,9 @@ import { ArrowRight, Play } from "lucide-react";
 const featured = cases.slice(0, 3);
 
 const CasesShowcase = () => (
-  <section className="section-padding gradient-dark relative overflow-hidden">
+  <section className="section-padding bg-background relative overflow-hidden">
     {/* Decorative */}
-    <div className="absolute top-0 left-[20%] w-[300px] h-[300px] rounded-full bg-primary/[0.06] blur-[120px]" />
+    <div className="absolute top-0 left-[20%] w-[300px] h-[300px] rounded-full bg-primary/[0.05] blur-[120px]" />
     
     <div className="container relative z-10">
       <motion.div
@@ -19,9 +19,9 @@ const CasesShowcase = () => (
       >
         <div>
           <Link to="/kejsy" className="hover:text-primary transition-colors">
-            <h2 className="text-3xl md:text-4xl font-bold text-white hover:text-primary transition-colors">Кейсы</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">Кейсы</h2>
           </Link>
-          <p className="mt-3 text-neutral-400 text-lg max-w-lg">
+          <p className="mt-3 text-muted-foreground text-lg max-w-lg">
             Реальные проекты с измеримыми результатами
           </p>
         </div>
@@ -41,7 +41,7 @@ const CasesShowcase = () => (
           >
             <Link
               to={`/kejsy/${c.slug}`}
-              className="group block rounded-2xl overflow-hidden border border-white/10 bg-white/[0.04] backdrop-blur-sm hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 transition-all duration-300"
+              className="group block rounded-2xl overflow-hidden border border-border bg-card hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Cover */}
               <div className={`relative h-48 overflow-hidden ${c.coverType === "logo" ? `bg-gradient-to-br ${c.coverGradient}` : ""}`}>
@@ -62,7 +62,7 @@ const CasesShowcase = () => (
                 )}
                 <div className="absolute bottom-3 left-4 flex flex-wrap gap-1.5">
                   {c.tags.slice(0, 2).map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full bg-white/10 text-white backdrop-blur-sm">
+                    <span key={tag} className="px-2.5 py-1 text-xs font-medium rounded-full bg-white/15 text-white backdrop-blur-sm">
                       {tag}
                     </span>
                   ))}
@@ -70,8 +70,8 @@ const CasesShowcase = () => (
               </div>
               {/* Content */}
               <div className="p-5">
-                <p className="text-xs text-neutral-500 mb-2">{c.client} · {c.industry}</p>
-                <h3 className="font-heading font-semibold text-white leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                <p className="text-xs text-muted-foreground mb-2">{c.client} · {c.industry}</p>
+                <h3 className="font-heading font-semibold text-foreground leading-snug group-hover:text-primary transition-colors line-clamp-2">
                   {c.title}
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
