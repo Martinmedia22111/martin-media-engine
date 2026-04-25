@@ -35,6 +35,7 @@ const Index = () => (
       <InlineContactForm
         title="Нужен видеоконтент?"
         subtitle="Оставьте контакты — обсудим задачи и предложим решение"
+        variant="dark"
       />
       <CasesShowcase />
       <ResultsSection />
