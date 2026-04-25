@@ -1,56 +1,103 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { stats } from "@/data/company";
 
 const HeroSection = () => (
-  <section className="relative min-h-[90vh] flex items-center overflow-hidden gradient-hero pt-20">
-    {/* Decorative elements */}
-    <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.08] blur-[150px]" />
-    <div className="absolute bottom-0 left-[-100px] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
-    <div className="absolute top-1/2 right-[15%] w-40 h-40 border border-primary/10 rounded-full" />
-    <div className="absolute top-[25%] right-[8%] w-20 h-20 border border-primary/20 rounded-full" />
-    {/* Subtle grid pattern */}
-    <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(hsl(0 0% 100% / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+  <section className="relative min-h-screen flex items-center overflow-hidden gradient-hero pt-24 pb-16">
+    {/* Animated red orb */}
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1.5 }}
+      className="absolute top-[10%] right-[-10%] w-[700px] h-[700px] rounded-full bg-primary/[0.18] blur-[180px]"
+    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: 0.3 }}
+      className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] rounded-full bg-primary/[0.08] blur-[150px]"
+    />
+
+    {/* Grid pattern */}
+    <div
+      className="absolute inset-0 opacity-[0.04]"
+      style={{
+        backgroundImage:
+          'linear-gradient(hsl(0 0% 100% / 0.15) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.15) 1px, transparent 1px)',
+        backgroundSize: '80px 80px',
+      }}
+    />
+
+    {/* Diagonal accent line */}
+    <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
 
     <div className="container relative z-10">
-      <div className="max-w-5xl">
+      <div className="max-w-6xl">
+        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/30 backdrop-blur-sm"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-6 border border-primary/20">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            С 2015 года · Видео · Контент · AI
-          </div>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
-            <span className="text-white">Martin Media — </span>
-            <span className="text-white">помогаем брендам </span>
-            <span className="text-primary">расти.</span>
-          </h1>
+          <Sparkles size={14} className="text-primary" />
+          <span>С 2015 · Видео · Контент · AI</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
         </motion.div>
 
+        {/* Headline — экспрессивная типографика */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-heading font-bold leading-[0.95] tracking-tight"
+        >
+          <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+            Martin Media —
+          </span>
+          <span className="block text-white/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
+            помогаем брендам
+          </span>
+          <span className="block mt-3 text-7xl sm:text-8xl md:text-9xl lg:text-[11rem] leading-[0.85] tracking-tighter">
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  'linear-gradient(135deg, hsl(0 85% 60%) 0%, hsl(0 72% 50%) 50%, hsl(0 65% 42%) 100%)',
+              }}
+            >
+              расти.
+            </span>
+          </span>
+        </motion.h1>
+
+        {/* Subline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-6 text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="mt-10 text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
         >
-Рекламное агентство полного цикла: стратегия, креатив, видеопродакшн,
+          Рекламное агентство полного цикла: стратегия, креатив, видеопродакшн,
           SMM, performance и AI-решения — собранные в единую систему маркетинга и коммуникации.
         </motion.p>
 
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-10 flex flex-col sm:flex-row gap-4"
         >
-          <Button asChild variant="hero" size="xl">
+          <Button asChild variant="hero" size="xl" className="group">
             <Link to="/brief">
-              Рассчитать стоимость <ArrowRight className="ml-1" size={18} />
+              Рассчитать стоимость
+              <ArrowRight
+                className="ml-1 transition-transform group-hover:translate-x-1"
+                size={18}
+              />
             </Link>
           </Button>
           <Button asChild variant="hero-outline" size="xl">
@@ -59,19 +106,29 @@ const HeroSection = () => (
         </motion.div>
       </div>
 
-      {/* Stats bar */}
+      {/* Stats — минималистичная лента с красной верхней чертой */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.5 }}
-        className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 rounded-2xl px-8 py-8"
-        style={{ background: 'linear-gradient(135deg, hsl(0 10% 14%) 0%, hsl(0 15% 12%) 100%)' }}
+        transition={{ duration: 0.8, delay: 0.7 }}
+        className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/10"
       >
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <div className="font-heading text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
-            <div className="text-base text-white mt-1">{stat.label}</div>
-          </div>
+        {stats.map((stat, i) => (
+          <motion.div
+            key={stat.label}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
+            className="relative group px-6 py-8 bg-[hsl(0_10%_8%)] hover:bg-[hsl(0_15%_10%)] transition-colors"
+          >
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="font-heading text-4xl md:text-5xl font-bold text-white tracking-tight">
+              {stat.value}
+            </div>
+            <div className="text-sm text-neutral-400 mt-2 leading-tight">
+              {stat.label}
+            </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>
