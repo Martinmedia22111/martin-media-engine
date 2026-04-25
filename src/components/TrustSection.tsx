@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const TrustSection = () => (
-  <section className="section-padding bg-secondary/50">
+  <section className="section-padding bg-[hsl(0_45%_12%)]">
     <div className="container">
       {/* Numbers */}
       <motion.div
