@@ -61,6 +61,7 @@ const Services = () => (
       path="/uslugi"
     />
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }]} />
+    <FAQJsonLd items={servicesFAQ} />
     <Header />
     <main className="pt-20">
       <section className="section-padding bg-background pb-8">
