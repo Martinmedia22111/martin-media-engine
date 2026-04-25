@@ -10,12 +10,12 @@ type Result = {
 };
 
 const results: Result[] = [
-  { icon: TrendingUp, metric: "200", metricSuffix: "–400%", title: "Рост охватов", description: "Системный контент вместо разовых публикаций" },
-  { icon: Target, metric: "−40", metricSuffix: "%", title: "Стоимость лида", description: "Видеоконтент конвертирует лучше статики" },
-  { icon: Rocket, metric: "2–4", metricSuffix: " нед.", title: "Запуск проекта", description: "От брифа до первых результатов" },
-  { icon: Bot, metric: "24/7", title: "AI-ассистенты", description: "Работают без выходных и перерывов" },
-  { icon: Layers, metric: "1", metricSuffix: " команда", title: "Полный цикл", description: "Стратегия → продакшн → дистрибуция" },
-  { icon: BarChart3, metric: "100", metricSuffix: "%", title: "Прозрачность", description: "Метрики и аналитика с первого месяца" },
+  { icon: TrendingUp, metric: "×3", title: "Рост охватов", description: "Системный контент даёт в среднем трёхкратный прирост аудитории за квартал" },
+  { icon: Target, metric: "−40", metricSuffix: "%", title: "Стоимость лида", description: "Видеоконтент конвертирует дешевле статики и дольше работает в ленте" },
+  { icon: Rocket, metric: "2–4", metricSuffix: " нед.", title: "Запуск проекта", description: "От брифа до первых публикаций и измеримых результатов" },
+  { icon: Bot, metric: "24/7", title: "AI-ассистенты", description: "Работают без выходных, перерывов и человеческого фактора" },
+  { icon: Layers, metric: "1", metricSuffix: " команда", title: "Полный цикл", description: "Стратегия, продакшн и дистрибуция в одном контракте" },
+  { icon: BarChart3, metric: "100", metricSuffix: "%", title: "Прозрачность", description: "Метрики и сквозная аналитика доступны с первого месяца" },
 ];
 
 const ResultsSection = () => (
