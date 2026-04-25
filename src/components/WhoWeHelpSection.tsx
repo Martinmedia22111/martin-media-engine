@@ -9,21 +9,21 @@ const segments: { scene: AudienceSceneKey; title: string }[] = [
 ];
 
 const WhoWeHelpSection = () => (
-  <section className="py-12 md:py-16 bg-background">
+  <section className="py-16 md:py-20 bg-background">
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-8 md:mb-10"
+        className="text-center mb-10 md:mb-12"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground">Кому мы помогаем</h2>
-        <p className="mt-2 text-muted-foreground text-base max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Кому мы помогаем</h2>
+        <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
           Маркетинговое агентство полного цикла: реклама, digital, performance, SEO, видеопродакшн и AI
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
         {segments.map((item, i) => (
           <motion.div
             key={item.title}
@@ -31,12 +31,12 @@ const WhoWeHelpSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group flex items-center gap-3 p-3 md:p-4 rounded-xl bg-card border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300"
+            className="group flex items-center gap-4 p-5 md:p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
           >
-            <div className="w-12 h-12 md:w-14 md:h-14 shrink-0 transition-transform duration-500 group-hover:scale-110">
+            <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 transition-transform duration-500 group-hover:scale-110">
               <AudienceSceneIcon scene={item.scene} />
             </div>
-            <h3 className="font-heading font-semibold text-sm md:text-base text-foreground leading-tight">
+            <h3 className="font-heading font-semibold text-base md:text-lg text-foreground leading-tight">
               {item.title}
             </h3>
           </motion.div>
