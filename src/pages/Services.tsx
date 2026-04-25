@@ -19,7 +19,7 @@ const Services = () => (
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }]} />
     <Header />
     <main className="pt-20">
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-background pb-8">
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Услуги" }]} />
@@ -29,13 +29,68 @@ const Services = () => (
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+          {/* Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8"
+          >
+            {[
+              { value: "3000+", label: "Реализованных проектов" },
+              { value: "125+", label: "Довольных клиентов" },
+              { value: "100M+", label: "Просмотров контента" },
+              { value: "9+", label: "Лет на рынке" },
+            ].map((n) => (
+              <div key={n.label} className="text-center">
+                <div className="font-heading text-3xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                  {n.value}
+                </div>
+                <div className="text-sm text-muted-foreground mt-2">{n.label}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sticky category nav */}
+      <div className="sticky top-20 z-30 bg-background/85 backdrop-blur-md border-y border-border">
+        <div className="container">
+          <nav className="flex gap-2 overflow-x-auto py-3 scrollbar-hide">
+            {serviceCategories.map((cat) => {
+              const has = services.some((s) => s.category === cat.id);
+              if (!has) return null;
+              return (
+                <a
+                  key={cat.id}
+                  href={`#cat-${cat.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById(`cat-${cat.id}`);
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.scrollY - 140;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                  }}
+                  className="shrink-0 inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                >
+                  {cat.label}
+                </a>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+
+      <section className="section-padding bg-background pt-10">
+        <div className="container">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {serviceCategories.map((cat) => {
               const catServices = services.filter((s) => s.category === cat.id);
               if (catServices.length === 0) return null;
               return (
                 <div key={cat.id} className="contents">
-                  <div className="col-span-full mt-6 first:mt-0">
+                  <div id={`cat-${cat.id}`} className="col-span-full mt-6 first:mt-0 scroll-mt-40">
                     <h2 className="text-2xl font-bold text-foreground">{cat.label}</h2>
                     <p className="text-muted-foreground mt-1">{cat.description}</p>
                   </div>
