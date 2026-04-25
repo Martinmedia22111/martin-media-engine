@@ -29,14 +29,16 @@ const Services = () => (
             </p>
           </motion.div>
 
-          {serviceCategories.map((cat) => {
-            const catServices = services.filter((s) => s.category === cat.id);
-            if (catServices.length === 0) return null;
-            return (
-              <div key={cat.id} className="mt-14">
-                <h2 className="text-2xl font-bold text-foreground">{cat.label}</h2>
-                <p className="text-muted-foreground mt-1">{cat.description}</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+            {serviceCategories.map((cat) => {
+              const catServices = services.filter((s) => s.category === cat.id);
+              if (catServices.length === 0) return null;
+              return (
+                <div key={cat.id} className="contents">
+                  <div className="col-span-full mt-6 first:mt-0">
+                    <h2 className="text-2xl font-bold text-foreground">{cat.label}</h2>
+                    <p className="text-muted-foreground mt-1">{cat.description}</p>
+                  </div>
                   {catServices.map((s, i) => (
                     <motion.div key={s.slug} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }}>
                       <Link
@@ -82,9 +84,9 @@ const Services = () => (
                     </motion.div>
                   ))}
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
       <CTASection />
