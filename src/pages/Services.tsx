@@ -189,6 +189,11 @@ const Services = () => (
           </div>
         </div>
       </section>
+      <FAQSection
+        items={servicesFAQ}
+        title="Частые вопросы об услугах"
+        subtitle="Коротко о форматах работы, сроках, стоимости и результатах"
+      />
       <CTASection />
     </main>
     <Footer />
