@@ -100,7 +100,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.7 }}
-        className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-px bg-primary/10 rounded-2xl overflow-hidden border border-primary/20"
+        className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/10"
       >
         {stats.map((stat, i) => (
           <motion.div
@@ -108,7 +108,7 @@ const HeroSection = () => (
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 + i * 0.1 }}
-            className="relative group px-6 py-8 bg-[hsl(0_55%_18%)] hover:bg-[hsl(0_60%_22%)] transition-colors"
+            className="relative group px-6 py-8 bg-transparent hover:bg-white/[0.03] transition-colors"
           >
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="font-heading text-4xl md:text-5xl font-bold text-white tracking-tight">
