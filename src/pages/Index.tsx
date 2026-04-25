@@ -8,7 +8,7 @@ import ServicesSection from "@/components/ServicesSection";
 import CasesShowcase from "@/components/CasesShowcase";
 import ResultsSection from "@/components/ResultsSection";
 import ClientsMarquee from "@/components/ClientsMarquee";
-import TrustSection from "@/components/TrustSection";
+
 import MartinLabSection from "@/components/MartinLabSection";
 import ProcessSection from "@/components/ProcessSection";
 import InlineContactForm from "@/components/InlineContactForm";
