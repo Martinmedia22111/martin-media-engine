@@ -35,7 +35,7 @@ const WhoWeHelpSection = () => (
       >
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Кому мы помогаем</h2>
         <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-          Работаем с компаниями, которые хотят расти через медиа, контент и технологии
+          Маркетинговое агентство полного цикла: реклама, digital, performance, SEO, видеопродакшн и AI
         </p>
       </motion.div>
 
