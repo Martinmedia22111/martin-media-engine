@@ -1,41 +1,45 @@
 import { motion } from "framer-motion";
 import { FileText, Lightbulb, Film, Rocket, BarChart3 } from "lucide-react";
 
+// Monochrome dark with red accent
+const stepGradient = "from-[#1f2937] to-[#0b0f17]"; // slate-800 → near-black
+const stepGlow = "shadow-[0_10px_40px_-10px_rgba(220,38,38,0.45)]";
+
 const steps = [
   {
     icon: FileText,
     title: "Бриф",
     description: "Разбираемся в задаче, целях и аудитории вашего бизнеса",
-    gradient: "from-[#ef4444] to-[#f97316]", // red → orange
-    glow: "shadow-[0_10px_40px_-10px_rgba(239,68,68,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: Lightbulb,
     title: "Стратегия",
     description: "Формируем подход, концепцию и план действий",
-    gradient: "from-[#f97316] to-[#eab308]", // orange → yellow
-    glow: "shadow-[0_10px_40px_-10px_rgba(249,115,22,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: Film,
     title: "Продакшн",
     description: "Создаём контент: видео, графика, тексты, AI-решения",
-    gradient: "from-[#dc2626] to-[#a855f7]", // red → purple
-    glow: "shadow-[0_10px_40px_-10px_rgba(168,85,247,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: Rocket,
     title: "Запуск",
     description: "Запускаем в работу, интегрируем с вашими процессами",
-    gradient: "from-[#a855f7] to-[#3b82f6]", // purple → blue
-    glow: "shadow-[0_10px_40px_-10px_rgba(59,130,246,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: BarChart3,
     title: "Аналитика",
     description: "Измеряем результат и оптимизируем на основе данных",
-    gradient: "from-[#3b82f6] to-[#10b981]", // blue → green
-    glow: "shadow-[0_10px_40px_-10px_rgba(16,185,129,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
 ];
 
