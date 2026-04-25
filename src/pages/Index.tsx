@@ -39,7 +39,6 @@ const Index = () => (
       <CasesShowcase />
       <ResultsSection />
       <ClientsMarquee />
-      <TrustSection />
       <MartinLabSection />
       <ProcessSection />
       <SeoTextSection />
