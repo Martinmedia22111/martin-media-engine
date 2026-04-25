@@ -6,9 +6,9 @@ import { ArrowRight, Play } from "lucide-react";
 const featured = cases.slice(0, 3);
 
 const CasesShowcase = () => (
-  <section className="section-padding gradient-dark relative overflow-hidden">
+  <section className="section-padding bg-background relative overflow-hidden">
     {/* Decorative */}
-    <div className="absolute top-0 left-[20%] w-[300px] h-[300px] rounded-full bg-primary/[0.06] blur-[120px]" />
+    <div className="absolute top-0 left-[20%] w-[300px] h-[300px] rounded-full bg-primary/[0.05] blur-[120px]" />
     
     <div className="container relative z-10">
       <motion.div
@@ -19,9 +19,9 @@ const CasesShowcase = () => (
       >
         <div>
           <Link to="/kejsy" className="hover:text-primary transition-colors">
-            <h2 className="text-3xl md:text-4xl font-bold text-white hover:text-primary transition-colors">Кейсы</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">Кейсы</h2>
           </Link>
-          <p className="mt-3 text-neutral-400 text-lg max-w-lg">
+          <p className="mt-3 text-muted-foreground text-lg max-w-lg">
             Реальные проекты с измеримыми результатами
           </p>
         </div>
