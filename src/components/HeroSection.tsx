@@ -58,7 +58,7 @@ const HeroSection = () => (
             Martin Media —
           </span>
           <span className="block text-white/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
-            помогаем брендам расти.
+            помогаем брендам <span className="text-primary">расти.</span>
           </span>
         </motion.h1>
 
