@@ -64,16 +64,16 @@ const ProcessSection = () => (
 
       {/* Desktop: horizontal connected timeline */}
       <div className="hidden md:block relative">
-        {/* Animated connecting line */}
+        {/* Animated connecting line — red accent */}
         <div className="absolute top-[52px] left-[10%] right-[10%] h-[3px] rounded-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#ef4444] via-[#a855f7] to-[#10b981] opacity-30" />
+          <div className="absolute inset-0 bg-primary/15" />
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.8, ease: "easeOut" }}
             style={{ transformOrigin: "left" }}
-            className="absolute inset-0 bg-gradient-to-r from-[#ef4444] via-[#a855f7] to-[#10b981]"
+            className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary to-primary/60"
           />
         </div>
 
