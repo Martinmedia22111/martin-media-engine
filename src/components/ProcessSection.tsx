@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { FileText, Lightbulb, Film, Rocket, BarChart3 } from "lucide-react";
 
-// Monochrome dark with red accent
-const stepGradient = "from-[#1f2937] to-[#0b0f17]"; // slate-800 → near-black
-const stepGlow = "shadow-[0_10px_40px_-10px_rgba(220,38,38,0.45)]";
+// Light monochrome with red accent
+const stepGradient = "from-white to-[#f1f3f5]"; // soft light gradient
+const stepGlow = "shadow-[0_10px_30px_-10px_rgba(220,38,38,0.25)]";
 
 const steps = [
   {
