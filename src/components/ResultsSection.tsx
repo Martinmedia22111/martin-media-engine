@@ -66,7 +66,7 @@ const ResultsSection = () => (
       </motion.div>
 
       {/* Diagonal grid: each row offset for rhythm */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 rounded-3xl overflow-hidden border border-neutral-200 shadow-[0_30px_80px_-30px_hsl(0_0%_0%/0.15)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200/70 rounded-3xl overflow-hidden border border-neutral-200 shadow-[0_40px_100px_-30px_hsl(220_30%_20%/0.18)]">
         {results.map((r, i) => {
           const Icon = r.icon;
           return (
