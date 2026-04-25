@@ -8,7 +8,7 @@ const TrustSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
+        className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 rounded-2xl border border-primary/20 bg-primary/15 p-6 md:p-8"
       >
         {[
           { value: "3000+", label: "Реализованных проектов" },
