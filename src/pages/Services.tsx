@@ -1,13 +1,57 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 import SEO from "@/components/SEO";
-import { BreadcrumbJsonLd } from "@/components/JsonLd";
+import { BreadcrumbJsonLd, FAQJsonLd } from "@/components/JsonLd";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { services, serviceCategories } from "@/data/services";
 import ServiceTypoIcon from "@/components/ServiceTypoIcon";
 import Breadcrumbs from "@/components/Breadcrumbs";
+
+const servicesFAQ = [
+  {
+    question: "Какие услуги вы оказываете?",
+    answer:
+      "Martin Media — рекламное агентство полного цикла: видеопродакшн, рекламные ролики, TikTok и Reels, SMM, performance-маркетинг, 3D/VFX, AI-решения, разработка ботов и сайтов, PR. Полный список — в каталоге выше.",
+  },
+  {
+    question: "Можно ли заказать одну услугу или только пакет?",
+    answer:
+      "Можно и то, и другое. Берём как разовые проекты (например, один ролик или серия Reels), так и комплексное сопровождение: стратегия + продакшн + дистрибуция. Комплексный подход обычно даёт кратно больший результат.",
+  },
+  {
+    question: "Сколько стоит услуга?",
+    answer:
+      "Цена зависит от задачи, формата, объёма работ, сроков и состава команды. Мы не публикуем прайс, потому что одинаковая по названию услуга может отличаться в 5–10 раз. После брифа в течение 1–2 дней присылаем смету и тайминг.",
+  },
+  {
+    question: "Сколько времени занимает запуск проекта?",
+    answer:
+      "Обычно стартуем в течение 3–5 рабочих дней после согласования брифа и договора. Сроки реализации зависят от услуги: Reels — от 5–7 дней, рекламный ролик — от 3–4 недель, комплексный SMM — стартует в течение 1–2 недель.",
+  },
+  {
+    question: "Работаете ли вы с компаниями за пределами Беларуси?",
+    answer:
+      "Да. Мы работаем с клиентами из Беларуси, России, Казахстана, ЕС и других стран. Большую часть процессов ведём удалённо, на съёмки выезжаем по согласованию.",
+  },
+  {
+    question: "Подходят ли ваши услуги малому бизнесу?",
+    answer:
+      "Да. У нас есть форматы и под крупные бренды (TV-ролики, федеральные кампании), и под малый бизнес (короткие Reels, контент-абонементы, таргет). Подбираем решение под задачу и бюджет.",
+  },
+  {
+    question: "Как вы измеряете результат?",
+    answer:
+      "На старте согласовываем KPI: охваты, просмотры, стоимость лида, конверсии, ER, рост подписчиков и т.д. Регулярно присылаем отчёты с цифрами и выводами, корректируем стратегию по данным.",
+  },
+  {
+    question: "Какие гарантии и что входит в договор?",
+    answer:
+      "Работаем по официальному договору, при необходимости — NDA. В договоре фиксируем объём работ, сроки, количество правок, условия оплаты и передачи прав на материалы. Все исходники и права передаём заказчику.",
+  },
+];
 
 const Services = () => (
   <>
@@ -17,6 +61,7 @@ const Services = () => (
       path="/uslugi"
     />
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "Услуги", url: "/uslugi" }]} />
+    <FAQJsonLd items={servicesFAQ} />
     <Header />
     <main className="pt-20">
       <section className="section-padding bg-background pb-8">
@@ -144,6 +189,11 @@ const Services = () => (
           </div>
         </div>
       </section>
+      <FAQSection
+        items={servicesFAQ}
+        title="Частые вопросы об услугах"
+        subtitle="Коротко о форматах работы, сроках, стоимости и результатах"
+      />
       <CTASection />
     </main>
     <Footer />
