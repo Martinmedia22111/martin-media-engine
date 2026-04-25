@@ -20,11 +20,12 @@ const results: Result[] = [
 
 const ResultsSection = () => (
   <section className="relative overflow-hidden bg-[hsl(220_13%_91%)] py-24 md:py-32">
-    {/* Soft background accents */}
-    <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[160px]" />
-    <div className="absolute bottom-0 right-[-5%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[140px]" />
-    {/* Subtle vertical gradient for depth */}
-    <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220_13%_94%)]/60 via-transparent to-[hsl(220_15%_86%)]/70 pointer-events-none" />
+    {/* Bordeaux radial accents */}
+    <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[hsl(0_70%_35%)]/20 blur-[160px]" />
+    <div className="absolute bottom-[-10%] right-[-8%] w-[550px] h-[550px] rounded-full bg-[hsl(0_75%_30%)]/18 blur-[150px]" />
+    <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full bg-[hsl(350_60%_40%)]/12 blur-[180px]" />
+    {/* Diagonal bordeaux gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[hsl(0_50%_40%)]/[0.04] to-[hsl(0_60%_25%)]/[0.10] pointer-events-none" />
 
     {/* Grid pattern */}
     <div
