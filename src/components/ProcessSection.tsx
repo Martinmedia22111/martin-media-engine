@@ -124,7 +124,7 @@ const ProcessSection = () => (
             >
               <div className="relative flex-shrink-0">
                 <div
-                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center ring-4 ring-background`}
+                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center ring-1 ring-primary/15 border border-border`}
                 >
                   <step.icon size={26} strokeWidth={2} className="text-primary" />
                 </div>
