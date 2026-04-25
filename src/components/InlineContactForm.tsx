@@ -43,7 +43,13 @@ const InlineContactForm = ({
   const isDark = variant === "dark";
 
   return (
-    <section className={isDark ? "section-padding bg-foreground" : "section-padding bg-secondary"}>
+    <section
+      className={
+        isDark
+          ? "section-padding bg-foreground"
+          : "section-padding bg-[radial-gradient(ellipse_at_top,hsl(0_60%_18%)_0%,hsl(0_0%_4%)_70%)]"
+      }
+    >
       <div className="container max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
