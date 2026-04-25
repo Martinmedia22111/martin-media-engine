@@ -31,7 +31,6 @@ const Index = () => (
     <main>
       <HeroSection />
       
-      <WhoWeHelpSection />
       <ServicesSection />
       <InlineContactForm
         title="Нужен видеоконтент?"
