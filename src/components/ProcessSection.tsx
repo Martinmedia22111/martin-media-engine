@@ -111,7 +111,7 @@ const ProcessSection = () => (
 
       {/* Mobile: vertical connected timeline */}
       <div className="md:hidden relative">
-        <div className="absolute left-[34px] top-4 bottom-4 w-[3px] bg-gradient-to-b from-[#ef4444] via-[#a855f7] to-[#10b981] rounded-full opacity-40" />
+        <div className="absolute left-[34px] top-4 bottom-4 w-[3px] bg-primary/30 rounded-full" />
         <div className="space-y-6">
           {steps.map((step, i) => (
             <motion.div
@@ -124,9 +124,9 @@ const ProcessSection = () => (
             >
               <div className="relative flex-shrink-0">
                 <div
-                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center text-white ring-4 ring-background`}
+                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center ring-4 ring-background`}
                 >
-                  <step.icon size={26} strokeWidth={2} />
+                  <step.icon size={26} strokeWidth={2} className="text-primary" />
                 </div>
                 <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-background border-2 border-foreground/10 text-foreground text-xs font-bold flex items-center justify-center">
                   {i + 1}
