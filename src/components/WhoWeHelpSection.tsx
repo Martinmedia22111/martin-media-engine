@@ -4,23 +4,23 @@ import AudienceSceneIcon, { type AudienceSceneKey } from "./AudienceSceneIcon";
 const segments: { scene: AudienceSceneKey; title: string; description: string }[] = [
   {
     scene: "brands",
-    title: "Бренды, которым нужен системный видеоконтент",
-    description: "Выстроим производство контента как предсказуемый процесс",
+    title: "Брендам, которым нужен сильный маркетинг",
+    description: "Стратегия, позиционирование, креатив и реклама — как единая система роста",
   },
   {
     scene: "vertical",
-    title: "Компании, выходящие в TikTok и Reels",
-    description: "Стратегия, производство и аналитика вертикального контента",
+    title: "Бизнесу, который растёт через digital",
+    description: "Performance, таргет, SEO и контент — приводим клиентов и считаем результат",
   },
   {
     scene: "ai",
-    title: "Бизнесы, внедряющие AI в маркетинг",
-    description: "AI-ассистенты, автоматизация, интеграции с вашими процессами",
+    title: "Компаниям, внедряющим AI в маркетинг",
+    description: "AI-ассистенты, автоматизация процессов и интеграции с вашими системами",
   },
   {
     scene: "cmo",
-    title: "Маркетинг-директора, ищущие сильного партнёра",
-    description: "Одна команда вместо пяти подрядчиков — продакшн, контент, AI",
+    title: "Маркетинг-директорам — сильный партнёр",
+    description: "Одна команда вместо десяти подрядчиков: реклама, digital, продакшн, AI",
   },
 ];
 
@@ -35,7 +35,7 @@ const WhoWeHelpSection = () => (
       >
         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Кому мы помогаем</h2>
         <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-          Работаем с компаниями, которые хотят расти через медиа, контент и технологии
+          Маркетинговое агентство полного цикла: реклама, digital, performance, SEO, видеопродакшн и AI
         </p>
       </motion.div>
 
