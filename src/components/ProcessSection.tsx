@@ -1,41 +1,45 @@
 import { motion } from "framer-motion";
 import { FileText, Lightbulb, Film, Rocket, BarChart3 } from "lucide-react";
 
+// Monochrome dark with red accent
+const stepGradient = "from-[#1f2937] to-[#0b0f17]"; // slate-800 → near-black
+const stepGlow = "shadow-[0_10px_40px_-10px_rgba(220,38,38,0.45)]";
+
 const steps = [
   {
     icon: FileText,
     title: "Бриф",
     description: "Разбираемся в задаче, целях и аудитории вашего бизнеса",
-    gradient: "from-[#ef4444] to-[#f97316]", // red → orange
-    glow: "shadow-[0_10px_40px_-10px_rgba(239,68,68,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: Lightbulb,
     title: "Стратегия",
     description: "Формируем подход, концепцию и план действий",
-    gradient: "from-[#f97316] to-[#eab308]", // orange → yellow
-    glow: "shadow-[0_10px_40px_-10px_rgba(249,115,22,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: Film,
     title: "Продакшн",
     description: "Создаём контент: видео, графика, тексты, AI-решения",
-    gradient: "from-[#dc2626] to-[#a855f7]", // red → purple
-    glow: "shadow-[0_10px_40px_-10px_rgba(168,85,247,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: Rocket,
     title: "Запуск",
     description: "Запускаем в работу, интегрируем с вашими процессами",
-    gradient: "from-[#a855f7] to-[#3b82f6]", // purple → blue
-    glow: "shadow-[0_10px_40px_-10px_rgba(59,130,246,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
   {
     icon: BarChart3,
     title: "Аналитика",
     description: "Измеряем результат и оптимизируем на основе данных",
-    gradient: "from-[#3b82f6] to-[#10b981]", // blue → green
-    glow: "shadow-[0_10px_40px_-10px_rgba(16,185,129,0.6)]",
+    gradient: stepGradient,
+    glow: stepGlow,
   },
 ];
 
@@ -60,16 +64,16 @@ const ProcessSection = () => (
 
       {/* Desktop: horizontal connected timeline */}
       <div className="hidden md:block relative">
-        {/* Animated connecting line */}
+        {/* Animated connecting line — red accent */}
         <div className="absolute top-[52px] left-[10%] right-[10%] h-[3px] rounded-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#ef4444] via-[#a855f7] to-[#10b981] opacity-30" />
+          <div className="absolute inset-0 bg-primary/15" />
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.8, ease: "easeOut" }}
             style={{ transformOrigin: "left" }}
-            className="absolute inset-0 bg-gradient-to-r from-[#ef4444] via-[#a855f7] to-[#10b981]"
+            className="absolute inset-0 bg-gradient-to-r from-primary/60 via-primary to-primary/60"
           />
         </div>
 
@@ -88,9 +92,9 @@ const ProcessSection = () => (
                 {/* Outer ring on hover */}
                 <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500`} />
                 <div
-                  className={`relative w-[104px] h-[104px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ring-4 ring-background`}
+                  className={`relative w-[104px] h-[104px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ring-4 ring-background`}
                 >
-                  <step.icon size={36} strokeWidth={2} />
+                  <step.icon size={36} strokeWidth={2} className="text-primary" />
                 </div>
                 {/* Number badge */}
                 <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-background border-2 border-foreground/10 text-foreground text-sm font-bold flex items-center justify-center shadow-md">
@@ -107,7 +111,7 @@ const ProcessSection = () => (
 
       {/* Mobile: vertical connected timeline */}
       <div className="md:hidden relative">
-        <div className="absolute left-[34px] top-4 bottom-4 w-[3px] bg-gradient-to-b from-[#ef4444] via-[#a855f7] to-[#10b981] rounded-full opacity-40" />
+        <div className="absolute left-[34px] top-4 bottom-4 w-[3px] bg-primary/30 rounded-full" />
         <div className="space-y-6">
           {steps.map((step, i) => (
             <motion.div
@@ -120,9 +124,9 @@ const ProcessSection = () => (
             >
               <div className="relative flex-shrink-0">
                 <div
-                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center text-white ring-4 ring-background`}
+                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center ring-4 ring-background`}
                 >
-                  <step.icon size={26} strokeWidth={2} />
+                  <step.icon size={26} strokeWidth={2} className="text-primary" />
                 </div>
                 <div className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-background border-2 border-foreground/10 text-foreground text-xs font-bold flex items-center justify-center">
                   {i + 1}
