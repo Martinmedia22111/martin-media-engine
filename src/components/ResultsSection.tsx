@@ -43,7 +43,7 @@ const ResultsSection = () => (
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="max-w-3xl mb-16 md:mb-20"
+        className="max-w-3xl mx-auto text-center mb-16 md:mb-20"
       >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-medium mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -61,7 +61,7 @@ const ResultsSection = () => (
             бизнес.
           </span>
         </h2>
-        <p className="mt-6 text-neutral-600 text-lg max-w-xl leading-relaxed">
+        <p className="mt-6 text-neutral-600 text-lg max-w-xl mx-auto leading-relaxed">
           Не просто контент, а измеримый рост бизнес-показателей.
         </p>
       </motion.div>
