@@ -110,7 +110,7 @@ const ResultsSection = () => (
                 <h3 className="mt-4 font-heading font-semibold text-white text-lg">
                   {r.title}
                 </h3>
-                <p className="mt-1.5 text-sm text-neutral-400 leading-relaxed">
+                <p className="mt-1.5 text-sm leading-relaxed text-destructive-foreground">
                   {r.description}
                 </p>
               </div>
