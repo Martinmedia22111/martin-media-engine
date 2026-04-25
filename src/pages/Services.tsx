@@ -68,8 +68,8 @@ const Services = () => (
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Услуги" }]} />
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground">Услуги</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground text-center">Услуги</h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto text-center">
               Полный спектр услуг рекламного агентства — от стратегии и креатива до видеопродакшна, SMM и AI-решений
             </p>
           </motion.div>
