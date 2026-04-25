@@ -19,10 +19,12 @@ const results: Result[] = [
 ];
 
 const ResultsSection = () => (
-  <section className="relative overflow-hidden bg-[hsl(30_25%_97%)] py-24 md:py-32">
+  <section className="relative overflow-hidden bg-[hsl(220_14%_96%)] py-24 md:py-32">
     {/* Soft background accents */}
-    <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[160px]" />
+    <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[160px]" />
     <div className="absolute bottom-0 right-[-5%] w-[400px] h-[400px] rounded-full bg-primary/[0.04] blur-[140px]" />
+    {/* Subtle vertical gradient for depth */}
+    <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-[hsl(220_14%_92%)]/60 pointer-events-none" />
 
     {/* Grid pattern */}
     <div
@@ -64,7 +66,7 @@ const ResultsSection = () => (
       </motion.div>
 
       {/* Diagonal grid: each row offset for rhythm */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 rounded-3xl overflow-hidden border border-neutral-200 shadow-[0_30px_80px_-30px_hsl(0_0%_0%/0.15)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200/70 rounded-3xl overflow-hidden border border-neutral-200 shadow-[0_40px_100px_-30px_hsl(220_30%_20%/0.18)]">
         {results.map((r, i) => {
           const Icon = r.icon;
           return (
