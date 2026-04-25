@@ -92,9 +92,9 @@ const ProcessSection = () => (
                 {/* Outer ring on hover */}
                 <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500`} />
                 <div
-                  className={`relative w-[104px] h-[104px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center text-white transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ring-4 ring-background`}
+                  className={`relative w-[104px] h-[104px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ring-4 ring-background`}
                 >
-                  <step.icon size={36} strokeWidth={2} />
+                  <step.icon size={36} strokeWidth={2} className="text-primary" />
                 </div>
                 {/* Number badge */}
                 <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-background border-2 border-foreground/10 text-foreground text-sm font-bold flex items-center justify-center shadow-md">
