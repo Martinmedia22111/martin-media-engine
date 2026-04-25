@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { FileText, Lightbulb, Film, Rocket, BarChart3 } from "lucide-react";
 
-// Monochrome dark with red accent
-const stepGradient = "from-[#1f2937] to-[#0b0f17]"; // slate-800 → near-black
-const stepGlow = "shadow-[0_10px_40px_-10px_rgba(220,38,38,0.45)]";
+// Light monochrome with red accent
+const stepGradient = "from-white to-[#f1f3f5]"; // soft light gradient
+const stepGlow = "shadow-[0_10px_30px_-10px_rgba(220,38,38,0.25)]";
 
 const steps = [
   {
@@ -92,7 +92,7 @@ const ProcessSection = () => (
                 {/* Outer ring on hover */}
                 <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-40 blur-xl transition-opacity duration-500`} />
                 <div
-                  className={`relative w-[104px] h-[104px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ring-4 ring-background`}
+                  className={`relative w-[104px] h-[104px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 ring-1 ring-primary/15 border border-border`}
                 >
                   <step.icon size={36} strokeWidth={2} className="text-primary" />
                 </div>
@@ -124,7 +124,7 @@ const ProcessSection = () => (
             >
               <div className="relative flex-shrink-0">
                 <div
-                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center ring-4 ring-background`}
+                  className={`w-[68px] h-[68px] rounded-full bg-gradient-to-br ${step.gradient} ${step.glow} flex items-center justify-center ring-1 ring-primary/15 border border-border`}
                 >
                   <step.icon size={26} strokeWidth={2} className="text-primary" />
                 </div>
