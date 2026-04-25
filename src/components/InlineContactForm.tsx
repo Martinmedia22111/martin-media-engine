@@ -46,8 +46,8 @@ const InlineContactForm = ({
     <section
       className={
         isDark
-          ? "section-padding bg-foreground"
-          : "section-padding bg-[radial-gradient(ellipse_at_top,hsl(0_60%_18%)_0%,hsl(0_0%_4%)_70%)]"
+          ? "section-padding bg-[radial-gradient(ellipse_at_top,hsl(0_55%_16%)_0%,hsl(0_0%_4%)_75%)]"
+          : "section-padding bg-secondary"
       }
     >
       <div className="container max-w-3xl">
