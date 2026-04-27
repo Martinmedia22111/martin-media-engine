@@ -63,22 +63,34 @@ const About = () => (
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "О компании", url: "/o-kompanii" }]} />
     <Header />
     <main>
-      {/* HERO MANIFEST */}
-      <section className="relative overflow-hidden gradient-hero pt-32 pb-20 md:pt-40 md:pb-28">
+      {/* HERO MANIFEST — светлый, чтобы контрастировать с тёмным hero главной */}
+      <section className="relative overflow-hidden bg-background pt-32 pb-20 md:pt-40 md:pb-28">
+        {/* Лёгкий красный орб-акцент */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-[10%] right-[-10%] w-[700px] h-[700px] rounded-full bg-primary/[0.18] blur-[180px]"
+          className="absolute top-[5%] right-[-15%] w-[700px] h-[700px] rounded-full bg-primary/[0.10] blur-[180px]"
         />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 0.3 }}
+          className="absolute bottom-[-20%] left-[-15%] w-[600px] h-[600px] rounded-full bg-primary/[0.06] blur-[160px]"
+        />
+
+        {/* Сетка под светлый фон */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.5]"
           style={{
             backgroundImage:
-              'linear-gradient(hsl(0 0% 100% / 0.15) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.15) 1px, transparent 1px)',
+              'linear-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground) / 0.04) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
           }}
         />
+
+        {/* Боковая красная вертикаль */}
+        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
 
         <div className="container relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -89,7 +101,7 @@ const About = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/30 backdrop-blur-sm"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/30"
           >
             <Sparkles size={14} />
             <span>О компании · С 2015 года</span>
@@ -101,10 +113,10 @@ const About = () => (
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-heading font-bold leading-[0.95] tracking-tight max-w-5xl"
           >
-            <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+            <span className="block text-foreground text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
               Мы делаем,
             </span>
-            <span className="block text-white/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
+            <span className="block text-foreground/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
               чтобы бренды <span className="text-primary">росли.</span>
             </span>
           </motion.h1>
@@ -113,24 +125,24 @@ const About = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
+            className="mt-10 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
           >
             Martin Media — это команда стратегов, креаторов, режиссёров и маркетологов,
             которая девять лет превращает идеи брендов в видео, контент и кампании,
             работающие на бизнес-результат.
           </motion.p>
 
-          {/* Stats inline with hero */}
+          {/* Stats inline with hero — светлая версия */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10 max-w-4xl"
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-4xl"
           >
             {manifestStats.map((s) => (
-              <div key={s.label} className="bg-transparent p-6 md:p-8">
-                <div className="font-heading text-3xl md:text-5xl font-bold text-white">{s.value}</div>
-                <div className="text-xs md:text-sm text-neutral-400 mt-2 uppercase tracking-wider">{s.label}</div>
+              <div key={s.label} className="bg-card p-6 md:p-8">
+                <div className="font-heading text-3xl md:text-5xl font-bold text-foreground">{s.value}</div>
+                <div className="text-xs md:text-sm text-muted-foreground mt-2 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </motion.div>
