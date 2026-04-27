@@ -63,34 +63,39 @@ const About = () => (
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "О компании", url: "/o-kompanii" }]} />
     <Header />
     <main>
-      {/* HERO MANIFEST — фиолетовый градиент в духе Martin Lab */}
+      {/* HERO MANIFEST — насыщенный фиолетовый градиент в духе Martin Lab */}
       <section
         className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
         style={{
           background:
-            'linear-gradient(180deg, hsl(260 35% 9%) 0%, hsl(270 30% 11%) 50%, hsl(280 25% 8%) 100%)',
+            'linear-gradient(180deg, hsl(265 55% 16%) 0%, hsl(275 60% 22%) 45%, hsl(290 55% 18%) 100%)',
         }}
       >
-        {/* Фиолетовый орб */}
+        {/* Фиолетовый орб — ярче */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-[5%] right-[-10%] w-[700px] h-[700px] rounded-full blur-[180px]"
-          style={{ background: 'hsl(280 90% 60% / 0.22)' }}
+          className="absolute top-[5%] right-[-10%] w-[800px] h-[800px] rounded-full blur-[160px]"
+          style={{ background: 'hsl(280 95% 65% / 0.45)' }}
         />
-        {/* Мажента-орб */}
+        {/* Мажента-орб — ярче */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.3 }}
-          className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] rounded-full blur-[160px]"
-          style={{ background: 'hsl(320 85% 60% / 0.14)' }}
+          className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] rounded-full blur-[150px]"
+          style={{ background: 'hsl(320 90% 60% / 0.35)' }}
         />
-        {/* Лёгкий красный акцент справа снизу — связка с брендом */}
+        {/* Красный акцент — связка с брендом */}
         <div
-          className="absolute bottom-[10%] right-[5%] w-[300px] h-[300px] rounded-full blur-[120px]"
-          style={{ background: 'hsl(0 85% 55% / 0.10)' }}
+          className="absolute bottom-[5%] right-[10%] w-[400px] h-[400px] rounded-full blur-[130px]"
+          style={{ background: 'hsl(0 90% 60% / 0.22)' }}
+        />
+        {/* Голубовато-фиолетовое свечение сверху для глубины */}
+        <div
+          className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] rounded-full blur-[140px]"
+          style={{ background: 'hsl(255 90% 65% / 0.25)' }}
         />
 
         {/* Сетка */}
