@@ -68,34 +68,34 @@ const About = () => (
         className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
         style={{
           background:
-            'linear-gradient(180deg, hsl(265 55% 16%) 0%, hsl(275 60% 22%) 45%, hsl(290 55% 18%) 100%)',
+            'linear-gradient(180deg, hsl(265 50% 11%) 0%, hsl(275 55% 15%) 45%, hsl(290 50% 12%) 100%)',
         }}
       >
-        {/* Фиолетовый орб — ярче */}
+        {/* Фиолетовый орб */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-[5%] right-[-10%] w-[800px] h-[800px] rounded-full blur-[160px]"
-          style={{ background: 'hsl(280 95% 65% / 0.45)' }}
+          className="absolute top-[5%] right-[-10%] w-[800px] h-[800px] rounded-full blur-[170px]"
+          style={{ background: 'hsl(280 95% 62% / 0.32)' }}
         />
-        {/* Мажента-орб — ярче */}
+        {/* Мажента-орб */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.3 }}
-          className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] rounded-full blur-[150px]"
-          style={{ background: 'hsl(320 90% 60% / 0.35)' }}
+          className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] rounded-full blur-[160px]"
+          style={{ background: 'hsl(320 90% 58% / 0.24)' }}
         />
         {/* Красный акцент — связка с брендом */}
         <div
           className="absolute bottom-[5%] right-[10%] w-[400px] h-[400px] rounded-full blur-[130px]"
-          style={{ background: 'hsl(0 90% 60% / 0.22)' }}
+          style={{ background: 'hsl(0 90% 58% / 0.16)' }}
         />
         {/* Голубовато-фиолетовое свечение сверху для глубины */}
         <div
-          className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] rounded-full blur-[140px]"
-          style={{ background: 'hsl(255 90% 65% / 0.25)' }}
+          className="absolute top-[-10%] left-[20%] w-[500px] h-[500px] rounded-full blur-[150px]"
+          style={{ background: 'hsl(255 85% 62% / 0.18)' }}
         />
 
         {/* Сетка */}
