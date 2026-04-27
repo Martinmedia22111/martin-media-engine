@@ -24,14 +24,14 @@ const ServicesSection = () => (
         {serviceCategories.filter(c => c.id !== "special").map((cat) => (
           <span
             key={cat.id}
-            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/60 bg-white/50 backdrop-blur-md text-muted-foreground"
+            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-border bg-card text-muted-foreground"
           >
             {cat.label}
           </span>
         ))}
       </div>
 
-      {/* Glass grid */}
+      {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {services.filter(s => s.category !== "special").map((service, i) => (
           <motion.div
@@ -43,27 +43,16 @@ const ServicesSection = () => (
           >
             <Link
               to={`/uslugi/${service.slug}`}
-              className="group relative flex flex-col h-full rounded-2xl glass-card glass-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative flex flex-col h-full rounded-2xl bg-card border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              {/* Typo header — теперь часть стеклянной карточки, без серого фона */}
-              <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden">
-                {/* мягкий бордовый градиент-подложка только в верхней части */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse 90% 110% at 50% 0%, hsl(0 70% 96% / 0.9) 0%, hsl(0 50% 98% / 0.4) 50%, transparent 100%)",
-                  }}
-                />
+              <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden bg-secondary/50">
                 <ServiceTypoIcon
                   slug={service.slug}
                   className="relative text-[44px] sm:text-[48px] text-foreground/90 group-hover:text-primary transition-colors duration-300"
                 />
               </div>
 
-              {/* тонкий разделитель-стекло */}
-              <div className="h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+              <div className="h-px bg-border" />
 
               <div className="flex flex-col flex-1 p-5">
                 <h3 className="font-heading font-semibold text-sm text-foreground leading-snug">
@@ -73,7 +62,7 @@ const ServicesSection = () => (
                   {service.description}
                 </p>
                 <div className="mt-4 flex justify-center">
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-white/60 backdrop-blur-sm border border-white/70 text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-secondary border border-border text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
                     Подробнее
                   </span>
                 </div>
