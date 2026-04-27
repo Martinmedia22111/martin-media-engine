@@ -45,17 +45,7 @@ const ServicesSection = () => (
               to={`/uslugi/${service.slug}`}
               className="group relative flex flex-col h-full rounded-2xl bg-card border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              {/* Typo header — теперь часть стеклянной карточки, без серого фона */}
-              <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden">
-                {/* мягкий бордовый градиент-подложка только в верхней части */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse 90% 110% at 50% 0%, hsl(0 70% 96% / 0.9) 0%, hsl(0 50% 98% / 0.4) 50%, transparent 100%)",
-                  }}
-                />
+              <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden bg-secondary/50">
                 <ServiceTypoIcon
                   slug={service.slug}
                   className="relative text-[44px] sm:text-[48px] text-foreground/90 group-hover:text-primary transition-colors duration-300"
