@@ -7,7 +7,7 @@ import SocialLinks from "@/components/SocialLinks";
 const footerServices = services.slice(0, 5);
 
 const Footer = () => (
-  <footer className="bg-foreground text-neutral-300">
+  <footer className="gradient-hero text-neutral-300">
     <div className="container py-16 md:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
         {/* Brand */}
