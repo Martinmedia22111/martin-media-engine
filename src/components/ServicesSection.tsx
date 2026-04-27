@@ -24,7 +24,7 @@ const ServicesSection = () => (
         {serviceCategories.filter(c => c.id !== "special").map((cat) => (
           <span
             key={cat.id}
-            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/60 bg-white/50 backdrop-blur-md text-muted-foreground"
+            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-border bg-card text-muted-foreground"
           >
             {cat.label}
           </span>
