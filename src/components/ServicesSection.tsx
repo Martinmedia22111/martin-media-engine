@@ -63,7 +63,7 @@ const ServicesSection = () => (
                   {service.description}
                 </p>
                 <div className="mt-4 flex justify-center">
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-white/60 backdrop-blur-sm border border-white/70 text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
+                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-secondary border border-border text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
                     Подробнее
                   </span>
                 </div>
