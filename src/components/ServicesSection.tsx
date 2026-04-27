@@ -52,8 +52,7 @@ const ServicesSection = () => (
                 />
               </div>
 
-              {/* тонкий разделитель-стекло */}
-              <div className="h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+              <div className="h-px bg-border" />
 
               <div className="flex flex-col flex-1 p-5">
                 <h3 className="font-heading font-semibold text-sm text-foreground leading-snug">
