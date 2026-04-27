@@ -18,7 +18,7 @@ const CTASection = ({
   buttonLink = "/brief",
   variant = "default",
 }: CTASectionProps) => (
-  <section className={variant === "dark" ? "section-padding bg-foreground" : "section-padding bg-primary/[0.04]"}>
+  <section className={variant === "dark" ? "section-padding gradient-hero" : "section-padding bg-primary/[0.04]"}>
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
