@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -12,14 +11,14 @@ interface CTASectionProps {
   variant?: "default" | "dark";
 }
 
-const CTASection = forwardRef<HTMLElement, CTASectionProps>(({
+const CTASection = ({
   title = "Готовы обсудить проект?",
   subtitle = "Расскажите о задаче — мы предложим решение и оценку за 24 часа",
   buttonText = "Обсудить проект",
   buttonLink = "/brief",
   variant = "default",
-}, ref) => (
-  <section ref={ref} className={variant === "dark" ? "section-padding gradient-hero" : "section-padding bg-primary/[0.04]"}>
+}: CTASectionProps) => (
+  <section className={variant === "dark" ? "section-padding gradient-hero" : "section-padding bg-primary/[0.04]"}>
     <div className="container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -46,8 +45,6 @@ const CTASection = forwardRef<HTMLElement, CTASectionProps>(({
       </motion.div>
     </div>
   </section>
-));
-
-CTASection.displayName = "CTASection";
+);
 
 export default CTASection;

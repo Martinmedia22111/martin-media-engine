@@ -1,4 +1,3 @@
-import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
@@ -28,10 +27,10 @@ const defaultFAQ: FAQItem[] = [
  * были в DOM, видны поисковикам, AI-ботам и screen readers.
  * По умолчанию первый вопрос открыт — даёт сразу видимый контент в пререндере.
  */
-const FAQSection = forwardRef<HTMLElement, FAQSectionProps>(({ items = defaultFAQ, title = "Частые вопросы", subtitle, showH1 = false }, ref) => {
+const FAQSection = ({ items = defaultFAQ, title = "Частые вопросы", subtitle, showH1 = false }: FAQSectionProps) => {
   const Heading = showH1 ? "h1" : "h2";
   return (
-    <section ref={ref} className="section-padding bg-background">
+    <section className="section-padding bg-background">
       <div className="container max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,8 +65,6 @@ const FAQSection = forwardRef<HTMLElement, FAQSectionProps>(({ items = defaultFA
       </div>
     </section>
   );
-});
-
-FAQSection.displayName = "FAQSection";
+};
 
 export default FAQSection;
