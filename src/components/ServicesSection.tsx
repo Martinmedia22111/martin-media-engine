@@ -5,15 +5,15 @@ import { ArrowRight } from "lucide-react";
 import ServiceTypoIcon from "@/components/ServiceTypoIcon";
 
 const ServicesSection = () => (
-  <section className="section-padding bg-secondary/50">
-    <div className="container">
+  <section className="section-padding bg-secondary/50 services-glow-bg relative overflow-hidden">
+    <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="text-center mb-12 md:mb-16"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Направления</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gradient-accent">Направления</h2>
         <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
           Единая экосистема: от стратегии и продакшна до AI-автоматизации
         </p>
@@ -24,14 +24,14 @@ const ServicesSection = () => (
         {serviceCategories.filter(c => c.id !== "special").map((cat) => (
           <span
             key={cat.id}
-            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-border bg-card text-muted-foreground"
+            className="px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-white/60 bg-white/50 backdrop-blur-md text-muted-foreground"
           >
             {cat.label}
           </span>
         ))}
       </div>
 
-      {/* Uniform grid */}
+      {/* Glass grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {services.filter(s => s.category !== "special").map((service, i) => (
           <motion.div
@@ -43,35 +43,28 @@ const ServicesSection = () => (
           >
             <Link
               to={`/uslugi/${service.slug}`}
-              className="group flex flex-col h-full rounded-2xl bg-card border border-border hover:border-primary/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative flex flex-col h-full rounded-2xl glass-card glass-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div
-                className="relative flex items-center justify-center h-28 border-b border-border/60 px-4 overflow-hidden"
-                style={{
-                  backgroundColor: "#e0e4e8",
-                  backgroundImage: [
-                    // top highlight
-                    "linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 38%, rgba(0,0,0,0.02) 62%, rgba(0,0,0,0.05) 100%)",
-                    // diagonal sheen
-                    "linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 28%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.35) 100%)",
-                    // brushed metal vertical lines
-                    "repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 1px, rgba(0,0,0,0.05) 1px, rgba(0,0,0,0.05) 2px)",
-                    // base gradient — lighter dark side
-                    "linear-gradient(160deg, #ecf0f3 0%, #d8dce0 50%, #c4c9ce 100%)",
-                  ].join(", "),
-                }}
-              >
-                {/* subtle inner shine */}
+              {/* Typo header — теперь часть стеклянной карточки, без серого фона */}
+              <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden">
+                {/* мягкий бордовый градиент-подложка только в верхней части */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-x-0 top-0 h-1/2"
+                  className="absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
                     background:
-                      "radial-gradient(ellipse 80% 100% at 50% 0%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%)",
+                      "radial-gradient(ellipse 90% 110% at 50% 0%, hsl(0 70% 96% / 0.9) 0%, hsl(0 50% 98% / 0.4) 50%, transparent 100%)",
                   }}
                 />
-                <ServiceTypoIcon slug={service.slug} className="relative text-[44px] sm:text-[48px] drop-shadow-sm" />
+                <ServiceTypoIcon
+                  slug={service.slug}
+                  className="relative text-[44px] sm:text-[48px] text-foreground/90 group-hover:text-primary transition-colors duration-300"
+                />
               </div>
+
+              {/* тонкий разделитель-стекло */}
+              <div className="h-px bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+
               <div className="flex flex-col flex-1 p-5">
                 <h3 className="font-heading font-semibold text-sm text-foreground leading-snug">
                   {service.shortTitle}
@@ -80,7 +73,7 @@ const ServicesSection = () => (
                   {service.description}
                 </p>
                 <div className="mt-4 flex justify-center">
-                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-secondary text-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <span className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-white/60 backdrop-blur-sm border border-white/70 text-foreground group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300">
                     Подробнее
                   </span>
                 </div>
