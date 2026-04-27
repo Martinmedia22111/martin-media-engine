@@ -6,10 +6,11 @@ import { ArrowRight, Play } from "lucide-react";
 const featured = cases.slice(0, 3);
 
 const CasesShowcase = () => (
-  <section className="section-padding bg-background relative overflow-hidden">
+  <section className="section-padding gradient-red-subtle relative overflow-hidden">
     {/* Decorative glows */}
-    <div className="absolute top-0 left-[15%] w-[420px] h-[420px] rounded-full bg-primary/[0.08] blur-[140px] pointer-events-none" />
-    <div className="absolute bottom-0 right-[10%] w-[360px] h-[360px] rounded-full bg-primary/[0.06] blur-[130px] pointer-events-none" />
+    <div className="absolute -top-20 left-[10%] w-[520px] h-[520px] rounded-full bg-primary/[0.18] blur-[140px] pointer-events-none" />
+    <div className="absolute -bottom-20 right-[5%] w-[460px] h-[460px] rounded-full bg-primary/[0.14] blur-[130px] pointer-events-none" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-primary/[0.05] blur-[120px] pointer-events-none" />
     
     <div className="container relative z-10">
       <motion.div
