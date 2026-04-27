@@ -98,7 +98,7 @@
   }
 
   .gradient-hero {
-    background: linear-gradient(180deg, hsl(var(--dark-surface)) 0%, hsl(220 18% 10%) 60%, hsl(0 40% 10%) 100%);
+    background: linear-gradient(180deg, hsl(var(--dark-surface)) 0%, hsl(0 35% 11%) 55%, hsl(0 60% 16%) 100%);
   }
 
   .gradient-warm {
