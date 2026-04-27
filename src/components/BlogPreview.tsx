@@ -9,8 +9,8 @@ const articles = [
 ];
 
 const BlogPreview = () => (
-  <section className="section-padding bg-secondary/50">
-    <div className="container">
+  <section className="section-padding bg-paper-noise relative overflow-hidden">
+    <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ const BlogPreview = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10"
       >
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Блог</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient-accent">Блог</h2>
           <p className="mt-3 text-muted-foreground text-lg max-w-lg">
             Экспертные материалы о видео, контенте и AI для бизнеса
           </p>
