@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import ServiceTypoIcon from "@/components/ServiceTypoIcon";
 
 const ServicesSection = () => (
-  <section className="section-padding bg-secondary/50 services-glow-bg relative overflow-hidden">
+  <section className="section-padding bg-secondary/50 relative overflow-hidden">
     <div className="container relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
