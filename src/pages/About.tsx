@@ -63,34 +63,49 @@ const About = () => (
     <BreadcrumbJsonLd items={[{ name: "Главная", url: "/" }, { name: "О компании", url: "/o-kompanii" }]} />
     <Header />
     <main>
-      {/* HERO MANIFEST — светлый, чтобы контрастировать с тёмным hero главной */}
-      <section className="relative overflow-hidden bg-background pt-32 pb-20 md:pt-40 md:pb-28">
-        {/* Лёгкий красный орб-акцент */}
+      {/* HERO MANIFEST — фиолетовый градиент в духе Martin Lab */}
+      <section
+        className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
+        style={{
+          background:
+            'linear-gradient(180deg, hsl(260 35% 9%) 0%, hsl(270 30% 11%) 50%, hsl(280 25% 8%) 100%)',
+        }}
+      >
+        {/* Фиолетовый орб */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute top-[5%] right-[-15%] w-[700px] h-[700px] rounded-full bg-primary/[0.10] blur-[180px]"
+          className="absolute top-[5%] right-[-10%] w-[700px] h-[700px] rounded-full blur-[180px]"
+          style={{ background: 'hsl(280 90% 60% / 0.22)' }}
         />
+        {/* Мажента-орб */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 0.3 }}
-          className="absolute bottom-[-20%] left-[-15%] w-[600px] h-[600px] rounded-full bg-primary/[0.06] blur-[160px]"
+          className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] rounded-full blur-[160px]"
+          style={{ background: 'hsl(320 85% 60% / 0.14)' }}
+        />
+        {/* Лёгкий красный акцент справа снизу — связка с брендом */}
+        <div
+          className="absolute bottom-[10%] right-[5%] w-[300px] h-[300px] rounded-full blur-[120px]"
+          style={{ background: 'hsl(0 85% 55% / 0.10)' }}
         />
 
-        {/* Сетка под светлый фон */}
+        {/* Сетка */}
         <div
-          className="absolute inset-0 opacity-[0.5]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              'linear-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground) / 0.04) 1px, transparent 1px)',
+              'linear-gradient(hsl(0 0% 100% / 0.2) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.2) 1px, transparent 1px)',
             backgroundSize: '80px 80px',
           }}
         />
 
-        {/* Боковая красная вертикаль */}
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/40 to-transparent" />
+        {/* Верхняя и нижняя тонкие фиолетовые линии */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(280_90%_60%)]/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[hsl(320_85%_60%)]/30 to-transparent" />
 
         <div className="container relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
@@ -101,7 +116,12 @@ const About = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/30"
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-sm font-medium mb-8 border backdrop-blur-sm"
+            style={{
+              background: 'hsl(280 90% 60% / 0.12)',
+              borderColor: 'hsl(280 90% 60% / 0.35)',
+              color: 'hsl(285 95% 80%)',
+            }}
           >
             <Sparkles size={14} />
             <span>О компании · С 2015 года</span>
@@ -113,11 +133,22 @@ const About = () => (
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-heading font-bold leading-[0.95] tracking-tight max-w-5xl"
           >
-            <span className="block text-foreground text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+            <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
               Мы делаем,
             </span>
-            <span className="block text-foreground/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
-              чтобы бренды <span className="text-primary">росли.</span>
+            <span className="block text-white/90 text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-2">
+              чтобы бренды{" "}
+              <span
+                style={{
+                  background:
+                    'linear-gradient(135deg, hsl(280 95% 75%) 0%, hsl(320 85% 65%) 50%, hsl(0 85% 60%) 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                росли.
+              </span>
             </span>
           </motion.h1>
 
@@ -125,24 +156,28 @@ const About = () => (
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+            className="mt-10 text-lg md:text-xl text-neutral-400 max-w-2xl leading-relaxed"
           >
             Martin Media — это команда стратегов, креаторов, режиссёров и маркетологов,
             которая девять лет превращает идеи брендов в видео, контент и кампании,
             работающие на бизнес-результат.
           </motion.p>
 
-          {/* Stats inline with hero — светлая версия */}
+          {/* Stats — стеклянная плашка с фиолетовой обводкой */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.55 }}
-            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border max-w-4xl"
+            className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border max-w-4xl backdrop-blur-sm"
+            style={{
+              background: 'hsl(280 40% 50% / 0.15)',
+              borderColor: 'hsl(280 60% 60% / 0.20)',
+            }}
           >
             {manifestStats.map((s) => (
-              <div key={s.label} className="bg-card p-6 md:p-8">
-                <div className="font-heading text-3xl md:text-5xl font-bold text-foreground">{s.value}</div>
-                <div className="text-xs md:text-sm text-muted-foreground mt-2 uppercase tracking-wider">{s.label}</div>
+              <div key={s.label} className="bg-transparent p-6 md:p-8">
+                <div className="font-heading text-3xl md:text-5xl font-bold text-white">{s.value}</div>
+                <div className="text-xs md:text-sm text-neutral-400 mt-2 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </motion.div>
