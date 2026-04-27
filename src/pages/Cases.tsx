@@ -24,7 +24,8 @@ const Cases = () => {
       <main className="pt-20">
         <section className="section-padding bg-background">
           <div className="container">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 max-w-3xl relative pl-6 md:pl-8">
+              <span aria-hidden className="absolute left-0 top-1 bottom-1 w-1 rounded-full bg-primary" />
               <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Кейсы" }]} />
               <h1 className="text-4xl md:text-5xl font-bold text-foreground">Кейсы</h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-lg">Реальные проекты с измеримыми результатами для бизнеса</p>
