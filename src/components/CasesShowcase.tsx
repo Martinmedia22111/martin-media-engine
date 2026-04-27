@@ -7,8 +7,9 @@ const featured = cases.slice(0, 3);
 
 const CasesShowcase = () => (
   <section className="section-padding bg-background relative overflow-hidden">
-    {/* Decorative */}
-    <div className="absolute top-0 left-[20%] w-[300px] h-[300px] rounded-full bg-primary/[0.05] blur-[120px]" />
+    {/* Decorative glows */}
+    <div className="absolute top-0 left-[15%] w-[420px] h-[420px] rounded-full bg-primary/[0.08] blur-[140px] pointer-events-none" />
+    <div className="absolute bottom-0 right-[10%] w-[360px] h-[360px] rounded-full bg-primary/[0.06] blur-[130px] pointer-events-none" />
     
     <div className="container relative z-10">
       <motion.div
@@ -18,8 +19,8 @@ const CasesShowcase = () => (
         className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12"
       >
         <div>
-          <Link to="/kejsy" className="hover:text-primary transition-colors">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground hover:text-primary transition-colors">Кейсы</h2>
+          <Link to="/kejsy" className="hover:opacity-80 transition-opacity">
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient-accent">Кейсы</h2>
           </Link>
           <p className="mt-3 text-muted-foreground text-lg max-w-lg">
             Реальные проекты с измеримыми результатами
