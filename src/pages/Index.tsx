@@ -44,6 +44,7 @@ const Index = () => (
       <MartinLabSection />
       <ProcessSection />
       <SeoTextSection />
+      <BlogPreview />
       <FAQSection />
       <CTASection variant="dark" />
     </main>
