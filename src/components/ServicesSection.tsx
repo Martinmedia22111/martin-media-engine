@@ -43,7 +43,7 @@ const ServicesSection = () => (
           >
             <Link
               to={`/uslugi/${service.slug}`}
-              className="group relative flex flex-col h-full rounded-2xl bg-card border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group relative flex flex-col h-full rounded-2xl bg-card border border-border shadow-sm hover:border-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden bg-secondary/50">
                 <ServiceTypoIcon
