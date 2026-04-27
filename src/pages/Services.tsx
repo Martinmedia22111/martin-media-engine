@@ -66,10 +66,11 @@ const Services = () => (
     <main className="pt-20">
       <section className="section-padding bg-background pb-8">
         <div className="container">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative pl-6 md:pl-8 max-w-3xl">
+            <span aria-hidden className="absolute left-0 top-1 bottom-1 w-1 rounded-full bg-primary" />
             <Breadcrumbs items={[{ name: "Главная", url: "/" }, { name: "Услуги" }]} />
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground text-center">Услуги</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground">Услуги</h1>
+            <p className="mt-4 text-lg text-muted-foreground">
               Полный спектр услуг рекламного агентства — от стратегии и креатива до видеопродакшна, SMM и AI-решений
             </p>
           </motion.div>
