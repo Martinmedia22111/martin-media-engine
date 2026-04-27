@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logoMM from "@/assets/logo-mm.png";
+import logoMM from "@/assets/logo-mm.webp";
 import { cn } from "@/lib/utils";
 import { companyInfo } from "@/data/company";
 import SocialLinks from "@/components/SocialLinks";

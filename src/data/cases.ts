@@ -1,9 +1,9 @@
 import milaCover from "@/assets/mila-cover.jpg";
 import grindeksCover from "@/assets/grindeks-cover.webp";
-import galereyaCover from "@/assets/galereya-vkusa-cover.png";
-import babushkinaCover from "@/assets/babushkina-krynka-cover.png";
-import aquaDaridaCover from "@/assets/aqua-darida-cover.png";
-import caparolCover from "@/assets/caparol-cover.png";
+import galereyaCover from "@/assets/galereya-vkusa-cover.webp";
+import babushkinaCover from "@/assets/babushkina-krynka-cover.webp";
+import aquaDaridaCover from "@/assets/aqua-darida-cover.webp";
+import caparolCover from "@/assets/caparol-cover.webp";
 
 export interface CaseStudy {
   id: string;
