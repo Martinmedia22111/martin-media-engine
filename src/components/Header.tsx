@@ -20,7 +20,9 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const hasDarkHero = isHome;
+  // Страницы, где у hero тёмный фон — нужен светлый текст в шапке
+  const darkHeroRoutes = ["/", "/o-kompanii", "/martin-lab"];
+  const hasDarkHero = darkHeroRoutes.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
