@@ -12,6 +12,7 @@ import ClientsMarquee from "@/components/ClientsMarquee";
 import MartinLabSection from "@/components/MartinLabSection";
 import ProcessSection from "@/components/ProcessSection";
 import InlineContactForm from "@/components/InlineContactForm";
+import BlogPreview from "@/components/BlogPreview";
 import SeoTextSection from "@/components/SeoTextSection";
 
 import FAQSection from "@/components/FAQSection";
