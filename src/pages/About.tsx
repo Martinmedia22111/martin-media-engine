@@ -68,7 +68,7 @@ const About = () => (
         className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28"
         style={{
           background:
-            'linear-gradient(180deg, hsl(265 50% 11%) 0%, hsl(275 55% 15%) 45%, hsl(290 50% 12%) 100%)',
+            'linear-gradient(180deg, hsl(265 50% 8%) 0%, hsl(275 55% 11%) 45%, hsl(290 50% 9%) 100%)',
         }}
       >
         {/* Фиолетовый орб */}
