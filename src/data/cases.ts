@@ -2,7 +2,6 @@ import milaCover from "@/assets/mila-cover.jpg";
 import grindeksCover from "@/assets/grindeks-cover.webp";
 import galereyaCover from "@/assets/galereya-vkusa-cover.png";
 import babushkinaCover from "@/assets/babushkina-krynka-cover.png";
-import almiCover from "@/assets/almi-cover.jpg";
 import aquaDaridaCover from "@/assets/aqua-darida-cover.png";
 import caparolCover from "@/assets/caparol-cover.png";
 
@@ -582,28 +581,6 @@ export const cases: CaseStudy[] = [
       { label: "Просмотры/мес", value: "100К+" },
       { label: "Платформы", value: "TikTok, IG" },
       { label: "Рост", value: "Органический" },
-    ],
-  },
-  {
-    id: "33",
-    slug: "almi-tiktok",
-    title: "Продвижение TikTok для сети продуктовых магазинов АЛМИ",
-    client: "АЛМИ",
-    industry: "Ритейл / Продуктовые магазины",
-    services: ["short-form-video", "smm-content-strategy"],
-    challenge: "Сети продуктовых магазинов АЛМИ нужно было выделиться среди конкурентов, адаптировать сериальный тренд для широкой аудитории и показать акции так, чтобы их не пролистывали, а сохраняли и делились.",
-    solution: "Создавали контент максимально близкий к целевой аудитории, вызывающий разные эмоции. Адаптировали сериальные тренды для работы на широкую аудиторию. Сняли полноценный сериал про бизнес клиента, подавая акции в нативном формате.",
-    results: ["1 700 000+ органических просмотров за 3 месяца", "58 000 лайков", "1 277 комментариев", "6 028 репостов", "+3 220 новых подписчиков"],
-    tags: ["TikTok", "SMM", "Ритейл"],
-    coverGradient: "from-green-500/20 to-lime-400/10",
-    coverImage: almiCover,
-    coverType: "logo",
-    tiktokUrls: ["https://www.tiktok.com/@almi_belarus"],
-    metrics: [
-      { label: "Просмотры", value: "1.7 млн" },
-      { label: "Лайки", value: "58К" },
-      { label: "Репосты", value: "6К+" },
-      { label: "Подписчики", value: "+3 220" },
     ],
   },
   {
