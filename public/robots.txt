@@ -3,7 +3,8 @@
 
 User-agent: *
 Allow: /
-Disallow: /404
+
+Host: mmedia.by
 
 # Search engine bots
 User-agent: Googlebot
