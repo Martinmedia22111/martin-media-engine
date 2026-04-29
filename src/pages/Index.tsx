@@ -1,22 +1,24 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import SEO from "@/components/SEO";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
-
 import ServicesSection from "@/components/ServicesSection";
-import CasesShowcase from "@/components/CasesShowcase";
-import ResultsSection from "@/components/ResultsSection";
-import ClientsMarquee from "@/components/ClientsMarquee";
 
-import MartinLabSection from "@/components/MartinLabSection";
-import ProcessSection from "@/components/ProcessSection";
-import InlineContactForm from "@/components/InlineContactForm";
-import BlogPreview from "@/components/BlogPreview";
-import SeoTextSection from "@/components/SeoTextSection";
+// Below-the-fold sections — lazy loaded to reduce initial JS
+const CasesShowcase = lazy(() => import("@/components/CasesShowcase"));
+const ResultsSection = lazy(() => import("@/components/ResultsSection"));
+const ClientsMarquee = lazy(() => import("@/components/ClientsMarquee"));
+const MartinLabSection = lazy(() => import("@/components/MartinLabSection"));
+const ProcessSection = lazy(() => import("@/components/ProcessSection"));
+const InlineContactForm = lazy(() => import("@/components/InlineContactForm"));
+const BlogPreview = lazy(() => import("@/components/BlogPreview"));
+const SeoTextSection = lazy(() => import("@/components/SeoTextSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const CTASection = lazy(() => import("@/components/CTASection"));
 
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+const SectionFallback = () => <div className="min-h-[200px]" />;
 
 const Index = () => (
   <>
@@ -31,22 +33,23 @@ const Index = () => (
     <Header />
     <main>
       <HeroSection />
-      
       <ServicesSection />
-      <InlineContactForm
-        title="Нужен видеоконтент?"
-        subtitle="Оставьте контакты — обсудим задачи и предложим решение"
-        variant="dark"
-      />
-      <CasesShowcase />
-      <ResultsSection />
-      <ClientsMarquee />
-      <MartinLabSection />
-      <ProcessSection />
-      <SeoTextSection />
-      <BlogPreview />
-      <FAQSection />
-      <CTASection variant="dark" />
+      <Suspense fallback={<SectionFallback />}>
+        <InlineContactForm
+          title="Нужен видеоконтент?"
+          subtitle="Оставьте контакты — обсудим задачи и предложим решение"
+          variant="dark"
+        />
+        <CasesShowcase />
+        <ResultsSection />
+        <ClientsMarquee />
+        <MartinLabSection />
+        <ProcessSection />
+        <SeoTextSection />
+        <BlogPreview />
+        <FAQSection />
+        <CTASection variant="dark" />
+      </Suspense>
     </main>
     <Footer />
   </>

@@ -47,6 +47,10 @@ const CasesShowcase = () => (
                   <img
                     src={c.coverImage}
                     alt={c.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="400"
                     className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${c.coverType === "logo" ? "object-contain p-6" : "object-cover"}`}
                   />
                 ) : (
