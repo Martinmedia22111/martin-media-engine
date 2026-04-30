@@ -32,7 +32,7 @@ const ServicesSection = () => (
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
         {services.filter(s => s.category !== "special").map((service, i) => (
           <motion.div
             key={service.slug}
@@ -45,10 +45,10 @@ const ServicesSection = () => (
               to={`/uslugi/${service.slug}`}
               className="group relative flex flex-col h-full rounded-2xl bg-card border border-border shadow-sm hover:border-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="relative flex items-center justify-center h-28 px-4 overflow-hidden bg-secondary/50">
+              <div className="relative flex items-center justify-center h-20 px-4 overflow-hidden bg-secondary/50">
                 <ServiceTypoIcon
                   slug={service.slug}
-                  className="relative text-[44px] sm:text-[48px] text-foreground/90 group-hover:text-primary transition-colors duration-300"
+                  className="relative text-[32px] sm:text-[40px] text-foreground/90 group-hover:text-primary transition-colors duration-300"
                 />
               </div>
 
