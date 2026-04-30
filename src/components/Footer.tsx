@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logoMM from "@/assets/logo-mm.webp";
-import { services } from "@/data/services";
+import { servicesPreview as services } from "@/data/servicesPreview";
 import { companyInfo } from "@/data/company";
 import SocialLinks from "@/components/SocialLinks";
 

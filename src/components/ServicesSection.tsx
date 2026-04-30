@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { services, serviceCategories } from "@/data/services";
+import { servicesPreview as services, serviceCategories } from "@/data/servicesPreview";
 import { ArrowRight } from "lucide-react";
 import ServiceTypoIcon from "@/components/ServiceTypoIcon";
 
