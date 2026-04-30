@@ -158,6 +158,25 @@
       radial-gradient(ellipse 55% 45% at 85% 80%, hsl(var(--primary) / 0.08) 0%, transparent 60%),
       radial-gradient(ellipse 40% 30% at 50% 50%, hsl(0 70% 60% / 0.05) 0%, transparent 70%);
   }
+
+  /* Lazy-render off-screen sections: браузер пропускает layout/paint
+     для невидимых блоков. Критично для длинной главной с большим DOM. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px;
+  }
+}
+
+/* На узких экранах и тач-устройствах отключаем тяжёлые входные
+   анимации — для плавности скролла и снижения нагрузки на CPU. */
+@media (max-width: 767px) {
+  [data-mobile-static="true"],
+  [data-mobile-static="true"] * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
 
 /* Smooth scrolling */

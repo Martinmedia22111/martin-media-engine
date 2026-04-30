@@ -40,25 +40,49 @@
     <!-- Google Search Console (file in /public also exists) -->
     <meta name="google-site-verification" content="google21e8373182d4074f" />
 
-    <!-- Yandex Metrika -->
-    <script type="text/javascript">
-      (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108329201','ym');
-      ym(108329201,'init',{ssr:true,webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
-    </script>
-
-    <!-- Google tag (Analytics 4 + Ads Conversion) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3B9CFEVV9E"></script>
+    <!-- Analytics & Metrika — отложенная загрузка после полной отрисовки страницы,
+         чтобы не конкурировать с критичными ресурсами (особенно на мобильных). -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3B9CFEVV9E');
-      gtag('config', 'AW-18055825749');
+      (function(){
+        var loaded = false;
+        function loadAnalytics(){
+          if (loaded) return;
+          loaded = true;
+
+          // Yandex Metrika
+          (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            k=e.createElement(t);a=e.getElementsByTagName(t)[0];k.async=1;k.src=r;a.parentNode.insertBefore(k,a);
+          })(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108329201','ym');
+          ym(108329201,'init',{ssr:true,webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});
+
+          // Google tag (GA4 + Ads)
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-3B9CFEVV9E';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-3B9CFEVV9E');
+          gtag('config', 'AW-18055825749');
+        }
+        // Грузим аналитику после load + 2 секунды простоя,
+        // либо при первом взаимодействии пользователя (что наступит раньше).
+        function schedule(){
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadAnalytics, { timeout: 4000 });
+          } else {
+            setTimeout(loadAnalytics, 2000);
+          }
+        }
+        if (document.readyState === 'complete') schedule();
+        else window.addEventListener('load', schedule, { once: true });
+        ['scroll','mousemove','touchstart','keydown'].forEach(function(ev){
+          window.addEventListener(ev, loadAnalytics, { once: true, passive: true });
+        });
+      })();
     </script>
 
     <!-- Fonts (non-blocking, with swap to avoid FOIT) -->
