@@ -31,27 +31,25 @@ const Index = () => (
     <OrganizationJsonLd />
     <WebSiteJsonLd />
     <Header />
-    <main>
+    <main data-mobile-static="true">
       <HeroSection />
-      <div className="cv-auto"><ServicesSection /></div>
+      <ServicesSection />
       <Suspense fallback={<SectionFallback />}>
-        <div data-mobile-static="true">
-          <div className="cv-auto"><InlineContactForm
-            title="Нужен видеоконтент?"
-            subtitle="Оставьте контакты — обсудим задачи и предложим решение"
-            variant="dark"
-          /></div>
-          <div className="cv-auto"><CasesShowcase /></div>
-          <div className="cv-auto"><ResultsSection /></div>
-          <div className="cv-auto"><ClientsMarquee /></div>
-          <div className="cv-auto"><MartinLabSection /></div>
-          <div className="cv-auto"><ProcessSection /></div>
-          <div className="cv-auto"><SeoTextSection /></div>
-          <div className="cv-auto"><BlogPreview /></div>
-          <div className="cv-auto"><FAQSection /></div>
-          <div className="cv-auto"><CTASection variant="dark" /></div>
-        </div>
+        <InlineContactForm
+          title="Нужен видеоконтент?"
+          subtitle="Оставьте контакты — обсудим задачи и предложим решение"
+          variant="dark"
+        />
       </Suspense>
+      <Suspense fallback={<SectionFallback />}><CasesShowcase /></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><ResultsSection /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><ClientsMarquee /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><MartinLabSection /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><ProcessSection /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><SeoTextSection /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><BlogPreview /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><FAQSection /></div></Suspense>
+      <Suspense fallback={<SectionFallback />}><div className="cv-auto"><CTASection variant="dark" /></div></Suspense>
     </main>
     <Footer />
   </>
