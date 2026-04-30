@@ -33,22 +33,24 @@ const Index = () => (
     <Header />
     <main>
       <HeroSection />
-      <ServicesSection />
+      <div className="cv-auto"><ServicesSection /></div>
       <Suspense fallback={<SectionFallback />}>
-        <InlineContactForm
-          title="Нужен видеоконтент?"
-          subtitle="Оставьте контакты — обсудим задачи и предложим решение"
-          variant="dark"
-        />
-        <CasesShowcase />
-        <ResultsSection />
-        <ClientsMarquee />
-        <MartinLabSection />
-        <ProcessSection />
-        <SeoTextSection />
-        <BlogPreview />
-        <FAQSection />
-        <CTASection variant="dark" />
+        <div data-mobile-static="true">
+          <div className="cv-auto"><InlineContactForm
+            title="Нужен видеоконтент?"
+            subtitle="Оставьте контакты — обсудим задачи и предложим решение"
+            variant="dark"
+          /></div>
+          <div className="cv-auto"><CasesShowcase /></div>
+          <div className="cv-auto"><ResultsSection /></div>
+          <div className="cv-auto"><ClientsMarquee /></div>
+          <div className="cv-auto"><MartinLabSection /></div>
+          <div className="cv-auto"><ProcessSection /></div>
+          <div className="cv-auto"><SeoTextSection /></div>
+          <div className="cv-auto"><BlogPreview /></div>
+          <div className="cv-auto"><FAQSection /></div>
+          <div className="cv-auto"><CTASection variant="dark" /></div>
+        </div>
       </Suspense>
     </main>
     <Footer />
